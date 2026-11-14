@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Official Shop | Namanga River FC</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --club-green: #16834a;
+            --club-dark: #101d32;
+            --club-light: #f3f7f4;
+        }
+
+        body {
+            background: #f7f9f8;
+        }
+
+        .shop-hero {
+            background: linear-gradient(120deg, #101d32, #183c35);
+            color: white;
+            padding: 65px 25px;
+            text-align: center;
+        }
+
+        .shop-hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .shop-hero p {
+            color: #d8e6dc;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .shop-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 25px;
+        }
+
+        .shop-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .shop-heading h2 {
+            color: var(--club-dark);
+            font-size: 28px;
+        }
+
+        .shop-heading p {
+            color: #64748b;
+        }
+
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 13px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,.06);
+            transition: transform .2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 225px;
+            background: #e8efea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-placeholder {
+            font-size: 65px;
+            color: var(--club-green);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--club-green);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info h3 {
+            color: var(--club-dark);
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .product-description {
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            color: var(--club-green);
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .product-controls {
+            display: grid;
+            gap: 10px;
+        }
+
+        .product-controls label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--club-dark);
+        }
+
+        .product-controls select,
+        .product-controls input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dce3df;
+            border-radius: 7px;
+            background: white;
+        }
+
+        .add-cart-btn {
+            width: 100%;
+            border: none;
+            background: var(--club-green);
+            color: white;
+            padding: 12px;
+            border-radius: 7px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-cart-btn:hover {
+            background: #11663a;
+        }
+
+        /* CART */
+
+        .cart-panel {
+            background: white;
+            border-radius: 13px;
+            padding: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.06);
+            position: sticky;
+            top: 20px;
+        }
+
+        .cart-panel h2 {
+            color: var(--club-dark);
+            font-size: 21px;
+            margin-bottom: 18px;
+        }
+
+        .cart-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #edf0ee;
+            font-size: 13px;
+        }
+
+        .cart-item strong {
+            display: block;
+            color: var(--club-dark);
+        }
+
+        .cart-item small {
+            color: #64748b;
+        }
+
+        .remove-item {
+            color: #dc2626;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            font-weight: bold;
+            color: var(--club-dark);
+            font-size: 17px;
+        }
+
+        .cart-button {
+            width: 100%;
+            border: none;
+            border-radius: 7px;
+            padding: 13px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn {
+            background: #16834a;
+            color: white;
+        }
+
+        .paystack-btn {
+            background: var(--club-dark);
+            color: white;
+        }
+
+        .cart-button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        .empty-cart {
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+        }
+
+        /* INFORMATION */
+
+        .shop-benefits {
+            background: white;
+            padding: 35px 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .shop-benefits h3 {
+            color: var(--club-dark);
+            font-size: 15px;
+        }
+
+        .shop-benefits p {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .shop-contact {
+            text-align: center;
+            margin-top: 40px;
+            padding: 35px 20px;
+            background: #eaf2ec;
+            border-radius: 12px;
+        }
+
+        .shop-contact h2 {
+            color: var(--club-dark);
+        }
+
+        .shop-contact a {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--club-green);
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        @media(max-width: 1050px) {
+            .shop-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-panel {
+                position: static;
+            }
+        }
+
+        @media(max-width: 750px) {
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media(max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-container {
+                padding: 30px 15px;
+            }
+
+            .shop-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+
+<header class="header">
+    <div class="container header-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/Namanga river logo.jpeg"
+                 alt="Namanga River FC Logo">
+
+            <div class="logo-text">
+                <h1>NAMANGA RIVER</h1>
+                <span>FOOTBALL CLUB</span>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">☰</button>
+
+        <nav class="nav" id="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="squad.html">Squad</a>
+            <a href="fixtures.html">Fixtures</a>
+            <a href="results.html">Results</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="new.html">News</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- SHOP HERO -->
+
+<section class="shop-hero">
+    <h1>OFFICIAL CLUB SHOP</h1>
+
+    <p>
+        Wear the colours. Support the team.
+        Get your official Namanga River FC merchandise.
+    </p>
+</section>
+
+
+<!-- SHOP CONTENT -->
+
+<main class="shop-container">
+
+    <div class="shop-heading">
+        <h2>OUR MERCHANDISE</h2>
+        <p>Official products from Namanga River Football Club</p>
+    </div>
+
+    <div class="shop-layout">
+
+        <!-- PRODUCTS -->
+
+        <div class="products-grid" id="products-grid"></div>
+
+
+        <!-- SHOPPING CART -->
+
+        <aside class="cart-panel">
+
+            <h2>🛒 Your Cart</h2>
+
+            <div id="cart-items">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total">KSh 0</span>
+            </div>
+
+            <button class="cart-button whatsapp-btn"
+                    onclick="orderWhatsApp()">
+                ORDER ON WHATSAPP
+            </button>
+
+            <button class="cart-button paystack-btn"
+                    onclick="payOnline()">
+                PAY ONLINE
+            </button>
+
+            <p style="font-size:11px;color:#94a3b8;text-align:center;">
+                Online checkout will be activated after secure payment
+                integration.
+            </p>
+
+        </aside>
+
+    </div>
+
+
+    <!-- SHOP BENEFITS -->
+
+    <section class="shop-benefits">
+
+        <div>
+            <div class="benefit-icon">👕</div>
+            <h3>Official Merchandise</h3>
+            <p>Show your support with club products.</p>
+        </div>
+
+        <div>
+            <div class="benefit-icon">📦</div>
+            <h3>Collection or Delivery</h3>
+            <p>Arrange collection or delivery with the club.</p>
+        </div>
+
+        <div>
+            <div class="benefit-icon">💚</div>
+            <h3>Support the Team</h3>
+            <p>Every purchase helps support the club.</p>
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="shop-contact">
+        <h2>Want to support Namanga River FC?</h2>
+
+        <p>
+            Contact the club for merchandise enquiries,
+            bulk orders and sponsorship.
+        </p>
+
+        <a href="contact.html">CONTACT THE CLUB</a>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+    <p>
+        &copy; <span id="year"></span>
+        Namanga River Football Club.
+        All Rights Reserved.
+    </p>
+</footer>
+
+
+<script src="js/script.js"></script>
+
+<script>
+
+// ========================================
+// CLUB SHOP SETTINGS
+// ========================================
+
+// Replace this with the club's WhatsApp number.
+// Format: country code + number, without + or spaces.
+
+const CLUB_WHATSAPP = "254700000000";
+
+
+// ========================================
+// PRODUCTS
+// ========================================
+
+const products = [
+
+    {
+        id: 1,
+        name: "Official Home Shirt",
+        description: "Namanga River FC home playing jersey.",
+        price: 1500,
+        category: "HOME KIT",
+        image: "images/merchandise/home-shirt.jpg",
+        sizes: ["S", "M", "L", "XL", "XXL"]
+    },
+
+    {
+        id: 2,
+        name: "Official Away Shirt",
+        description: "Official away match jersey.",
+        price: 1500,
+        category: "AWAY KIT",
+        image: "images/merchandise/away-shirt.jpg",
+        sizes: ["S", "M", "L", "XL", "XXL"]
+    },
+
+    {
+        id: 3,
+        name: "Training Shirt",
+        description: "Comfortable club training wear.",
+        price: 1200,
+        category: "TRAINING",
+        image: "images/merchandise/training-shirt.jpg",
+        sizes: ["S", "M", "L", "XL", "XXL"]
+    },
+
+    {
+        id: 4,
+        name: "Club Hoodie",
+        description: "Official Namanga River FC hoodie.",
+        price: 2500,
+        category: "CASUAL WEAR",
+        image: "images/merchandise/hoodie.jpg",
+        sizes: ["S", "M", "L", "XL", "XXL"]
+    },
+
+    {
+        id: 5,
+        name: "Club Cap",
+        description: "Represent the club everywhere.",
+        price: 800,
+        category: "ACCESSORIES",
+        image: "images/merchandise/cap.jpg",
+        sizes: ["Free Size"]
+    },
+
+    {
+        id: 6,
+        name: "Club Scarf",
+        description: "Show your support on matchday.",
+        price: 700,
+        category: "ACCESSORIES",
+        image: "images/merchandise/scarf.jpg",
+        sizes: ["Standard"]
+    }
+
+];
+
+
+// ========================================
+// SHOPPING CART
+// ========================================
+
+let cart = [];
+
+
+// ========================================
+// DISPLAY PRODUCTS
+// ========================================
+
+const productsGrid = document.getElementById("products-grid");
+
+products.forEach(product => {
+
+    const card = document.createElement("div");
+
+    card.className = "product-card";
+
+    const sizeOptions = product.sizes.map(size =>
+        `<option value="${size}">${size}</option>`
+    ).join("");
+
+    card.innerHTML = `
+
+        <div class="product-image">
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+            >
+
+            <div class="product-placeholder" style="display:none;">
+                👕
+            </div>
+
+            <span class="product-tag">${product.category}</span>
+
+        </div>
+
+        <div class="product-info">
+
+            <h3>${product.name}</h3>
+
+            <p class="product-description">
+                ${product.description}
+            </p>
+
+            <div class="product-price">
+                KSh ${product.price.toLocaleString("en-KE")}
+            </div>
+
+            <div class="product-controls">
+
+                <label for="size-${product.id}">
+                    Select Size
+                </label>
+
+                <select id="size-${product.id}">
+                    ${sizeOptions}
+                </select>
+
+                <label for="quantity-${product.id}">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity-${product.id}"
+                    value="1"
+                    min="1"
+                    max="20"
+                >
+
+                <button
+                    class="add-cart-btn"
+                    onclick="addToCart(${product.id})"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+    productsGrid.appendChild(card);
+
+});
+
+
+// ========================================
+// ADD TO CART
+// ========================================
+
+function addToCart(productId) {
+
+    const product = products.find(p => p.id === productId);
+
+    const size = document.getElementById(
+        `size-${productId}`
+    ).value;
+
+    const quantity = Number(document.getElementById(
+        `quantity-${productId}`
+    ).value);
+
+    if (!Number.isInteger(quantity) || quantity < 1 || quantity > 20) {
+        alert("Please enter a quantity between 1 and 20.");
+        return;
+    }
+
+    const existing = cart.find(item =>
+        item.id === productId && item.size === size
+    );
+
+    if (existing) {
+
+        existing.quantity += quantity;
+
+    } else {
+
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            size: size,
+            quantity: quantity
+        });
+
+    }
+
+    renderCart();
+
+    alert(product.name + " added to your cart!");
+
+}
+
+
+// ========================================
+// DISPLAY CART
+// ========================================
+
+function renderCart() {
+
+    const cartItems = document.getElementById("cart-items");
+
+    const totalElement = document.getElementById("cart-total");
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            '<p class="empty-cart">Your cart is empty.</p>';
+
+        totalElement.textContent = "KSh 0";
+
+        return;
+
+    }
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, index) => {
+
+        const itemTotal = item.price * item.quantity;
+
+        total += itemTotal;
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <strong>${item.name}</strong>
+
+                <small>
+                    Size: ${item.size} |
+                    Quantity: ${item.quantity}
+                </small>
+
+                <p>KSh ${itemTotal.toLocaleString("en-KE")}</p>
+
+                <button
+                    class="remove-item"
+                    onclick="removeItem(${index})"
+                >
+                    Remove
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+    totalElement.textContent =
+        "KSh " + total.toLocaleString("en-KE");
+
+}
+
+
+// ========================================
+// REMOVE CART ITEM
+// ========================================
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    renderCart();
+
+}
+
+
+// ========================================
+// WHATSAPP ORDERING
+// ========================================
+
+function orderWhatsApp() {
+
+    if (cart.length === 0) {
+
+        alert("Please add products to your cart first.");
+
+        return;
+
+    }
+
+    if (!/^254\d{9}$/.test(CLUB_WHATSAPP) ||
+        CLUB_WHATSAPP === "254700000000") {
+
+        alert("Please enter the club's correct WhatsApp number in shop.html first.");
+
+        return;
+
+    }
+
+    let total = 0;
+
+    let message = "Hello Namanga River FC! I would like to order merchandise:\n\n";
+
+    cart.forEach((item, index) => {
+
+        const itemTotal = item.price * item.quantity;
+
+        total += itemTotal;
+
+        message += `${index + 1}. ${item.name}\n`;
+        message += `Size: ${item.size}\n`;
+        message += `Quantity: ${item.quantity}\n`;
+        message += `Price: KSh ${itemTotal.toLocaleString("en-KE")}\n\n`;
+
+    });
+
+    message += `TOTAL: KSh ${total.toLocaleString("en-KE")}\n\n`;
+    message += "Please confirm availability and payment arrangements. Thank you!";
+
+    const whatsappURL =
+        "https://wa.me/" +
+        CLUB_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+
+}
+
+
+// ========================================
+// PAYSTACK CHECKOUT
+// ========================================
+
+function payOnline() {
+
+    if (cart.length === 0) {
+
+        alert("Please add products to your cart first.");
+
+        return;
+
+    }
+
+    alert(
+        "Online payments are not activated yet. " +
+        "We will connect this button to the secure Paystack " +
+        "backend before accepting real payments. " +
+        "You can use WhatsApp ordering in the meantime."
+    );
+
+}
+
+
+// ========================================
+// FOOTER YEAR
+// ========================================
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
