@@ -1595,3 +1595,106 @@ body {
         line-height: 1.15 !important;
     }
 }
+/* COACHING STAFF SECTION */
+.coach-section {
+    padding: 70px 6%;
+    background: #f4f7f5;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-tag {
+    color: #16834a;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #101d32;
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #647084;
+}
+
+.coach-card {
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.coach-photo {
+    width: 190px;
+    height: 220px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #101d32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+    border-bottom: 5px solid #16834a;
+}
+
+.coach-info {
+    flex: 1;
+}
+
+.coach-role {
+    color: #16834a;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.coach-info h3 {
+    color: #101d32;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.coach-info p {
+    color: #647084;
+    line-height: 1.8;
+}
+
+.coach-details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e9e7;
+}
+
+.coach-details p {
+    margin: 7px 0;
+}
+
+@media (max-width: 600px) {
+    .coach-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .coach-photo {
+        width: 160px;
+        height: 180px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+}
