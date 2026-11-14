@@ -1,0 +1,601 @@
+
+/* =================================
+   NAMANGA RIVER FOOTBALL CLUB
+   Main Stylesheet
+================================= */
+
+/* ROOT VARIABLES */
+:root {
+    --primary: #101d32;
+    --secondary: #16834a;
+    --accent: #20a45f;
+    --white: #ffffff;
+    --light: #f4f7f5;
+    --dark: #17202b;
+    --gray: #687386;
+    --border: #e1e7e3;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 65px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--gray);
+}
+
+/* HEADER AND NAVIGATION */
+.header {
+    background: var(--primary);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.logo span {
+    color: #36c779;
+}
+
+.nav-links,
+#nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a,
+#nav a {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+#nav a:hover {
+    color: #36c779;
+}
+
+.menu-toggle,
+#menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 520px;
+    background:
+        linear-gradient(rgba(16, 29, 50, 0.82),
+        rgba(16, 29, 50, 0.82)),
+        url("../images/hero.jpg") center/cover no-repeat;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* PAGE BANNER */
+.page-banner {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.page-banner h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+/* INTRODUCTION */
+.intro {
+    background: var(--light);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    align-items: center;
+}
+
+.intro-content h2 {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.intro-content p {
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* VALUES AND GENERAL CARDS */
+.values-grid,
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+/* SQUAD */
+.squad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.player-card {
+    background: var(--white);
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.player-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    background: var(--light);
+}
+
+.player-card h3 {
+    color: var(--primary);
+    margin: 15px 0 5px;
+}
+
+.player-card p {
+    color: var(--gray);
+    padding-bottom: 15px;
+}
+
+/* FIXTURES AND RESULTS */
+.fixtures-grid,
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.fixture-card,
+.result-card {
+    background: var(--light);
+    padding: 25px;
+    border-left: 5px solid var(--secondary);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.fixture-card h3,
+.result-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.fixture-card p,
+.result-card p {
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.match-score {
+    font-size: 25px;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* NEWS */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.news-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.news-card-content {
+    padding: 20px;
+}
+
+.news-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    color: var(--gray);
+}
+
+/* CALL TO ACTION */
+.cta {
+    background: var(--secondary);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+/* CONTACT PAGE */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: var(--gray);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--secondary);
+    border-color: var(--secondary);
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 45px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.footer a:hover {
+    color: #36c779;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #34445c;
+    padding-top: 20px;
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .nav-links,
+    #nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .values-grid,
+    .cards-grid,
+    .squad-grid,
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        min-height: 65px;
+    }
+
+    .menu-toggle,
+    #menu-toggle {
+        display: block;
+    }
+
+    .nav-links,
+    #nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 5%;
+        gap: 18px;
+    }
+
+    .nav-links.show,
+    #nav.show {
+        display: flex;
+    }
+
+    .intro-grid,
+    .contact-grid,
+    .fixtures-grid,
+    .results-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .page-banner h1 {
+        font-size: 30px;
+    }
+
+    .values-grid,
+    .cards-grid,
+    .squad-grid,
+    .news-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 230px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 17px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .btn {
+        padding: 10px 17px;
+    }
+}
