@@ -4,10 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet the players and coaching staff of Namanga River Football Club.">
-    <title>Our Squad | Namanga River FC</title>
+    <title>Squad | Namanga River FC</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .starting-section {
+            padding: 45px 5%;
+            background: #f1f5f3;
+        }
+
+        .starting-section h2,
+        .club-roster-section h2 {
+            text-align: center;
+            color: #101d32;
+            margin-bottom: 10px;
+        }
+
+        .section-intro {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .starting-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .starting-player {
+            background: white;
+            padding: 18px 12px;
+            border-radius: 10px;
+            text-align: center;
+            border-bottom: 3px solid #16834a;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .starting-number {
+            background: #16834a;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+
+        .starting-player h3 {
+            font-size: 15px;
+            margin: 5px 0;
+            color: #101d32;
+        }
+
+        .starting-player p {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .matchday-label {
+            display: inline-block;
+            background: #16834a;
+            color: white;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .starting-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        @media(max-width: 900px) {
+            .starting-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .starting-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- SIDEBAR NAVIGATION -->
@@ -23,9 +112,7 @@
             </a>
 
             <button class="menu-toggle" id="menu-toggle"
-                    aria-label="Toggle navigation" aria-expanded="false">
-                ☰
-            </button>
+                aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
             <nav class="nav" id="nav">
                 <a href="index.html">Home</a>
@@ -34,126 +121,203 @@
                 <a href="fixtures.html">Fixtures</a>
                 <a href="results.html">Results</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="news.html">News</a>
+                <a href="new.html">News</a>
                 <a href="contact.html">Contact</a>
             </nav>
 
         </div>
     </header>
 
-    <main>
 
-        <!-- PAGE INTRO -->
-        <section class="squad-banner">
-            <span>THE TEAM BEHIND THE DREAM</span>
-            <h2>MEET OUR SQUAD</h2>
-            <p>Twenty-five players. One team. One dream.</p>
-        </section>
+    <!-- PAGE BANNER -->
+    <section class="squad-banner">
+        <div class="container">
+            <h1>OUR TEAM</h1>
+            <p>Meet the players representing Namanga River Football Club</p>
+        </div>
+    </section>
 
-        <!-- COACH -->
-        <section class="club-coach-section">
+
+    <!-- STARTING XI SECTION -->
+    <section class="starting-section">
+
+        <div class="starting-heading">
+            <span class="matchday-label">MATCHDAY LINEUP</span>
+            <h2>STARTING XI</h2>
+            <p class="section-intro">
+                The eleven players selected to start the match.
+            </p>
+        </div>
+
+        <div class="starting-grid" id="starting-grid"></div>
+
+    </section>
+
+
+    <!-- HEAD COACH SECTION -->
+    <section class="club-coach-section">
+
+        <div class="container">
+            <h2>OUR HEAD COACH</h2>
+
             <div class="club-coach-card">
                 <div class="coach-badge">HC</div>
-
                 <div>
-                    <span class="roster-label">TEAM LEADERSHIP</span>
-                    <h2>Head Coach</h2>
-                    <p>
-                        Leading our team through discipline, tactical
-                        preparation, teamwork and player development.
-                    </p>
-                    <span class="coach-role">HEAD COACH · NAMANGA RIVER FC</span>
+                    <h3>Head Coach</h3>
+                    <p>Namanga River Football Club</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- PLAYER ROSTER -->
-        <section class="club-roster-section">
+    </section>
+
+
+    <!-- FULL SQUAD SECTION -->
+    <section class="club-roster-section">
+
+        <div class="container">
 
             <div class="roster-heading">
-                <div>
-                    <span class="roster-label">THE PLAYERS</span>
-                    <h2>FIRST TEAM SQUAD</h2>
-                    <p>Meet the 25 players representing our club.</p>
-                </div>
-
-                <div class="squad-total">
-                    <strong>25</strong>
-                    <span>PLAYERS</span>
-                </div>
+                <h2>THE FULL SQUAD</h2>
+                <p>Our 25 registered players</p>
+                <span class="squad-total">25 PLAYERS</span>
             </div>
 
-            <div class="roster-grid" id="roster-grid">
-                <!-- Player cards are generated below -->
-            </div>
+            <div class="roster-grid" id="roster-grid"></div>
 
-        </section>
+        </div>
 
-        <!-- CLUB MOTTO -->
-        <section class="squad-motto">
-            <h2>ONE CLUB. ONE DREAM. ONE RIVER.</h2>
-            <p>Passion. Unity. Determination.</p>
-        </section>
+    </section>
 
-    </main>
+
+    <!-- CLUB MOTTO -->
+    <section class="squad-motto">
+        <h2>ONE TEAM. ONE DREAM.</h2>
+        <p>United by passion, driven by victory.</p>
+    </section>
+
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <h3>NAMANGA RIVER FOOTBALL CLUB</h3>
-            <p>One Club. One Dream. One River.</p>
-            <p>&copy; <span id="year"></span> Namanga River FC. All Rights Reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; <span id="year"></span> Namanga River Football Club.
+            All Rights Reserved.</p>
     </footer>
 
+
+    <script src="js/script.js"></script>
+
     <script>
+
+        /*
+        ==========================================
+        MATCHDAY SELECTION
+        ==========================================
+
+        Set starting: true for the 11 players
+        selected for the match.
+
+        Set starting: false for everyone else.
+
+        Change names and positions when you have
+        the actual player information.
+        */
+
         const players = [
-            { number: "01", name: "Player 01", position: "Goalkeeper" },
-            { number: "02", name: "Player 02", position: "Defender" },
-            { number: "03", name: "Player 03", position: "Defender" },
-            { number: "04", name: "Player 04", position: "Defender" },
-            { number: "05", name: "Player 05", position: "Defender" },
-            { number: "06", name: "Player 06", position: "Defender" },
-            { number: "07", name: "Player 07", position: "Midfielder" },
-            { number: "08", name: "Player 08", position: "Midfielder" },
-            { number: "09", name: "Player 09", position: "Forward" },
-            { number: "10", name: "Player 10", position: "Midfielder" },
-            { number: "11", name: "Player 11", position: "Forward" },
-            { number: "12", name: "Player 12", position: "Goalkeeper" },
-            { number: "13", name: "Player 13", position: "Defender" },
-            { number: "14", name: "Player 14", position: "Midfielder" },
-            { number: "15", name: "Player 15", position: "Forward" },
-            { number: "16", name: "Player 16", position: "Midfielder" },
-            { number: "17", name: "Player 17", position: "Defender" },
-            { number: "18", name: "Player 18", position: "Forward" },
-            { number: "19", name: "Player 19", position: "Midfielder" },
-            { number: "20", name: "Player 20", position: "Forward" },
-            { number: "21", name: "Player 21", position: "Goalkeeper" },
-            { number: "22", name: "Player 22", position: "Defender" },
-            { number: "23", name: "Player 23", position: "Midfielder" },
-            { number: "24", name: "Player 24", position: "Forward" },
-            { number: "25", name: "Player 25", position: "Midfielder" }
+
+            { number: 1, name: "Player 01", position: "Goalkeeper", starting: true },
+            { number: 2, name: "Player 02", position: "Defender", starting: true },
+            { number: 3, name: "Player 03", position: "Defender", starting: true },
+            { number: 4, name: "Player 04", position: "Defender", starting: true },
+            { number: 5, name: "Player 05", position: "Defender", starting: true },
+
+            { number: 6, name: "Player 06", position: "Midfielder", starting: true },
+            { number: 7, name: "Player 07", position: "Midfielder", starting: true },
+            { number: 8, name: "Player 08", position: "Midfielder", starting: true },
+            { number: 9, name: "Player 09", position: "Forward", starting: true },
+
+            { number: 10, name: "Player 10", position: "Forward", starting: true },
+            { number: 11, name: "Player 11", position: "Forward", starting: true },
+
+            { number: 12, name: "Player 12", position: "Goalkeeper", starting: false },
+            { number: 13, name: "Player 13", position: "Defender", starting: false },
+            { number: 14, name: "Player 14", position: "Defender", starting: false },
+            { number: 15, name: "Player 15", position: "Defender", starting: false },
+            { number: 16, name: "Player 16", position: "Midfielder", starting: false },
+            { number: 17, name: "Player 17", position: "Midfielder", starting: false },
+            { number: 18, name: "Player 18", position: "Midfielder", starting: false },
+            { number: 19, name: "Player 19", position: "Midfielder", starting: false },
+            { number: 20, name: "Player 20", position: "Forward", starting: false },
+            { number: 21, name: "Player 21", position: "Forward", starting: false },
+            { number: 22, name: "Player 22", position: "Forward", starting: false },
+            { number: 23, name: "Player 23", position: "Defender", starting: false },
+            { number: 24, name: "Player 24", position: "Midfielder", starting: false },
+            { number: 25, name: "Player 25", position: "Goalkeeper", starting: false }
+
         ];
 
-        const roster = document.getElementById("roster-grid");
+
+        // DISPLAY STARTING XI
+
+        const startingGrid = document.getElementById("starting-grid");
+
+        const startingPlayers = players.filter(player => player.starting);
+
+        if (startingPlayers.length === 11) {
+
+            startingPlayers.forEach(player => {
+
+                startingGrid.innerHTML += `
+                    <div class="starting-player">
+                        <div class="starting-number">${player.number}</div>
+                        <h3>${player.name}</h3>
+                        <p>${player.position}</p>
+                    </div>
+                `;
+
+            });
+
+        } else {
+
+            startingGrid.innerHTML = `
+                <p style="text-align:center; color:red; grid-column:1/-1;">
+                    Please select exactly 11 starting players.
+                    Currently selected: ${startingPlayers.length}
+                </p>
+            `;
+
+        }
+
+
+        // DISPLAY ALL 25 PLAYERS
+
+        const rosterGrid = document.getElementById("roster-grid");
 
         players.forEach(player => {
-            roster.innerHTML += `
-                <article class="roster-player">
-                    <div class="roster-number">${player.number}</div>
+
+            rosterGrid.innerHTML += `
+                <div class="roster-player">
+
+                    <div class="roster-number">
+                        ${player.number}
+                    </div>
+
                     <div class="roster-player-info">
                         <h3>${player.name}</h3>
-                        <span>${player.position}</span>
+                        <p>${player.position}</p>
                     </div>
-                </article>
+
+                </div>
             `;
+
         });
+
+
+        // UPDATE FOOTER YEAR
 
         document.getElementById("year").textContent =
             new Date().getFullYear();
-    </script>
 
-    <script src="js/script.js"></script>
+    </script>
 
 </body>
 </html>
