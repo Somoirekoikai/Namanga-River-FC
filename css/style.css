@@ -1698,3 +1698,260 @@ body {
         font-size: 26px;
     }
 }
+
+/* =====================================
+   COMPACT PROFESSIONAL SQUAD PAGE
+===================================== */
+
+.squad-banner {
+    background: linear-gradient(135deg, #101d32, #1b3150);
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.squad-banner > span {
+    color: #19c477;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.squad-banner h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    margin: 12px 0;
+}
+
+.squad-banner p {
+    color: #dce4ee;
+    margin: 0;
+}
+
+.club-coach-section,
+.club-roster-section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+.club-coach-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: #ffffff;
+    border: 1px solid #e3e8ed;
+    border-left: 5px solid #16834a;
+    border-radius: 12px;
+    padding: 22px 26px;
+    box-shadow: 0 5px 20px rgba(16, 29, 50, 0.06);
+}
+
+.coach-badge {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #101d32;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.roster-label {
+    color: #16834a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.club-coach-card h2 {
+    color: #101d32;
+    margin: 5px 0;
+    font-size: 23px;
+}
+
+.club-coach-card p {
+    color: #667085;
+    margin: 5px 0 10px;
+    line-height: 1.6;
+}
+
+.coach-role {
+    color: #16834a;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.roster-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.roster-heading h2 {
+    color: #101d32;
+    font-size: 27px;
+    margin: 6px 0;
+}
+
+.roster-heading p {
+    color: #667085;
+    margin: 0;
+}
+
+.squad-total {
+    min-width: 85px;
+    text-align: center;
+    padding: 12px;
+    background: #101d32;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.squad-total strong {
+    display: block;
+    color: #19c477;
+    font-size: 27px;
+}
+
+.squad-total span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.roster-player {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    padding: 13px 10px;
+    background: #ffffff;
+    border: 1px solid #e4e9ef;
+    border-radius: 9px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.roster-player:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(16, 29, 50, 0.09);
+    border-color: #16834a;
+}
+
+.roster-number {
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #101d32;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.roster-player-info {
+    min-width: 0;
+}
+
+.roster-player-info h3 {
+    color: #101d32;
+    font-size: 13px;
+    margin: 0 0 5px;
+    overflow-wrap: anywhere;
+}
+
+.roster-player-info span {
+    color: #16834a;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.squad-motto {
+    text-align: center;
+    background: #101d32;
+    color: #ffffff;
+    padding: 35px 20px;
+}
+
+.squad-motto h2 {
+    font-size: 22px;
+    margin: 0 0 8px;
+}
+
+.squad-motto p {
+    color: #19c477;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+    .roster-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 600px) {
+    .squad-banner {
+        padding: 40px 15px;
+    }
+
+    .club-coach-section,
+    .club-roster-section {
+        padding: 25px 15px;
+    }
+
+    .roster-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .roster-player {
+        padding: 10px 7px;
+        gap: 7px;
+    }
+
+    .roster-number {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .roster-player-info h3 {
+        font-size: 11px;
+    }
+
+    .roster-player-info span {
+        font-size: 10px;
+    }
+
+    .roster-heading h2 {
+        font-size: 21px;
+    }
+
+    .club-coach-card {
+        padding: 17px;
+        gap: 13px;
+    }
+
+    .coach-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 17px;
+    }
+}
