@@ -5,30 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Meet the players and coaching staff of Namanga River Football Club.">
-    <title>Our Squad | Namanga River Football Club</title>
+    <title>Our Squad | Namanga River FC</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- LEFT SIDEBAR NAVIGATION -->
+    <!-- SIDEBAR NAVIGATION -->
     <header class="header">
         <div class="container header-container">
 
             <a href="index.html" class="logo">
-                <img src="images/Namanga river logo.jpeg"
-                     alt="Namanga River Football Club Logo">
-
+                <img src="images/Namanga river logo.jpeg" alt="Namanga River FC Logo">
                 <div class="logo-text">
                     <h1>NAMANGA RIVER</h1>
                     <span>FOOTBALL CLUB</span>
                 </div>
             </a>
 
-            <button class="menu-toggle"
-                    id="menu-toggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
+            <button class="menu-toggle" id="menu-toggle"
+                    aria-label="Toggle navigation" aria-expanded="false">
                 ☰
             </button>
 
@@ -46,249 +41,117 @@
         </div>
     </header>
 
-
-    <!-- MAIN PAGE CONTENT -->
     <main>
 
-        <!-- PAGE INTRODUCTION -->
-        <section class="page-hero">
-            <div class="container">
-                <span class="section-label">THE TEAM</span>
-                <h2>OUR SQUAD</h2>
-                <p>
-                    Meet the players and coaching staff representing
-                    Namanga River Football Club.
-                </p>
+        <!-- PAGE INTRO -->
+        <section class="squad-banner">
+            <span>THE TEAM BEHIND THE DREAM</span>
+            <h2>MEET OUR SQUAD</h2>
+            <p>Twenty-five players. One team. One dream.</p>
+        </section>
+
+        <!-- COACH -->
+        <section class="club-coach-section">
+            <div class="club-coach-card">
+                <div class="coach-badge">HC</div>
+
+                <div>
+                    <span class="roster-label">TEAM LEADERSHIP</span>
+                    <h2>Head Coach</h2>
+                    <p>
+                        Leading our team through discipline, tactical
+                        preparation, teamwork and player development.
+                    </p>
+                    <span class="coach-role">HEAD COACH · NAMANGA RIVER FC</span>
+                </div>
             </div>
         </section>
 
+        <!-- PLAYER ROSTER -->
+        <section class="club-roster-section">
 
-        <!-- HEAD COACH SECTION -->
-        <section class="section coach-section">
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-label">TEAM LEADERSHIP</span>
-                    <h2>MEET OUR HEAD COACH</h2>
-                    <p>
-                        Leadership, discipline and teamwork are at the
-                        heart of our football philosophy.
-                    </p>
+            <div class="roster-heading">
+                <div>
+                    <span class="roster-label">THE PLAYERS</span>
+                    <h2>FIRST TEAM SQUAD</h2>
+                    <p>Meet the 25 players representing our club.</p>
                 </div>
 
-                <div class="coach-card">
-
-                    <div class="coach-image">
-                        <div class="coach-placeholder">
-                            <span>COACH</span>
-                        </div>
-                    </div>
-
-                    <div class="coach-info">
-                        <span class="section-label">HEAD COACH</span>
-                        <h3>Head Coach</h3>
-
-                        <p>
-                            Our head coach leads the technical team,
-                            guides player development and prepares the
-                            squad for training sessions and competitive
-                            matches.
-                        </p>
-
-                        <p>
-                            Through discipline, commitment and teamwork,
-                            the coach works to bring out the best in
-                            every player.
-                        </p>
-
-                        <div class="coach-details">
-                            <div>
-                                <strong>Role</strong>
-                                <span>Head Coach</span>
-                            </div>
-
-                            <div>
-                                <strong>Club</strong>
-                                <span>Namanga River FC</span>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="squad-total">
+                    <strong>25</strong>
+                    <span>PLAYERS</span>
                 </div>
-
             </div>
+
+            <div class="roster-grid" id="roster-grid">
+                <!-- Player cards are generated below -->
+            </div>
+
         </section>
 
-
-        <!-- PLAYERS SECTION -->
-        <section class="section squad-section">
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-label">THE PLAYERS</span>
-                    <h2>MEET OUR PLAYERS</h2>
-                    <p>
-                        The talent, passion and determination behind
-                        Namanga River Football Club.
-                    </p>
-                </div>
-
-
-                <div class="squad-grid">
-
-                    <!-- PLAYER 1 -->
-                    <article class="player-card">
-                        <div class="player-image">
-                            <img src="images/players/player1.jpg"
-                                 alt="Namanga River FC player">
-                            <span class="player-number">01</span>
-                        </div>
-                        <div class="player-info">
-                            <span class="player-position">Goalkeeper</span>
-                            <h3>Player Name</h3>
-                            <p>Namanga River FC</p>
-                        </div>
-                    </article>
-
-
-                    <!-- PLAYER 2 -->
-                    <article class="player-card">
-                        <div class="player-image">
-                            <img src="images/players/player2.jpg"
-                                 alt="Namanga River FC player">
-                            <span class="player-number">02</span>
-                        </div>
-                        <div class="player-info">
-                            <span class="player-position">Defender</span>
-                            <h3>Player Name</h3>
-                            <p>Namanga River FC</p>
-                        </div>
-                    </article>
-
-
-                    <!-- PLAYER 3 -->
-                    <article class="player-card">
-                        <div class="player-image">
-                            <img src="images/players/player3.jpg"
-                                 alt="Namanga River FC player">
-                            <span class="player-number">03</span>
-                        </div>
-                        <div class="player-info">
-                            <span class="player-position">Defender</span>
-                            <h3>Player Name</h3>
-                            <p>Namanga River FC</p>
-                        </div>
-                    </article>
-
-
-                    <!-- PLAYER 4 -->
-                    <article class="player-card">
-                        <div class="player-image">
-                            <img src="images/players/player4.jpg"
-                                 alt="Namanga River FC player">
-                            <span class="player-number">04</span>
-                        </div>
-                        <div class="player-info">
-                            <span class="player-position">Midfielder</span>
-                            <h3>Player Name</h3>
-                            <p>Namanga River FC</p>
-                        </div>
-                    </article>
-
-
-                    <!-- PLAYER 5 -->
-                    <article class="player-card">
-                        <div class="player-image">
-                            <img src="images/players/player5.jpg"
-                                 alt="Namanga River FC player">
-                            <span class="player-number">05</span>
-                        </div>
-                        <div class="player-info">
-                            <span class="player-position">Midfielder</span>
-                            <h3>Player Name</h3>
-                            <p>Namanga River FC</p>
-                        </div>
-                    </article>
-
-
-                    <!-- PLAYER 6 -->
-                    <article class="player-card">
-                        <div class="player-image">
-                            <img src="images/players/player6.jpg"
-                                 alt="Namanga River FC player">
-                            <span class="player-number">06</span>
-                        </div>
-                        <div class="player-info">
-                            <span class="player-position">Forward</span>
-                            <h3>Player Name</h3>
-                            <p>Namanga River FC</p>
-                        </div>
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- CLUB VALUES -->
-        <section class="section squad-values">
-            <div class="container">
-                <div class="section-heading">
-                    <span class="section-label">OUR PHILOSOPHY</span>
-                    <h2>ONE TEAM. ONE PURPOSE.</h2>
-                    <p>
-                        We believe success comes through unity,
-                        hard work, discipline and determination.
-                    </p>
-                </div>
-
-                <div class="values-grid">
-
-                    <div class="value-card">
-                        <h3>TEAMWORK</h3>
-                        <p>
-                            We work together, support one another
-                            and play as one team.
-                        </p>
-                    </div>
-
-                    <div class="value-card">
-                        <h3>DISCIPLINE</h3>
-                        <p>
-                            We respect the game, our opponents,
-                            our coaches and our teammates.
-                        </p>
-                    </div>
-
-                    <div class="value-card">
-                        <h3>DETERMINATION</h3>
-                        <p>
-                            We remain committed to improving
-                            and giving our best on the pitch.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
+        <!-- CLUB MOTTO -->
+        <section class="squad-motto">
+            <h2>ONE CLUB. ONE DREAM. ONE RIVER.</h2>
+            <p>Passion. Unity. Determination.</p>
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <h3>NAMANGA RIVER FOOTBALL CLUB</h3>
             <p>One Club. One Dream. One River.</p>
-            <p>
-                &copy; <span id="year"></span>
-                Namanga River Football Club.
-                All Rights Reserved.
-            </p>
+            <p>&copy; <span id="year"></span> Namanga River FC. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script>
+        const players = [
+            { number: "01", name: "Player 01", position: "Goalkeeper" },
+            { number: "02", name: "Player 02", position: "Defender" },
+            { number: "03", name: "Player 03", position: "Defender" },
+            { number: "04", name: "Player 04", position: "Defender" },
+            { number: "05", name: "Player 05", position: "Defender" },
+            { number: "06", name: "Player 06", position: "Defender" },
+            { number: "07", name: "Player 07", position: "Midfielder" },
+            { number: "08", name: "Player 08", position: "Midfielder" },
+            { number: "09", name: "Player 09", position: "Forward" },
+            { number: "10", name: "Player 10", position: "Midfielder" },
+            { number: "11", name: "Player 11", position: "Forward" },
+            { number: "12", name: "Player 12", position: "Goalkeeper" },
+            { number: "13", name: "Player 13", position: "Defender" },
+            { number: "14", name: "Player 14", position: "Midfielder" },
+            { number: "15", name: "Player 15", position: "Forward" },
+            { number: "16", name: "Player 16", position: "Midfielder" },
+            { number: "17", name: "Player 17", position: "Defender" },
+            { number: "18", name: "Player 18", position: "Forward" },
+            { number: "19", name: "Player 19", position: "Midfielder" },
+            { number: "20", name: "Player 20", position: "Forward" },
+            { number: "21", name: "Player 21", position: "Goalkeeper" },
+            { number: "22", name: "Player 22", position: "Defender" },
+            { number: "23", name: "Player 23", position: "Midfielder" },
+            { number: "24", name: "Player 24", position: "Forward" },
+            { number: "25", name: "Player 25", position: "Midfielder" }
+        ];
+
+        const roster = document.getElementById("roster-grid");
+
+        players.forEach(player => {
+            roster.innerHTML += `
+                <article class="roster-player">
+                    <div class="roster-number">${player.number}</div>
+                    <div class="roster-player-info">
+                        <h3>${player.name}</h3>
+                        <span>${player.position}</span>
+                    </div>
+                </article>
+            `;
+        });
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
     <script src="js/script.js"></script>
 
