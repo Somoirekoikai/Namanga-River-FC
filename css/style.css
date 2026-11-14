@@ -858,3 +858,364 @@ img {
         height: 55px;
     }
 }
+
+/* =====================================
+   NAMANGA RIVER FC - UPDATED PAGE DESIGN
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172238;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* HEADER AND LOGO */
+
+.site-header {
+    background: #101d32;
+    color: #ffffff;
+    padding: 12px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.club-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: 2px solid #ffffff;
+    background: #000000;
+    flex-shrink: 0;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #24c477;
+}
+
+/* PAGE INTRODUCTION */
+
+.page-hero {
+    background: linear-gradient(120deg, #101d32, #263d5b);
+    color: #ffffff;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.page-hero h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    margin: 8px 0;
+}
+
+.page-hero p {
+    margin: 8px 0;
+}
+
+.eyebrow {
+    color: #159b5b;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.page-hero .eyebrow {
+    color: #42dc91;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 65px 0;
+}
+
+.light-section {
+    background: #f3f6f8;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.section-heading h2 {
+    margin: 5px 0 10px;
+    font-size: 30px;
+}
+
+.section-heading p {
+    color: #647084;
+}
+
+/* CONTENT LAYOUTS */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.info-card,
+.player-card,
+.news-card,
+.fixture-card,
+.result-card {
+    background: #ffffff;
+    border: 1px solid #e5e9ee;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 18px rgba(16, 29, 50, 0.06);
+}
+
+.info-card h3,
+.player-card h3,
+.news-card h3 {
+    margin-top: 0;
+    color: #101d32;
+}
+
+/* PLAYER CARDS */
+
+.player-card {
+    text-align: center;
+}
+
+.player-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #101d32;
+    color: #42dc91;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.position {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background: #e6f7ee;
+    color: #13834b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* FIXTURES AND RESULTS */
+
+.fixture-list {
+    display: grid;
+    gap: 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.fixture-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-left: 5px solid #159b5b;
+}
+
+.fixture-card h3 {
+    margin: 8px 0 0;
+}
+
+.fixture-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.match-label {
+    color: #159b5b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.result-card {
+    text-align: center;
+}
+
+.score-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.score {
+    font-size: 23px;
+    font-weight: 800;
+    color: #159b5b;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.gallery-placeholder {
+    min-height: 190px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #101d32, #34506d);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* NEWS */
+
+.news-card {
+    border-top: 4px solid #159b5b;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: #101d32;
+    color: #ffffff;
+    text-align: center;
+    padding: 35px 15px;
+    margin-top: 20px;
+}
+
+.site-footer h3 {
+    margin: 0 0 8px;
+}
+
+.site-footer p {
+    margin: 6px 0;
+    color: #d5dce5;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .three-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .club-logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .main-nav {
+        gap: 10px 15px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    .three-columns,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fixture-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fixture-details {
+        text-align: left;
+    }
+
+    .score-line {
+        flex-direction: column;
+    }
+
+    .page-hero {
+        padding: 45px 15px;
+    }
+
+    .section {
+        padding: 45px 0;
+    }
+}
