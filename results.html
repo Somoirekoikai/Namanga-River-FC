@@ -4,83 +4,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View Namanga River Football Club match results.">
     <title>Results | Namanga River FC</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: "#101D32",
+                        club: "#16834A",
+                        bright: "#22C875"
+                    },
+                    fontFamily: {
+                        heading: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
-    <div class="container header-container">
-        <a href="index.html" class="brand">
-            <img src="images/Namanga river logo.jpeg" alt="Namanga River FC Logo" class="club-logo">
-            <span>Namanga River FC</span>
-        </a>
+    <div class="container mx-auto px-5">
+        <div class="header-inner flex items-center justify-between">
 
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="squad.html">Squad</a>
-            <a href="fixtures.html">Fixtures</a>
-            <a href="results.html" class="active">Results</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="new.html">News</a>
-            <a href="contact.html">Contact</a>
-            <a href="shop.html">Shop</a>
-            <a href="donations.html">Donations</a>
-        </nav>
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/Namanga%20river%20logo.jpeg"
+                     alt="Namanga River FC Logo"
+                     class="w-12 h-12 object-contain rounded-full">
+                <div>
+                    <span class="block font-bold text-white">NAMANGA RIVER FC</span>
+                    <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
+                </div>
+            </a>
+
+            <button id="menu-toggle"
+                    class="text-white text-2xl"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <nav id="nav" class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button">
+                        Club <i data-lucide="chevron-down" size="15"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="squad.html">Our Squad</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="new.html">News</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown open">
+                    <button class="nav-link dropdown-toggle" type="button">
+                        Matches <i data-lucide="chevron-down" size="15"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="results.html">Results</a>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="donations.html" class="nav-link">Support Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
     </div>
 </header>
 
-<main>
-    <section class="page-hero">
-        <div class="container">
-            <p class="eyebrow">MATCH CENTRE</p>
-            <h1>Match Results</h1>
-            <p>Follow the performance and progress of our team.</p>
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-heading">
-                <p class="eyebrow">OUR PERFORMANCE</p>
-                <h2>Recent Results</h2>
-                <p>Official scores will be published here after each match.</p>
+<!-- HERO -->
+<section class="results-hero">
+    <div class="results-overlay"></div>
+
+    <div class="relative z-10 container mx-auto px-5 py-24 text-center">
+        <p class="text-green-400 font-bold tracking-widest uppercase mb-4">
+            Every Match. Every Moment.
+        </p>
+
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-5">
+            MATCH RESULTS
+        </h1>
+
+        <p class="text-gray-200 max-w-2xl mx-auto">
+            Follow the journey of Namanga River FC through completed matches
+            and the results that shape our season.
+        </p>
+    </div>
+</section>
+
+
+<!-- RESULTS -->
+<main class="bg-gray-50 py-16">
+    <div class="container mx-auto px-5 max-w-6xl">
+
+        <div class="text-center mb-12">
+            <span class="text-club font-bold uppercase tracking-widest text-sm">
+                Match Centre
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mt-3">
+                Latest Results
+            </h2>
+
+            <p class="text-gray-500 mt-4 max-w-xl mx-auto">
+                View completed matches and official score updates from the club.
+            </p>
+        </div>
+
+
+        <!-- RESULTS EMPTY STATE -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+
+            <div class="bg-black text-white px-6 py-5 flex items-center justify-between flex-wrap gap-3">
+                <div>
+                    <h3 class="font-bold text-xl">Completed Matches</h3>
+                    <p class="text-gray-400 text-sm mt-1">Namanga River Football Club</p>
+                </div>
+
+                <span class="bg-green-700 text-white text-xs font-bold px-4 py-2 rounded-full">
+                    RESULTS
+                </span>
             </div>
 
-            <div class="fixture-list">
-                <article class="result-card">
-                    <span class="match-label">MATCH RESULT</span>
-                    <div class="score-line">
-                        <strong>Namanga River FC</strong>
-                        <span class="score">TBC - TBC</span>
-                        <strong>Opposition TBC</strong>
-                    </div>
-                    <p>Date: To be announced</p>
-                </article>
+            <div class="px-6 py-16 text-center">
 
-                <article class="result-card">
-                    <span class="match-label">MATCH RESULT</span>
-                    <div class="score-line">
-                        <strong>Namanga River FC</strong>
-                        <span class="score">TBC - TBC</span>
-                        <strong>Opposition TBC</strong>
-                    </div>
-                    <p>Date: To be announced</p>
-                </article>
+                <div class="w-20 h-20 bg-green-50 text-club rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="trophy" size="38"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                    No Match Results Published Yet
+                </h3>
+
+                <p class="text-gray-500 max-w-lg mx-auto leading-relaxed">
+                    Official match results will be displayed here after
+                    games have been completed and confirmed.
+                </p>
+
+                <a href="fixtures.html"
+                   class="inline-flex items-center gap-2 mt-7 bg-club hover:bg-green-800 text-white font-bold px-7 py-3 rounded-lg transition">
+                    View Upcoming Fixtures
+                    <i data-lucide="arrow-right" size="18"></i>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!-- SEASON INFORMATION -->
+        <section class="mt-14">
+            <div class="text-center mb-8">
+                <span class="text-club font-bold uppercase tracking-widest text-sm">
+                    Our Journey
+                </span>
+
+                <h2 class="text-3xl font-black text-gray-900 mt-3">
+                    The Season So Far
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-lg bg-green-50 text-club flex items-center justify-center mb-5">
+                        <i data-lucide="calendar-check" size="25"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Match History</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Keep track of the club's completed matches throughout the season.
+                    </p>
+                </div>
+
+                <div class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-lg bg-green-50 text-club flex items-center justify-center mb-5">
+                        <i data-lucide="chart-no-axes-column-increasing" size="25"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Performance</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Follow match outcomes and the team's progress over time.
+                    </p>
+                </div>
+
+                <div class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-lg bg-green-50 text-club flex items-center justify-center mb-5">
+                        <i data-lucide="users" size="25"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Team Spirit</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Celebrate the effort and commitment of our players.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="mt-16 bg-black rounded-2xl px-7 py-12 text-center">
+            <h2 class="text-2xl md:text-3xl font-black text-white mb-4">
+                THE JOURNEY CONTINUES
+            </h2>
+
+            <p class="text-gray-300 max-w-xl mx-auto mb-7">
+                Stay connected with Namanga River FC for the latest club updates.
+            </p>
+
+            <a href="new.html"
+               class="inline-flex items-center gap-2 bg-club hover:bg-green-700 text-white font-bold px-7 py-3 rounded-lg transition">
+                Read Club News
+                <i data-lucide="arrow-right" size="18"></i>
+            </a>
+        </section>
+
+    </div>
 </main>
 
+
+<!-- FOOTER -->
 <footer class="site-footer">
-    <div class="container">
-        <h3>Namanga River Football Club</h3>
-        <p>One Club. One Dream. One River.</p>
-        <p>&copy; <span id="year"></span> Namanga River FC. All rights reserved.</p>
+    <div class="container mx-auto px-5 py-12">
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="images/Namanga%20river%20logo.jpeg"
+                         alt="Namanga River FC Logo"
+                         class="w-12 h-12 object-contain rounded-full">
+                    <h3 class="font-bold text-white">NAMANGA RIVER FC</h3>
+                </div>
+
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    One club. One dream. One river. United by football
+                    and driven by ambition.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-4">Quick Links</h3>
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="squad.html">Our Squad</a>
+                    <a href="fixtures.html">Fixtures</a>
+                    <a href="results.html">Results</a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-4">Club Pages</h3>
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                    <a href="gallery.html">Gallery</a>
+                    <a href="new.html">News</a>
+                    <a href="shop.html">Merchandise</a>
+                    <a href="donations.html">Support the Club</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+            <p class="text-gray-500 text-sm">
+                © <span id="year"></span> Namanga River Football Club.
+                All Rights Reserved.
+            </p>
+        </div>
+
     </div>
 </footer>
 
+
+<style>
+.results-hero {
+    position: relative;
+    background:
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85")
+        center 45% / cover no-repeat;
+}
+
+.results-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.55)
+    );
+}
+
+.site-footer a:hover {
+    color: #22c875;
+}
+</style>
+
 <script src="js/script.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+
 </body>
 </html>
