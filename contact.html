@@ -4,183 +4,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Namanga River Football Club.">
+    <meta name="description" content="Contact Namanga River Football Club for enquiries, partnerships and support.">
     <title>Contact Us | Namanga River FC</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: "#101D32",
+                        club: "#16834A",
+                        bright: "#22C875"
+                    },
+                    fontFamily: {
+                        heading: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="container header-container">
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container mx-auto px-5">
+        <div class="header-inner flex items-center justify-between">
 
-        <a href="index.html" class="logo">
-            <img src="images/Namanga%20river%20logo.jpeg"
-                 alt="Namanga River FC Logo">
-            <span>Namanga River FC</span>
-        </a>
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/Namanga%20river%20logo.jpeg"
+                     alt="Namanga River FC Logo"
+                     class="w-12 h-12 object-contain rounded-full">
+                <div>
+                    <span class="block font-bold text-white">NAMANGA RIVER FC</span>
+                    <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
+                </div>
+            </a>
 
-        <button class="menu-toggle" id="menu-toggle"
-                aria-label="Toggle navigation" aria-expanded="false">
-            ☰
-        </button>
+            <button id="menu-toggle"
+                    class="text-white text-2xl"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
 
-        <nav class="nav" id="nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="squad.html">Squad</a>
-            <a href="fixtures.html">Fixtures</a>
-            <a href="results.html">Results</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="new.html">News</a>
-            <a href="contact.html" class="active">Contact</a>
-            <a href="shop.html">Shop</a>
-            <a href="donations.html">Donations</a>
-        </nav>
+            <nav id="nav" class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
 
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button">
+                        Club <i data-lucide="chevron-down" size="15"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="squad.html">Our Squad</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="new.html">News</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button">
+                        Matches <i data-lucide="chevron-down" size="15"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="results.html">Results</a>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="donations.html" class="nav-link">Support Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
     </div>
 </header>
 
-<main>
 
-    <section class="contact-hero">
-        <div class="container">
-            <p class="contact-label">GET IN TOUCH</p>
-            <h1>Contact Our Club</h1>
-            <p>
-                Have a question, want to join the team, or interested
-                in partnering with us? We would love to hear from you.
+<!-- HERO -->
+<section class="contact-hero">
+    <div class="contact-overlay"></div>
+
+    <div class="relative z-10 container mx-auto px-5 py-24 text-center">
+        <p class="text-green-400 font-bold tracking-widest uppercase mb-4">
+            We'd Love To Hear From You
+        </p>
+
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-5">
+            CONTACT US
+        </h1>
+
+        <p class="text-gray-200 max-w-2xl mx-auto">
+            Get in touch with Namanga River Football Club.
+            We welcome enquiries, partnerships and support.
+        </p>
+    </div>
+</section>
+
+
+<!-- CONTACT CONTENT -->
+<main class="bg-gray-50 py-16">
+
+    <div class="container mx-auto px-5 max-w-7xl">
+
+        <div class="text-center mb-12">
+            <span class="text-club font-bold uppercase tracking-widest text-sm">
+                Get In Touch
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mt-3">
+                Let's Connect
+            </h2>
+
+            <p class="text-gray-500 mt-4 max-w-xl mx-auto">
+                Have a question, partnership proposal or something to share?
+                Send the club a message.
             </p>
         </div>
-    </section>
 
-    <section class="contact-section">
-        <div class="container">
 
-            <div class="contact-heading">
-                <p class="contact-label">CONNECT WITH US</p>
-                <h2>We Would Love to Hear From You</h2>
-                <p>
-                    Reach out to Namanga River Football Club.
-                    Our team welcomes players, supporters and partners.
+        <div class="grid lg:grid-cols-5 gap-8 items-start">
+
+            <!-- CONTACT INFORMATION -->
+            <div class="lg:col-span-2 bg-black rounded-2xl p-8 text-white">
+
+                <span class="text-green-400 font-bold uppercase tracking-widest text-xs">
+                    Contact Information
+                </span>
+
+                <h2 class="text-2xl font-black mt-3 mb-4">
+                    Let's Talk Football
+                </h2>
+
+                <p class="text-gray-400 text-sm leading-relaxed mb-9">
+                    Reach out to Namanga River FC for general enquiries,
+                    sponsorship opportunities and club-related information.
+                </p>
+
+
+                <div class="flex gap-4 mb-7">
+                    <div class="w-12 h-12 shrink-0 rounded-lg bg-green-900 text-green-400 flex items-center justify-center">
+                        <i data-lucide="mail" size="22"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-1">Email</h3>
+                        <p class="text-gray-400 text-sm">
+                            Contact the club through the message form.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flex gap-4 mb-7">
+                    <div class="w-12 h-12 shrink-0 rounded-lg bg-green-900 text-green-400 flex items-center justify-center">
+                        <i data-lucide="map-pin" size="22"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-1">Location</h3>
+                        <p class="text-gray-400 text-sm">
+                            Namanga River FC
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flex gap-4 mb-9">
+                    <div class="w-12 h-12 shrink-0 rounded-lg bg-green-900 text-green-400 flex items-center justify-center">
+                        <i data-lucide="handshake" size="22"></i>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-1">Partnerships</h3>
+                        <p class="text-gray-400 text-sm">
+                            Contact us to discuss sponsorship and collaboration.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="border-t border-gray-800 pt-7">
+                    <h3 class="font-bold mb-4">Our Motto</h3>
+                    <p class="text-green-400 font-extrabold tracking-wide">
+                        ONE CLUB. ONE DREAM. ONE RIVER.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+            <div class="lg:col-span-3 bg-white rounded-2xl p-7 md:p-10 shadow-sm border border-gray-200">
+
+                <h2 class="text-2xl font-black text-gray-900 mb-2">
+                    Send Us A Message
+                </h2>
+
+                <p class="text-gray-500 text-sm mb-8">
+                    Complete the form below and submit your enquiry.
+                </p>
+
+                <!-- IMPORTANT:
+                     Replace YOUR_FORMSPREE_ENDPOINT with the existing
+                     Formspree endpoint already used by your club website.
+                -->
+
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT"
+                      method="POST"
+                      class="space-y-6">
+
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-gray-700 mb-2">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   id="name"
+                                   name="name"
+                                   placeholder="Enter your full name"
+                                   required
+                                   class="contact-input">
+                        </div>
+
+
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-gray-700 mb-2">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Enter your email"
+                                   required
+                                   class="contact-input">
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <label for="subject" class="block text-sm font-bold text-gray-700 mb-2">
+                            Subject
+                        </label>
+
+                        <select id="subject"
+                                name="subject"
+                                required
+                                class="contact-input">
+
+                            <option value="">Select an enquiry type</option>
+                            <option value="General Enquiry">General Enquiry</option>
+                            <option value="Sponsorship">Sponsorship</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Player Enquiry">Player Enquiry</option>
+                            <option value="Merchandise">Merchandise</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+                    </div>
+
+
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-gray-700 mb-2">
+                            Your Message
+                        </label>
+
+                        <textarea id="message"
+                                  name="message"
+                                  rows="6"
+                                  placeholder="Write your message here..."
+                                  required
+                                  class="contact-input resize-y"></textarea>
+                    </div>
+
+
+                    <button type="submit"
+                            class="w-full bg-club hover:bg-green-800 text-white font-bold py-4 rounded-lg transition flex items-center justify-center gap-2">
+
+                        Send Message
+                        <i data-lucide="send" size="18"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM SECTION -->
+        <section class="mt-16 bg-white rounded-2xl border border-gray-200 p-8 md:p-10 text-center">
+
+            <div class="w-14 h-14 bg-green-50 text-club rounded-full flex items-center justify-center mx-auto mb-5">
+                <i data-lucide="heart-handshake" size="28"></i>
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">
+                Interested In Supporting The Club?
+            </h2>
+
+            <p class="text-gray-500 max-w-xl mx-auto mb-7">
+                Your support can help the team grow and achieve its ambitions.
+                Explore ways to support Namanga River FC.
+            </p>
+
+            <a href="donations.html"
+               class="inline-flex items-center gap-2 bg-club hover:bg-green-800 text-white font-bold px-7 py-3 rounded-lg transition">
+                Support Our Club
+                <i data-lucide="arrow-right" size="18"></i>
+            </a>
+
+        </section>
+
+    </div>
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container mx-auto px-5 py-12">
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="images/Namanga%20river%20logo.jpeg"
+                         alt="Namanga River FC Logo"
+                         class="w-12 h-12 object-contain rounded-full">
+
+                    <h3 class="font-bold text-white">NAMANGA RIVER FC</h3>
+                </div>
+
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    One club. One dream. One river. United by football
+                    and driven by ambition.
                 </p>
             </div>
 
-            <div class="contact-layout">
+            <div>
+                <h3 class="font-bold text-white mb-4">Quick Links</h3>
 
-                <div class="contact-information">
-                    <h3>Club Information</h3>
-                    <p class="contact-intro">
-                        Find our club details below.
-                    </p>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Namanga, Kenya</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">⚽</div>
-                        <div>
-                            <h4>Club</h4>
-                            <p>Namanga River Football Club</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>Official club email to be added</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">☎</div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>Official club phone number to be added</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-social">
-                        <h4>Follow Our Journey</h4>
-                        <p>
-                            Our official social media links will be
-                            published here soon.
-                        </p>
-                    </div>
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="squad.html">Our Squad</a>
+                    <a href="fixtures.html">Fixtures</a>
+                    <a href="results.html">Results</a>
                 </div>
-
-                <div class="contact-form-container">
-                    <h3>Send Us a Message</h3>
-                    <p class="contact-intro">
-                        Complete the form below to get in touch.
-                    </p>
-
-                    <form class="contact-form" action="#" method="POST">
-
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name"
-                                   placeholder="Enter your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email"
-                                   placeholder="Enter your email address" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="Joining the team">Joining the team</option>
-                                <option value="Sponsorship">Sponsorship</option>
-                                <option value="Partnership">Partnership</option>
-                                <option value="General enquiry">General enquiry</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message"
-                                      rows="5"
-                                      placeholder="Write your message here..."
-                                      required></textarea>
-                        </div>
-
-                        <button type="submit" class="contact-submit">
-                            Send Message
-                        </button>
-
-                        <p class="form-note">
-                            The contact form needs a form service or
-                            backend connection before it can deliver messages.
-                        </p>
-
-                    </form>
-                </div>
-
             </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-4">Club Pages</h3>
+
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                    <a href="gallery.html">Gallery</a>
+                    <a href="new.html">News</a>
+                    <a href="shop.html">Merchandise</a>
+                    <a href="donations.html">Support the Club</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+
         </div>
-    </section>
 
-</main>
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+            <p class="text-gray-500 text-sm">
+                © <span id="year"></span> Namanga River Football Club.
+                All Rights Reserved.
+            </p>
+        </div>
 
-<footer class="footer">
-    <div class="container">
-        <p>&copy; <span id="year"></span> Namanga River Football Club.
-           All Rights Reserved.</p>
-        <p>Passion. Unity. Determination.</p>
     </div>
 </footer>
 
+
+<style>
+.contact-hero {
+    position: relative;
+    background:
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85")
+        center 45% / cover no-repeat;
+}
+
+.contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.55)
+    );
+}
+
+.contact-input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #111827;
+    outline: none;
+    font-size: 14px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.contact-input:focus {
+    border-color: #16834a;
+    box-shadow: 0 0 0 3px rgba(22,131,74,.12);
+}
+
+.site-footer a:hover {
+    color: #22c875;
+}
+</style>
+
+
 <script src="js/script.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
 
 </body>
 </html>
