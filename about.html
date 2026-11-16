@@ -4,106 +4,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the history, vision, mission and values of Namanga River Football Club.">
     <title>About Us | Namanga River FC</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clubgreen: "#16834A",
+                        brightgreen: "#22C875",
+                        blackclub: "#080808"
+                    },
+                    fontFamily: {
+                        heading: ["Montserrat", "sans-serif"],
+                        body: ["Century Gothic", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .about-hero {
+            background:
+                linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
+                url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-image {
+            min-height: 380px;
+            background: #f1f5f2;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            object-fit: cover;
+        }
+
+        .about-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 32px;
+            transition: .3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-6px);
+            border-color: #16834A;
+            box-shadow: 0 12px 30px rgba(0,0,0,.08);
+        }
+
+        .about-card svg {
+            width: 38px;
+            height: 38px;
+            color: #16834A;
+            margin-bottom: 20px;
+        }
+
+        .about-divider {
+            width: 65px;
+            height: 4px;
+            background: #16834A;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body>
+
+<body class="bg-white text-gray-900 font-body">
+
+<!-- HEADER -->
 
 <header class="site-header">
-    <div class="container header-container">
-        <a href="index.html" class="brand">
-            <img src="images/Namanga river logo.jpeg" alt="Namanga River FC Logo" class="club-logo">
-            <span>Namanga River FC</span>
-        </a>
+    <div class="max-w-7xl mx-auto px-5">
+        <div class="flex items-center justify-between h-20">
 
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="squad.html">Squad</a>
-            <a href="fixtures.html">Fixtures</a>
-            <a href="results.html">Results</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="new.html">News</a>
-            <a href="contact.html">Contact</a>
-            <a href="shop.html">Shop</a>
-            <a href="donations.html">Donations</a>
-        </nav>
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/Namanga%20river%20logo.jpeg"
+                     alt="Namanga River FC Logo"
+                     class="w-12 h-12 object-contain">
+
+                <div>
+                    <h1 class="text-white font-heading font-black text-lg">
+                        NAMANGA RIVER
+                    </h1>
+                    <p class="text-brightgreen text-xs tracking-widest font-bold">
+                        FOOTBALL CLUB
+                    </p>
+                </div>
+            </a>
+
+            <button id="menu-toggle"
+                    class="text-white md:hidden"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <nav id="nav" class="main-nav">
+
+                <a href="index.html" class="nav-link">Home</a>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-toggle">
+                        Club <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="about.html">About the Club</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-toggle">
+                        Team <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="squad.html">Our Squad</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-toggle">
+                        Matches <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="results.html">Results</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-toggle">
+                        Media <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="gallery.html">Gallery</a>
+                        <a href="new.html">News</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-toggle">
+                        Support <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="shop.html">Club Shop</a>
+                        <a href="donations.html">Donations</a>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="cart-link" aria-label="Shopping bag">
+                    <i data-lucide="shopping-bag"></i>
+                </a>
+
+            </nav>
+        </div>
     </div>
 </header>
 
-<main>
-    <section class="page-hero">
-        <div class="container">
-            <p class="eyebrow">OUR STORY</p>
-            <h1>About Namanga River FC</h1>
-            <p>Discover our identity, our values and our passion for football.</p>
-        </div>
-    </section>
+<!-- HERO -->
 
-    <section class="section">
-        <div class="container content-grid">
-            <div>
-                <p class="eyebrow">WHO WE ARE</p>
-                <h2>More Than a Football Club</h2>
-                <p>
-                    Namanga River Football Club is a football club based in
-                    Namanga, Kenya. We are united by our passion for football,
-                    teamwork and community development.
-                </p>
-                <p>
-                    Our goal is to provide an environment where talented
-                    players can develop their abilities, demonstrate
-                    discipline and compete with confidence.
-                </p>
-            </div>
+<section class="about-hero">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32">
 
-            <div class="info-card">
-                <h3>Our Identity</h3>
-                <p><strong>Club:</strong> Namanga River Football Club</p>
-                <p><strong>Location:</strong> Namanga, Kenya</p>
-                <p><strong>Sport:</strong> Football</p>
-                <p><strong>Our motto:</strong> One Club. One Dream. One River.</p>
-            </div>
-        </div>
-    </section>
+        <p class="text-brightgreen font-bold tracking-widest text-sm mb-5">
+            OUR IDENTITY. OUR PURPOSE.
+        </p>
 
-    <section class="section light-section">
-        <div class="container three-columns">
-            <article class="info-card">
-                <h3>Our Vision</h3>
-                <p>
-                    To become a respected football club known for developing
-                    talent, promoting teamwork and inspiring our community.
-                </p>
-            </article>
+        <h2 class="text-white font-heading text-5xl md:text-7xl font-black mb-6">
+            ABOUT THE CLUB
+        </h2>
 
-            <article class="info-card">
-                <h3>Our Mission</h3>
-                <p>
-                    To develop football talent through discipline, hard work,
-                    teamwork and opportunities for competitive football.
-                </p>
-            </article>
+        <p class="text-gray-300 max-w-xl text-lg">
+            Discover the story, values and ambition behind
+            Namanga River Football Club.
+        </p>
 
-            <article class="info-card">
-                <h3>Our Values</h3>
-                <p>
-                    Discipline, respect, unity, commitment, sportsmanship
-                    and determination.
-                </p>
-            </article>
-        </div>
-    </section>
-</main>
+        <div class="about-divider"></div>
 
-<footer class="site-footer">
-    <div class="container">
-        <h3>Namanga River Football Club</h3>
-        <p>One Club. One Dream. One River.</p>
-        <p>&copy; <span id="year"></span> Namanga River FC. All rights reserved.</p>
     </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="py-20 md:py-28 px-6">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+        <div>
+            <p class="text-clubgreen font-bold text-xs tracking-widest mb-4">
+                WHO WE ARE
+            </p>
+
+            <h2 class="font-heading text-3xl md:text-5xl font-black leading-tight mb-7">
+                MORE THAN JUST A FOOTBALL CLUB
+            </h2>
+
+            <p class="text-gray-600 leading-8 mb-5">
+                Namanga River Football Club is built around a shared
+                passion for football, teamwork and community.
+            </p>
+
+            <p class="text-gray-600 leading-8 mb-5">
+                We believe football is more than a game. It is an
+                opportunity to bring people together, develop talent
+                and inspire young people to pursue their ambitions.
+            </p>
+
+            <p class="text-gray-600 leading-8">
+                Through discipline, commitment and unity, we continue
+                working towards building a club that represents its
+                community with pride.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1100&q=85"
+                alt="Football stadium and playing field">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- VISION AND MISSION -->
+
+<section class="bg-gray-50 py-20 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-14">
+            <p class="text-clubgreen font-bold text-xs tracking-widest mb-3">
+                OUR DIRECTION
+            </p>
+
+            <h2 class="font-heading text-3xl md:text-4xl font-black">
+                OUR VISION & MISSION
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <div class="about-card bg-white">
+                <i data-lucide="eye"></i>
+
+                <h3 class="font-heading text-2xl font-black mb-5">
+                    OUR VISION
+                </h3>
+
+                <p class="text-gray-600 leading-8">
+                    To become a respected football club recognised
+                    for developing talent, promoting teamwork and
+                    making a positive contribution to our community.
+                </p>
+            </div>
+
+            <div class="about-card bg-white">
+                <i data-lucide="target"></i>
+
+                <h3 class="font-heading text-2xl font-black mb-5">
+                    OUR MISSION
+                </h3>
+
+                <p class="text-gray-600 leading-8">
+                    To promote football through discipline, teamwork,
+                    player development and community participation,
+                    while creating opportunities for our players to grow.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CORE VALUES -->
+
+<section class="py-20 md:py-28 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="mb-14">
+            <p class="text-clubgreen font-bold text-xs tracking-widest mb-3">
+                WHAT WE STAND FOR
+            </p>
+
+            <h2 class="font-heading text-3xl md:text-4xl font-black">
+                OUR CORE VALUES
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="about-card">
+                <i data-lucide="flame"></i>
+                <h3 class="font-heading font-black text-lg mb-3">
+                    PASSION
+                </h3>
+                <p class="text-gray-500 text-sm leading-7">
+                    We give our best and play with love for the game.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <i data-lucide="users"></i>
+                <h3 class="font-heading font-black text-lg mb-3">
+                    UNITY
+                </h3>
+                <p class="text-gray-500 text-sm leading-7">
+                    We work together and support one another.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <i data-lucide="shield-check"></i>
+                <h3 class="font-heading font-black text-lg mb-3">
+                    DISCIPLINE
+                </h3>
+                <p class="text-gray-500 text-sm leading-7">
+                    We respect the game, our teammates and our responsibilities.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <i data-lucide="trophy"></i>
+                <h3 class="font-heading font-black text-lg mb-3">
+                    DETERMINATION
+                </h3>
+                <p class="text-gray-500 text-sm leading-7">
+                    We keep pushing ourselves to improve and achieve more.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+
+<section class="bg-blackclub text-white py-20 px-6">
+
+    <div class="max-w-4xl mx-auto text-center">
+
+        <p class="text-brightgreen font-bold tracking-widest text-xs mb-5">
+            BE PART OF OUR JOURNEY
+        </p>
+
+        <h2 class="font-heading font-black text-3xl md:text-5xl mb-6">
+            ONE CLUB. ONE DREAM. ONE RIVER.
+        </h2>
+
+        <p class="text-gray-400 mb-9">
+            Connect with Namanga River Football Club and be part
+            of our growing football community.
+        </p>
+
+        <a href="contact.html" class="btn-primary">
+            CONTACT THE CLUB
+            <i data-lucide="arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-black text-white px-6 py-12">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <div>
+                <h3 class="font-heading font-black text-xl mb-3">
+                    NAMANGA RIVER FC
+                </h3>
+
+                <p class="text-gray-400 text-sm">
+                    Passion. Unity. Determination.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4">QUICK LINKS</h4>
+
+                <div class="grid grid-cols-2 gap-3 text-gray-400 text-sm">
+                    <a href="index.html">Home</a>
+                    <a href="squad.html">Squad</a>
+                    <a href="fixtures.html">Fixtures</a>
+                    <a href="results.html">Results</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4">ABOUT OUR CLUB</h4>
+
+                <p class="text-gray-400 text-sm leading-7">
+                    Building talent, promoting unity and representing
+                    our community through football.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+            &copy; <span id="year">2026</span>
+            Namanga River Football Club. All rights reserved.
+        </div>
+
+    </div>
+
 </footer>
 
 <script src="js/script.js"></script>
+<script>
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+</script>
+
 </body>
 </html>
