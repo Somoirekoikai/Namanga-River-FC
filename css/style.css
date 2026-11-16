@@ -1,7 +1,21 @@
 
-/* =========================
-   GENERAL SETTINGS
-========================= */
+/* =========================================
+   NAMANGA RIVER FC
+   Main Website Design System
+========================================= */
+
+/* GOOGLE FONT + GLOBAL SETTINGS */
+
+:root {
+    --navy: #101d32;
+    --green: #16834a;
+    --bright-green: #22c875;
+    --light-bg: #f4f6f8;
+    --white: #ffffff;
+    --dark-text: #172033;
+    --muted-text: #64748b;
+    --transition: all 0.3s ease;
+}
 
 * {
     margin: 0;
@@ -11,13 +25,18 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172033;
-    background: #ffffff;
-    line-height: 1.6;
+    font-family: "Century Gothic", "Arial", sans-serif;
+    color: var(--dark-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -25,1933 +44,547 @@ a {
     color: inherit;
 }
 
+button {
+    font-family: inherit;
+}
+
 img {
     max-width: 100%;
     display: block;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* =========================
+/* =========================================
    HEADER AND NAVIGATION
-========================= */
+========================================= */
 
-.header {
-    background: #101d32;
-    color: #ffffff;
-    position: relative;
-    z-index: 100;
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--navy);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
 }
 
-.header-container {
-    min-height: 95px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
+.site-header .max-w-7xl {
+    max-width: 1280px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.logo img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: #ffffff;
-}
-
-.logo-text h1 {
-    font-size: 23px;
-    line-height: 1.2;
-    color: #ffffff;
-}
-
-.logo-text span {
-    color: #22c875;
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.nav {
+.main-nav {
     display: flex;
     align-items: center;
     gap: 22px;
 }
 
-.nav a {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
+.nav-link,
+.dropdown-toggle {
+    color: #e5e7eb;
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--transition);
 }
 
-.nav a:hover,
-.nav a.active {
-    color: #22c875;
+.nav-link:hover,
+.nav-link.active,
+.dropdown-toggle:hover {
+    color: var(--bright-green);
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    color: #ffffff;
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
     border: none;
-    font-size: 28px;
     cursor: pointer;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+.dropdown-toggle svg {
+    width: 15px;
+    height: 15px;
+}
 
-.hero {
-    min-height: 580px;
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 190px;
+    padding: 10px;
+    margin-top: 18px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+    z-index: 1001;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    display: block;
+    animation: dropdownFade 0.2s ease;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 11px 13px;
+    color: var(--dark-text);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.dropdown-menu a:hover {
+    color: var(--green);
+    background: #eefbf3;
+}
+
+.cart-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: #ffffff;
-    padding: 80px 20px;
-    background:
-        linear-gradient(
-            rgba(16, 29, 50, 0.90),
-            rgba(16, 29, 50, 0.94)
-        ),
-        linear-gradient(135deg, #263c5a, #101d32);
+    width: 40px;
+    height: 40px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transition: var(--transition);
 }
 
-.hero-content {
-    max-width: 850px;
+.cart-link:hover {
+    background: var(--green);
+    border-color: var(--green);
 }
 
-.hero-label {
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+.cart-link svg {
+    width: 19px;
+    height: 19px;
 }
 
-.hero h2 {
-    font-size: clamp(42px, 7vw, 66px);
-    line-height: 1.15;
-    font-weight: 900;
-    margin-bottom: 25px;
+#menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.hero-description {
-    font-size: 18px;
-    margin-bottom: 32px;
+#menu-toggle svg {
+    width: 28px;
+    height: 28px;
 }
 
-.hero-buttons {
+/* =========================================
+   HOMEPAGE HERO
+========================================= */
+
+.hero-home {
+    position: relative;
+    min-height: 680px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=85");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(9, 20, 37, 0.96) 0%,
+        rgba(9, 20, 37, 0.80) 48%,
+        rgba(9, 20, 37, 0.30) 100%
+    );
+}
 
-.btn {
-    display: inline-block;
+.hero-home h2 {
+    animation: slideUp 0.9s ease both;
+}
+
+.hero-home p,
+.hero-home .btn-primary,
+.hero-home .btn-outline {
+    animation: slideUp 1.1s ease both;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-primary,
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
     padding: 13px 25px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    transition: var(--transition);
 }
 
 .btn-primary {
-    background: #16834a;
-    color: #ffffff;
-    border: 2px solid #16834a;
+    color: white;
+    background: var(--green);
+    border: 2px solid var(--green);
 }
 
 .btn-primary:hover {
-    background: #116b3b;
-    border-color: #116b3b;
+    background: var(--bright-green);
+    border-color: var(--bright-green);
+    transform: translateY(-3px);
 }
 
 .btn-outline {
-    color: #ffffff;
-    border: 2px solid #ffffff;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .btn-outline:hover {
-    background: #ffffff;
-    color: #101d32;
+    color: var(--navy);
+    background: white;
+    transform: translateY(-3px);
 }
 
-/* =========================
+.btn-primary svg,
+.btn-outline svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* =========================================
    SECTION HEADINGS
-========================= */
+========================================= */
 
 .section-label {
-    color: #16834a;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-heading h2 {
-    font-size: 32px;
-    color: #101d32;
-    margin-bottom: 10px;
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.about-section {
-    padding: 85px 0;
-    background: #f4f7f5;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    gap: 50px;
-}
-
-.about-text h2 {
-    font-size: 32px;
-    color: #101d32;
-    margin-bottom: 18px;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-}
-
-.text-link {
-    display: inline-block;
-    margin-top: 12px;
-    color: #16834a;
-    font-weight: bold;
-}
-
-.text-link:hover {
-    color: #101d32;
-}
-
-.about-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-logo img {
-    width: 260px;
-    height: 260px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: #ffffff;
-}
-
-/* =========================
-   VALUES SECTION
-========================= */
-
-.values-section {
-    padding: 85px 0;
-    background: #ffffff;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.value-card {
-    padding: 35px 25px;
-    text-align: center;
-    background: #f4f7f5;
-    border-radius: 8px;
-    border-bottom: 4px solid #16834a;
-    transition: 0.3s;
-}
-
-.value-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.value-icon {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.value-card h3 {
-    color: #101d32;
-    margin-bottom: 12px;
-}
-
-/* =========================
-   HIGHLIGHTS SECTION
-========================= */
-
-.highlights-section {
-    padding: 85px 0;
-    background: #f4f7f5;
-}
-
-.highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.highlight-card {
-    background: #ffffff;
-    padding: 35px 28px;
-    border-radius: 8px;
-    border: 1px solid #e5e9e6;
-    transition: 0.3s;
-}
-
-.highlight-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.highlight-card span {
-    color: #16834a;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.highlight-card h3 {
-    color: #101d32;
-    margin: 15px 0 10px;
-}
-
-.highlight-card p {
-    color: #5b6472;
-    margin-bottom: 20px;
-}
-
-.highlight-card strong {
-    color: #16834a;
-    font-size: 13px;
-}
-
-/* =========================
-   CALL TO ACTION
-========================= */
-
-.cta-section {
-    padding: 75px 20px;
-    text-align: center;
-    color: #ffffff;
-    background: #101d32;
-}
-
-.cta-section h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.cta-section p {
-    margin-bottom: 25px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    padding: 40px 0 20px;
-    background: #091321;
-    color: #ffffff;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.footer h3 {
-    margin-bottom: 8px;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-}
-
-.footer-links a {
-    font-size: 14px;
-}
-
-.footer-links a:hover {
-    color: #22c875;
-}
-
-.copyright {
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #293447;
-    font-size: 13px;
-    color: #bdc5d0;
-}
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-@media (max-width: 1000px) {
-
-    .header-container {
-        flex-wrap: wrap;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .nav {
-        gap: 15px;
-    }
-
-    .nav a {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .header-container {
-        min-height: 80px;
-    }
-
-    .logo img {
-        width: 55px;
-        height: 55px;
-    }
-
-    .logo-text h1 {
-        font-size: 19px;
-    }
-
-    .logo-text span {
-        font-size: 12px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 10px 0;
-    }
-
-    .nav.show {
-        display: flex;
-    }
-
-    .nav a {
-        width: 100%;
-        padding: 12px 5px;
-        border-top: 1px solid #293447;
-        font-size: 15px;
-    }
-
-    .hero {
-        min-height: 500px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-logo img {
-        width: 210px;
-        height: 210px;
-    }
-
-    .values-grid,
-    .highlights-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-heading h2,
-    .about-text h2 {
-        font-size: 27px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .hero h2 {
-        font-size: 40px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 260px;
-    }
-
-    .cta-section h2 {
-        font-size: 25px;
-    }
-
-    .about-section,
-    .values-section,
-    .highlights-section {
-        padding: 60px 0;
-    }
-}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Namanga River Football Club.">
-    <title>Contact Us | Namanga River FC</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<header class="header">
-    <div class="container header-container">
-
-        <a href="index.html" class="logo">
-            <img src="images/Namanga%20river%20logo.jpeg"
-                 alt="Namanga River FC Logo">
-            <span>Namanga River FC</span>
-        </a>
-
-        <button class="menu-toggle" id="menu-toggle"
-                aria-label="Toggle navigation" aria-expanded="false">
-            ☰
-        </button>
-
-        <nav class="nav" id="nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="squad.html">Squad</a>
-            <a href="fixtures.html">Fixtures</a>
-            <a href="results.html">Results</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="new.html">News</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-
-    <section class="contact-hero">
-        <div class="container">
-            <p class="contact-label">GET IN TOUCH</p>
-            <h1>Contact Our Club</h1>
-            <p>
-                Have a question, want to join the team, or interested
-                in partnering with us? We would love to hear from you.
-            </p>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="container">
-
-            <div class="contact-heading">
-                <p class="contact-label">CONNECT WITH US</p>
-                <h2>We Would Love to Hear From You</h2>
-                <p>
-                    Reach out to Namanga River Football Club.
-                    Our team welcomes players, supporters and partners.
-                </p>
-            </div>
-
-            <div class="contact-layout">
-
-                <div class="contact-information">
-                    <h3>Club Information</h3>
-                    <p class="contact-intro">
-                        Find our club details below.
-                    </p>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Namanga, Kenya</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">⚽</div>
-                        <div>
-                            <h4>Club</h4>
-                            <p>Namanga River Football Club</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>Official club email to be added</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">☎</div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>Official club phone number to be added</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-social">
-                        <h4>Follow Our Journey</h4>
-                        <p>
-                            Our official social media links will be
-                            published here soon.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <h3>Send Us a Message</h3>
-                    <p class="contact-intro">
-                        Complete the form below to get in touch.
-                    </p>
-
-                    <form class="contact-form" action="#" method="POST">
-
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name"
-                                   placeholder="Enter your full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email"
-                                   placeholder="Enter your email address" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="Joining the team">Joining the team</option>
-                                <option value="Sponsorship">Sponsorship</option>
-                                <option value="Partnership">Partnership</option>
-                                <option value="General enquiry">General enquiry</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message"
-                                      rows="5"
-                                      placeholder="Write your message here..."
-                                      required></textarea>
-                        </div>
-
-                        <button type="submit" class="contact-submit">
-                            Send Message
-                        </button>
-
-                        <p class="form-note">
-                            The contact form needs a form service or
-                            backend connection before it can deliver messages.
-                        </p>
-
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <p>&copy; <span id="year"></span> Namanga River Football Club.
-           All Rights Reserved.</p>
-        <p>Passion. Unity. Determination.</p>
-    </div>
-</footer>
-
-<script src="js/script.js"></script>
-
-</body>
-</html>
-
-/* CONTACT PAGE - IMPROVED TWO-COLUMN LAYOUT */
-
-.contact-section {
-    background: #f4f7f5;
-    padding: 70px 20px;
-}
-
-.contact-heading {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 45px;
-}
-
-.contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-    align-items: start;
-}
-
-.contact-information,
-.contact-form-container {
-    background: #ffffff;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-}
-
-.contact-information h3,
-.contact-form-container h3 {
-    font-size: 23px;
-    color: #101d32;
-    margin-bottom: 15px;
-}
-
-.contact-item {
-    display: flex;
-    gap: 15px;
-    padding: 18px 0;
-    border-bottom: 1px solid #e5e9ed;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #d6dee5;
-    border-radius: 6px;
-    font-size: 14px;
-    font-family: inherit;
-}
-
-.form-group textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-.contact-submit {
-    background: #16834a;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.contact-submit:hover {
-    background: #10673a;
-}
-
-@media (max-width: 768px) {
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .contact-information,
-    .contact-form-container {
-        padding: 25px 20px;
-    }
-}
-
-/* CLUB LOGO - CIRCULAR DISPLAY */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.logo img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    flex-shrink: 0;
-    background: #000;
-}
-
-/* Keep the logo circular on smaller screens */
-@media (max-width: 768px) {
-    .logo img {
-        width: 55px;
-        height: 55px;
-    }
-}
-
-/* =====================================
-   NAMANGA RIVER FC - UPDATED PAGE DESIGN
-===================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172238;
-    background: #ffffff;
-    line-height: 1.7;
-}
-
-.container {
-    width: min(1100px, 92%);
-    margin: 0 auto;
-}
-
-/* HEADER AND LOGO */
-
-.site-header {
-    background: #101d32;
-    color: #ffffff;
-    padding: 12px 0;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 17px;
-    white-space: nowrap;
-}
-
-.club-logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border: 2px solid #ffffff;
-    background: #000000;
-    flex-shrink: 0;
-}
-
-/* NAVIGATION */
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.main-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    color: #24c477;
-}
-
-/* PAGE INTRODUCTION */
-
-.page-hero {
-    background: linear-gradient(120deg, #101d32, #263d5b);
-    color: #ffffff;
-    text-align: center;
-    padding: 65px 20px;
-}
-
-.page-hero h1 {
-    font-size: clamp(30px, 5vw, 44px);
-    margin: 8px 0;
-}
-
-.page-hero p {
-    margin: 8px 0;
-}
-
-.eyebrow {
-    color: #159b5b;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.page-hero .eyebrow {
-    color: #42dc91;
-}
-
-/* GENERAL SECTIONS */
-
-.section {
-    padding: 65px 0;
-}
-
-.light-section {
-    background: #f3f6f8;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 35px;
-}
-
-.section-heading h2 {
-    margin: 5px 0 10px;
-    font-size: 30px;
-}
-
-.section-heading p {
-    color: #647084;
-}
-
-/* CONTENT LAYOUTS */
-
-.content-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 35px;
-    align-items: center;
-}
-
-.three-columns {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.info-card,
-.player-card,
-.news-card,
-.fixture-card,
-.result-card {
-    background: #ffffff;
-    border: 1px solid #e5e9ee;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 5px 18px rgba(16, 29, 50, 0.06);
-}
-
-.info-card h3,
-.player-card h3,
-.news-card h3 {
-    margin-top: 0;
-    color: #101d32;
-}
-
-/* PLAYER CARDS */
-
-.player-card {
-    text-align: center;
-}
-
-.player-placeholder {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #101d32;
-    color: #42dc91;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.position {
-    display: inline-block;
-    padding: 5px 14px;
-    border-radius: 20px;
-    background: #e6f7ee;
-    color: #13834b;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-/* FIXTURES AND RESULTS */
-
-.fixture-list {
-    display: grid;
-    gap: 20px;
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.fixture-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    border-left: 5px solid #159b5b;
-}
-
-.fixture-card h3 {
-    margin: 8px 0 0;
-}
-
-.fixture-details {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-}
-
-.match-label {
-    color: #159b5b;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.result-card {
-    text-align: center;
-}
-
-.score-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.score {
-    font-size: 23px;
-    font-weight: 800;
-    color: #159b5b;
-}
-
-/* GALLERY */
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.gallery-placeholder {
-    min-height: 190px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #101d32, #34506d);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
-
-/* NEWS */
-
-.news-card {
-    border-top: 4px solid #159b5b;
-}
-
-/* FOOTER */
-
-.site-footer {
-    background: #101d32;
-    color: #ffffff;
-    text-align: center;
-    padding: 35px 15px;
-    margin-top: 20px;
-}
-
-.site-footer h3 {
-    margin: 0 0 8px;
-}
-
-.site-footer p {
-    margin: 6px 0;
-    color: #d5dce5;
-    font-size: 14px;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 850px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-nav {
-        justify-content: center;
-        gap: 14px;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .three-columns {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .club-logo {
-        width: 58px;
-        height: 58px;
-    }
-
-    .main-nav {
-        gap: 10px 15px;
-    }
-
-    .main-nav a {
-        font-size: 12px;
-    }
-
-    .three-columns,
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .fixture-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .fixture-details {
-        text-align: left;
-    }
-
-    .score-line {
-        flex-direction: column;
-    }
-
-    .page-hero {
-        padding: 45px 15px;
-    }
-
-    .section {
-        padding: 45px 0;
-    }
-}
-
-/* =====================================
-   LEFT SIDEBAR NAVIGATION
-===================================== */
-
-@media (min-width: 769px) {
-
-    body {
-        padding-left: 260px;
-    }
-
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 260px;
-        height: 100vh;
-        min-height: 100vh;
-        z-index: 1000;
-        background: #101d32;
-        padding: 25px 18px;
-        overflow-y: auto;
-        box-sizing: border-box;
-    }
-
-    .header-container {
-        width: 100%;
-        max-width: none;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 35px;
-    }
-
-    .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        width: 100%;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    .logo img {
-        width: 125px;
-        height: 125px;
-        min-width: 125px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 50%;
-        background: #ffffff;
-        border: 3px solid #ffffff;
-    }
-
-    .logo-text {
-        text-align: center;
-    }
-
-    .logo-text h1 {
-        font-size: 21px;
-        line-height: 1.3;
-        margin: 0;
-    }
-
-    .logo-text span {
-        display: block;
-        margin-top: 5px;
-        font-size: 13px;
-        letter-spacing: 2px;
-        color: #16c784;
-    }
-
-    #nav,
-    .nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    #nav a,
-    .nav a {
-        display: block;
-        width: 100%;
-        padding: 13px 18px;
-        box-sizing: border-box;
-        border-radius: 7px;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    #nav a:hover,
-    .nav a:hover {
-        background: #16834a;
-        color: #ffffff;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    main,
-    .main-content {
-        width: 100%;
-    }
-}
-
-/* =====================================
-   MOBILE NAVIGATION
-===================================== */
-
-@media (max-width: 768px) {
-
-    body {
-        padding-left: 0;
-    }
-
-    .header {
-        position: relative;
-        width: 100%;
-        height: auto;
-        min-height: auto;
-        padding: 12px 15px;
-        box-sizing: border-box;
-    }
-
-    .header-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo img {
-        width: 55px;
-        height: 55px;
-        min-width: 55px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    .logo-text h1 {
-        font-size: 16px;
-    }
-
-    .logo-text span {
-        font-size: 10px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    #nav,
-    .nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    #nav a,
-    .nav a {
-        display: block;
-        padding: 10px;
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    #nav:not(.show),
-    .nav:not(.show) {
-        display: none;
-    }
-
-    #nav.show,
-    .nav.show {
-        display: flex;
-    }
-}
-
-/* ==========================================
-   SIDEBAR FIX FOR ALL OTHER WEBSITE PAGES
-========================================== */
-
-@media screen and (min-width: 769px) {
-
-    body {
-        padding-left: 260px !important;
-    }
-
-    body header.site-header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        bottom: 0 !important;
-        width: 260px !important;
-        height: 100vh !important;
-        min-height: 100vh !important;
-        padding: 25px 18px !important;
-        box-sizing: border-box !important;
-        background: #101d32 !important;
-        z-index: 99999 !important;
-        overflow-y: auto !important;
-    }
-
-    body header.site-header .container.header-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 35px !important;
-    }
-
-    body header.site-header .brand {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 12px !important;
-        width: 100% !important;
-        color: white !important;
-        text-align: center !important;
-        text-decoration: none !important;
-    }
-
-    body header.site-header .brand img.club-logo {
-        width: 125px !important;
-        height: 125px !important;
-        min-width: 125px !important;
-        object-fit: cover !important;
-        object-position: center !important;
-        border-radius: 50% !important;
-        border: 3px solid white !important;
-        background: white !important;
-    }
-
-    body header.site-header .main-nav {
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 8px !important;
-    }
-
-    body header.site-header .main-nav a {
-        display: block !important;
-        width: 100% !important;
-        padding: 13px 16px !important;
-        box-sizing: border-box !important;
-        border-radius: 7px !important;
-        color: white !important;
-        text-decoration: none !important;
-        font-weight: 600 !important;
-    }
-
-    body header.site-header .main-nav a:hover,
-    body header.site-header .main-nav a.active {
-        background: #16834a !important;
-        color: white !important;
-    }
-}
-
-/* MOBILE DISPLAY */
-
-@media screen and (max-width: 768px) {
-
-    body {
-        padding-left: 0 !important;
-    }
-
-    body header.site-header {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
-    }
-
-    body header.site-header .container.header-container {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-    }
-
-    body header.site-header .brand {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-    }
-
-    body header.site-header .brand img.club-logo {
-        width: 55px !important;
-        height: 55px !important;
-        min-width: 55px !important;
-        object-fit: cover !important;
-        border-radius: 50% !important;
-    }
-
-    body header.site-header .main-nav {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        width: 100% !important;
-        gap: 8px !important;
-    }
-}
-
-/* =====================================
-   HOME PAGE HERO SIZE ADJUSTMENT
-===================================== */
-
-@media screen and (min-width: 769px) {
-
-    .hero {
-        min-height: 390px !important;
-        height: auto !important;
-        padding: 45px 30px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        box-sizing: border-box !important;
-    }
-
-    .hero-content {
-        padding: 15px 0 !important;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(42px, 4vw, 54px) !important;
-        line-height: 1.12 !important;
-        margin: 15px 0 20px !important;
-    }
-
-    .hero-content p {
-        margin-bottom: 25px !important;
-    }
-
-    .hero-content .hero-buttons {
-        margin-top: 20px !important;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    .hero {
-        min-height: 380px !important;
-        height: auto !important;
-        padding: 45px 20px !important;
-    }
-
-    .hero-content h1 {
-        font-size: 38px !important;
-        line-height: 1.15 !important;
-    }
-}
-/* COACHING STAFF SECTION */
-.coach-section {
-    padding: 70px 6%;
-    background: #f4f7f5;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-tag {
-    color: #16834a;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
-.section-heading h2 {
-    color: #101d32;
-    font-size: 32px;
-    margin: 12px 0;
-}
-
-.section-heading p {
-    color: #647084;
-}
-
-.coach-card {
-    max-width: 850px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    padding: 35px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.coach-photo {
-    width: 190px;
-    height: 220px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    background: #101d32;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 25px;
-    font-weight: 800;
-    border-bottom: 5px solid #16834a;
-}
-
-.coach-info {
-    flex: 1;
-}
-
-.coach-role {
-    color: #16834a;
-    font-weight: 800;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
-.coach-info h3 {
-    color: #101d32;
-    font-size: 27px;
-    margin: 12px 0;
-}
-
-.coach-info p {
-    color: #647084;
-    line-height: 1.8;
-}
-
-.coach-details {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #e5e9e7;
-}
-
-.coach-details p {
-    margin: 7px 0;
-}
-
-@media (max-width: 600px) {
-    .coach-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
-    }
-
-    .coach-photo {
-        width: 160px;
-        height: 180px;
-    }
-
-    .section-heading h2 {
-        font-size: 26px;
-    }
-}
-
-/* =====================================
-   COMPACT PROFESSIONAL SQUAD PAGE
-===================================== */
-
-.squad-banner {
-    background: linear-gradient(135deg, #101d32, #1b3150);
-    color: #ffffff;
-    text-align: center;
-    padding: 55px 20px;
-}
-
-.squad-banner > span {
-    color: #19c477;
+    margin-bottom: 13px;
+    color: var(--green);
+    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 3px;
 }
 
-.squad-banner h2 {
-    font-size: clamp(30px, 4vw, 46px);
-    margin: 12px 0;
+.section-title {
+    color: var(--navy);
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1.2;
 }
 
-.squad-banner p {
-    color: #dce4ee;
-    margin: 0;
-}
+/* =========================================
+   CLUB VALUES
+========================================= */
 
-.club-coach-section,
-.club-roster-section {
-    max-width: 1150px;
-    margin: auto;
-    padding: 35px 25px;
-}
-
-.club-coach-card {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    background: #ffffff;
-    border: 1px solid #e3e8ed;
-    border-left: 5px solid #16834a;
+.value-card {
+    padding: 38px 30px;
+    background: white;
+    border: 1px solid #e8edf0;
     border-radius: 12px;
-    padding: 22px 26px;
-    box-shadow: 0 5px 20px rgba(16, 29, 50, 0.06);
+    box-shadow: 0 8px 25px rgba(16, 29, 50, 0.04);
+    transition: var(--transition);
 }
 
-.coach-badge {
-    width: 65px;
-    height: 65px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #101d32;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 22px;
-    font-weight: 800;
+.value-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--bright-green);
+    box-shadow: 0 15px 35px rgba(16, 29, 50, 0.10);
 }
 
-.roster-label {
-    color: #16834a;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.club-coach-card h2 {
-    color: #101d32;
-    margin: 5px 0;
-    font-size: 23px;
-}
-
-.club-coach-card p {
-    color: #667085;
-    margin: 5px 0 10px;
-    line-height: 1.6;
-}
-
-.coach-role {
-    color: #16834a;
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.roster-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+.value-card > svg {
+    width: 42px;
+    height: 42px;
     margin-bottom: 22px;
+    color: var(--green);
+    stroke-width: 1.7;
 }
 
-.roster-heading h2 {
-    color: #101d32;
-    font-size: 27px;
-    margin: 6px 0;
+.value-card h3 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 19px;
+    font-weight: 900;
 }
 
-.roster-heading p {
-    color: #667085;
-    margin: 0;
+.value-card p {
+    color: var(--muted-text);
+    font-size: 14px;
+    line-height: 1.9;
 }
 
-.squad-total {
-    min-width: 85px;
-    text-align: center;
-    padding: 12px;
-    background: #101d32;
-    color: #ffffff;
-    border-radius: 10px;
-}
+/* =========================================
+   HOMEPAGE HIGHLIGHTS
+========================================= */
 
-.squad-total strong {
+.highlight-card {
+    position: relative;
     display: block;
-    color: #19c477;
-    font-size: 27px;
+    min-height: 260px;
+    padding: 35px;
+    overflow: hidden;
+    color: white;
+    background: var(--navy);
+    border-radius: 10px;
+    transition: var(--transition);
 }
 
-.squad-total span {
-    font-size: 10px;
+.highlight-card::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: -50px;
+    bottom: -60px;
+    background: var(--green);
+    opacity: 0.18;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    background: #172c49;
+}
+
+.highlight-card:hover::after {
+    transform: scale(1.5);
+}
+
+.highlight-card span {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--bright-green);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.highlight-card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.highlight-card p {
+    margin-bottom: 25px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.highlight-card strong {
+    color: var(--bright-green);
+    font-size: 12px;
     letter-spacing: 1px;
-    font-weight: 700;
 }
 
-.roster-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 12px;
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.cta-home {
+    position: relative;
+    background:
+        linear-gradient(rgba(16, 29, 50, 0.94), rgba(16, 29, 50, 0.94)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.roster-player {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    min-width: 0;
-    padding: 13px 10px;
-    background: #ffffff;
-    border: 1px solid #e4e9ef;
-    border-radius: 9px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--navy);
 }
 
-.roster-player:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 18px rgba(16, 29, 50, 0.09);
-    border-color: #16834a;
+footer a {
+    transition: var(--transition);
 }
 
-.roster-number {
-    width: 37px;
-    height: 37px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #101d32;
-    color: #ffffff;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 800;
+footer a:hover {
+    color: var(--bright-green);
 }
 
-.roster-player-info {
-    min-width: 0;
-}
+/* =========================================
+   ANIMATIONS
+========================================= */
 
-.roster-player-info h3 {
-    color: #101d32;
-    font-size: 13px;
-    margin: 0 0 5px;
-    overflow-wrap: anywhere;
-}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
-.roster-player-info span {
-    color: #16834a;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.squad-motto {
-    text-align: center;
-    background: #101d32;
-    color: #ffffff;
-    padding: 35px 20px;
-}
-
-.squad-motto h2 {
-    font-size: 22px;
-    margin: 0 0 8px;
-}
-
-.squad-motto p {
-    color: #19c477;
-    margin: 0;
-    font-weight: 600;
-}
-
-/* TABLETS */
-@media (max-width: 1000px) {
-    .roster-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* MOBILE PHONES */
-@media (max-width: 600px) {
-    .squad-banner {
-        padding: 40px 15px;
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
     }
 
-    .club-coach-section,
-    .club-roster-section {
-        padding: 25px 15px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+    .main-nav {
+        gap: 12px;
     }
 
-    .roster-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 9px;
-    }
-
-    .roster-player {
-        padding: 10px 7px;
-        gap: 7px;
-    }
-
-    .roster-number {
-        width: 32px;
-        height: 32px;
+    .nav-link,
+    .dropdown-toggle {
         font-size: 11px;
     }
+}
 
-    .roster-player-info h3 {
-        font-size: 11px;
+@media (max-width: 767px) {
+
+    .site-header {
+        position: sticky;
     }
 
-    .roster-player-info span {
-        font-size: 10px;
+    #menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
     }
 
-    .roster-heading h2 {
-        font-size: 21px;
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        padding: 20px 25px 28px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--navy);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
     }
 
-    .club-coach-card {
-        padding: 17px;
-        gap: 13px;
+    .main-nav.show {
+        display: flex;
     }
 
-    .coach-badge {
-        width: 48px;
-        height: 48px;
-        font-size: 17px;
+    .nav-link,
+    .dropdown-toggle {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 13px 5px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin: 0;
+        padding: 5px 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .dropdown-menu a {
+        padding: 12px;
+        color: #e2e8f0;
+    }
+
+    .dropdown-menu a:hover {
+        color: var(--bright-green);
+        background: transparent;
+    }
+
+    .cart-link {
+        margin-top: 15px;
+    }
+
+    .hero-home {
+        min-height: 620px;
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(9, 20, 37, 0.94),
+            rgba(9, 20, 37, 0.65)
+        );
+    }
+
+    .cta-home {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-home {
+        min-height: 570px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .value-card {
+        padding: 28px 23px;
+    }
+
+    .highlight-card {
+        min-height: 230px;
+        padding: 28px;
+    }
+}
+
+/* Respect reduced-motion accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
