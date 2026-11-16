@@ -4,542 +4,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donations | Namanga River FC</title>
+    <meta name="description" content="Support Namanga River Football Club through donations and sponsorship.">
+    <title>Support Our Club | Namanga River FC</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: "#101D32",
+                        club: "#16834A",
+                        bright: "#22C875"
+                    },
+                    fontFamily: {
+                        heading: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            background: #f4f7f5;
-            color: #172238;
-            font-family: Arial, sans-serif;
-        }
-
-        .donation-main {
-            max-width: 1150px;
-            margin: auto;
-            padding: 35px 25px 60px;
-        }
-
-        .donation-hero {
-            background: linear-gradient(120deg, #101d32, #183c35);
-            color: white;
-            padding: 65px 30px;
-            text-align: center;
-            border-radius: 16px;
-            margin-bottom: 35px;
-        }
-
-        .donation-hero h1 {
-            font-size: 38px;
-            margin: 0 0 15px;
-        }
-
-        .donation-hero p {
-            max-width: 650px;
-            margin: auto;
-            line-height: 1.7;
-            color: #e0e8e4;
-        }
-
-        .green-text {
-            color: #19c477;
-        }
-
-        .donation-layout {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 25px;
-            align-items: start;
-        }
-
-        .donation-card {
-            background: white;
-            padding: 28px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        }
-
-        .donation-card h2 {
-            margin-top: 0;
-            color: #101d32;
-        }
-
-        .donation-card p {
-            line-height: 1.7;
-            color: #647084;
-        }
-
-        .amount-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin: 22px 0;
-        }
-
-        .amount-btn {
-            padding: 15px 8px;
-            background: #f0f5f2;
-            border: 2px solid #dce7df;
-            border-radius: 9px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #172238;
-            font-size: 15px;
-        }
-
-        .amount-btn:hover,
-        .amount-btn.active {
-            background: #16834a;
-            border-color: #16834a;
-            color: white;
-        }
-
-        .donation-input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #d5ded8;
-            border-radius: 8px;
-            font-size: 16px;
-            margin: 10px 0 20px;
-        }
-
-        .donate-btn {
-            width: 100%;
-            border: none;
-            padding: 16px;
-            border-radius: 9px;
-            background: #16834a;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .donate-btn:hover {
-            background: #10683a;
-        }
-
-        .donate-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .donation-methods {
-            display: grid;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .method {
-            border: 1px solid #e0e8e2;
-            padding: 18px;
-            border-radius: 10px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .method-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
-            background: #e9f7ef;
-            display: grid;
-            place-items: center;
-            font-size: 23px;
-            flex-shrink: 0;
-        }
-
-        .method h3 {
-            margin: 0 0 5px;
-            font-size: 16px;
-        }
-
-        .method p {
-            margin: 0;
-            font-size: 13px;
-        }
-
-        .method-status {
-            font-size: 11px;
-            font-weight: bold;
-            color: #b7791f;
-        }
-
-        .impact-section {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 22px;
-        }
-
-        .impact-item {
-            background: white;
-            padding: 25px 18px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-        }
-
-        .impact-item span {
-            font-size: 30px;
-        }
-
-        .impact-item h3 {
-            color: #16834a;
-            margin-bottom: 8px;
-        }
-
-        .impact-item p {
-            color: #647084;
-            line-height: 1.5;
-            font-size: 14px;
-        }
-
-        .thank-you {
-            margin-top: 30px;
-            background: #e6f6ec;
-            border: 1px solid #c5e9d2;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .thank-you h2 {
-            color: #16834a;
-            margin-top: 0;
-        }
-
-        .donation-footer {
-            background: #101d32;
-            color: white;
-            padding: 25px;
-            text-align: center;
-            margin-top: 40px;
-            border-radius: 12px;
-        }
-
-        @media(max-width: 800px) {
-            .donation-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .donation-hero h1 {
-                font-size: 29px;
-            }
-
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media(max-width: 480px) {
-            .donation-main {
-                padding: 20px 14px 40px;
-            }
-
-            .donation-hero {
-                padding: 45px 18px;
-            }
-
-            .donation-card {
-                padding: 20px;
-            }
-
-            .amount-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<header class="header">
-    <div class="logo">
-        <img src="images/Namanga river logo.jpeg"
-             alt="Namanga River FC Logo">
-        <span>Namanga River FC</span>
-    </div>
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container mx-auto px-5">
+        <div class="header-inner flex items-center justify-between">
 
-    <button class="menu-toggle" onclick="toggleMenu()">
-        ☰
-    </button>
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/Namanga%20river%20logo.jpeg"
+                     alt="Namanga River FC Logo"
+                     class="w-12 h-12 object-contain rounded-full">
 
-    <nav id="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="squad.html">Squad</a>
-        <a href="fixtures.html">Fixtures</a>
-        <a href="results.html">Results</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="new.html">News</a>
-        <a href="shop.html">Shop</a>
-        <a href="donations.html" class="active">Donations</a>
-        <a href="contact.html">Contact</a>
-      <a href="donations.html">Donations</a>
-    </nav>
-</header>
+                <div>
+                    <span class="block font-bold text-white">NAMANGA RIVER FC</span>
+                    <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
+                </div>
+            </a>
 
-<main class="donation-main">
-
-    <!-- HERO -->
-    <section class="donation-hero">
-        <h1>Support <span class="green-text">Our Club</span></h1>
-
-        <p>
-            Namanga River Football Club is more than a team.
-            It is a community built on passion, discipline and teamwork.
-            Your contribution helps us develop players, improve facilities
-            and take the club forward.
-        </p>
-    </section>
-
-    <div class="donation-layout">
-
-        <!-- DONATION FORM -->
-        <section class="donation-card">
-
-            <h2>Make a Donation</h2>
-
-            <p>
-                Every contribution makes a difference.
-                Select an amount or enter your preferred contribution.
-            </p>
-
-            <div class="amount-options">
-
-                <button class="amount-btn" data-amount="100">
-                    KSh 100
-                </button>
-
-                <button class="amount-btn" data-amount="500">
-                    KSh 500
-                </button>
-
-                <button class="amount-btn" data-amount="1000">
-                    KSh 1,000
-                </button>
-
-                <button class="amount-btn" data-amount="2000">
-                    KSh 2,000
-                </button>
-
-                <button class="amount-btn" data-amount="5000">
-                    KSh 5,000
-                </button>
-
-                <button class="amount-btn" data-amount="10000">
-                    KSh 10,000
-                </button>
-
-            </div>
-
-            <label for="customAmount">
-                Or enter your own amount (KSh)
-            </label>
-
-            <input
-                type="number"
-                id="customAmount"
-                class="donation-input"
-                placeholder="Enter amount"
-                min="1"
-                step="1"
-            >
-
-            <label for="donorName">Your name (optional)</label>
-
-            <input
-                type="text"
-                id="donorName"
-                class="donation-input"
-                placeholder="Enter your name"
-                maxlength="80"
-            >
-
-            <button class="donate-btn" id="donateButton">
-                Continue to Donate
+            <button id="menu-toggle"
+                    class="text-white text-2xl"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <i data-lucide="menu"></i>
             </button>
 
-            <p style="font-size:12px; text-align:center;">
-                Payment checkout will be available after secure
-                payment integration is configured.
+            <nav id="nav" class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button">
+                        Club <i data-lucide="chevron-down" size="15"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="squad.html">Our Squad</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="new.html">News</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button">
+                        Matches <i data-lucide="chevron-down" size="15"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="results.html">Results</a>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="donations.html" class="nav-link">Support Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section class="donation-hero">
+    <div class="donation-overlay"></div>
+
+    <div class="relative z-10 container mx-auto px-5 py-24 text-center">
+        <p class="text-green-400 font-bold tracking-widest uppercase mb-4">
+            Every Contribution Matters
+        </p>
+
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-5">
+            SUPPORT OUR CLUB
+        </h1>
+
+        <p class="text-gray-200 max-w-2xl mx-auto">
+            Be part of the Namanga River FC journey.
+            Your support can help the club grow and compete.
+        </p>
+
+        <a href="#support-options"
+           class="inline-flex items-center gap-2 mt-8 bg-club hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg transition">
+            Explore Ways To Support
+            <i data-lucide="arrow-down" size="18"></i>
+        </a>
+    </div>
+</section>
+
+
+<!-- MAIN CONTENT -->
+<main class="bg-gray-50 py-16">
+
+    <div class="container mx-auto px-5 max-w-7xl">
+
+        <div class="text-center mb-12">
+            <span class="text-club font-bold uppercase tracking-widest text-sm">
+                Stand With The Team
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mt-3">
+                Help Us Move Forward
+            </h2>
+
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+                Football requires commitment, preparation and resources.
+                Support from our community can make a meaningful difference.
             </p>
+        </div>
+
+
+        <!-- SUPPORT OPTIONS -->
+        <section id="support-options" class="grid md:grid-cols-3 gap-7">
+
+            <article class="support-card">
+                <div class="support-icon">
+                    <i data-lucide="heart-handshake" size="28"></i>
+                </div>
+
+                <h3>Make A Donation</h3>
+
+                <p>
+                    Contribute towards the club's activities and
+                    development whenever you are able.
+                </p>
+
+                <a href="#donation-information" class="support-link">
+                    Donation Information
+                    <i data-lucide="arrow-right" size="17"></i>
+                </a>
+            </article>
+
+
+            <article class="support-card">
+                <div class="support-icon">
+                    <i data-lucide="handshake" size="28"></i>
+                </div>
+
+                <h3>Become A Sponsor</h3>
+
+                <p>
+                    Partner with Namanga River FC and explore
+                    opportunities to support the team's ambitions.
+                </p>
+
+                <a href="contact.html" class="support-link">
+                    Discuss Sponsorship
+                    <i data-lucide="arrow-right" size="17"></i>
+                </a>
+            </article>
+
+
+            <article class="support-card">
+                <div class="support-icon">
+                    <i data-lucide="shopping-bag" size="28"></i>
+                </div>
+
+                <h3>Buy Club Merchandise</h3>
+
+                <p>
+                    Support the club by purchasing official merchandise
+                    and representing the team.
+                </p>
+
+                <a href="shop.html" class="support-link">
+                    Visit Club Shop
+                    <i data-lucide="arrow-right" size="17"></i>
+                </a>
+            </article>
 
         </section>
 
+
         <!-- DONATION INFORMATION -->
-        <section class="donation-card">
+        <section id="donation-information"
+                 class="mt-16 bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
 
-            <h2>How You Can Support Us</h2>
+            <div class="bg-black text-white p-7 md:p-9">
+                <span class="text-green-400 text-xs font-bold tracking-widest uppercase">
+                    Contributions
+                </span>
 
-            <p>
-                Your generosity helps the club meet its daily needs
-                and create opportunities for talented players.
-            </p>
+                <h2 class="text-2xl md:text-3xl font-black mt-3">
+                    Support The Team
+                </h2>
 
-            <div class="donation-methods">
+                <p class="text-gray-400 mt-3 max-w-2xl text-sm leading-relaxed">
+                    If you would like to contribute financially, contact
+                    the club to confirm the official payment details and
+                    the available contribution methods.
+                </p>
+            </div>
 
-                <div class="method">
-                    <div class="method-icon">💳</div>
+
+            <div class="grid md:grid-cols-2 gap-8 p-7 md:p-9">
+
+                <div class="flex gap-5">
+                    <div class="w-14 h-14 shrink-0 bg-green-50 text-club rounded-xl flex items-center justify-center">
+                        <i data-lucide="smartphone" size="27"></i>
+                    </div>
+
                     <div>
-                        <h3>Paystack</h3>
-                        <p>Secure online card and supported payment options.</p>
-                        <span class="method-status">Coming soon</span>
+                        <h3 class="font-bold text-lg text-gray-900">
+                            M-Pesa
+                        </h3>
+
+                        <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                            M-Pesa contributions can be enabled once the
+                            club's official Paybill, Till or payment
+                            integration has been configured.
+                        </p>
+                        <span class="inline-block mt-3 text-xs font-bold text-orange-600">
+                            NOT YET CONFIGURED
+                        </span>
                     </div>
                 </div>
 
-                <div class="method">
-                    <div class="method-icon">📱</div>
-                    <div>
-                        <h3>M-Pesa</h3>
-                        <p>Support the club using mobile money.</p>
-                        <span class="method-status">Coming soon</span>
-                    </div>
-                </div>
 
-                <div class="method">
-                    <div class="method-icon">💬</div>
+                <div class="flex gap-5">
+                    <div class="w-14 h-14 shrink-0 bg-green-50 text-club rounded-xl flex items-center justify-center">
+                        <i data-lucide="credit-card" size="27"></i>
+                    </div>
+
                     <div>
-                        <h3>WhatsApp</h3>
-                        <p>Contact the club for donation arrangements.</p>
-                        <span class="method-status">Available after number setup</span>
+                        <h3 class="font-bold text-lg text-gray-900">
+                            Paystack
+                        </h3>
+
+                        <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                            Secure online donations can be introduced
+                            through a verified payment checkout connected
+                            to a secure backend.
+                        </p>
+                        <span class="inline-block mt-3 text-xs font-bold text-orange-600">
+                            NOT YET CONFIGURED
+                        </span>
                     </div>
                 </div>
 
             </div>
 
-            <p style="margin-top:20px;">
-                For assistance, contact the club through our
-                <a href="contact.html">Contact page</a>.
+
+            <div class="border-t border-gray-200 p-7 md:p-9 text-center">
+                <p class="text-gray-600 text-sm mb-5">
+                    Contact the club to obtain verified donation instructions.
+                </p>
+
+                <a href="contact.html"
+                   class="inline-flex items-center justify-center gap-2 bg-club hover:bg-green-800 text-white font-bold px-8 py-3 rounded-lg transition">
+                    Contact The Club
+                    <i data-lucide="arrow-right" size="18"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- WHY SUPPORT -->
+        <section class="mt-16">
+
+            <div class="text-center mb-9">
+                <span class="text-club font-bold uppercase tracking-widest text-sm">
+                    Our Shared Ambition
+                </span>
+
+                <h2 class="text-3xl font-black text-gray-900 mt-3">
+                    Why Your Support Matters
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-white p-7 rounded-xl border border-gray-200">
+                    <i data-lucide="shirt" class="text-club mb-5" size="30"></i>
+                    <h3 class="font-bold text-lg mb-2">Team Equipment</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Help the club work towards providing appropriate
+                        playing and training equipment.
+                    </p>
+                </div>
+
+                <div class="bg-white p-7 rounded-xl border border-gray-200">
+                    <i data-lucide="trophy" class="text-club mb-5" size="30"></i>
+                    <h3 class="font-bold text-lg mb-2">Competition</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Help the team prepare for matches, travel and
+                        other football activities.
+                    </p>
+                </div>
+
+                <div class="bg-white p-7 rounded-xl border border-gray-200">
+                    <i data-lucide="users" class="text-club mb-5" size="30"></i>
+                    <h3 class="font-bold text-lg mb-2">Club Development</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Contribute towards building a stronger and
+                        more sustainable football club.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="mt-16 bg-black rounded-2xl px-7 py-12 text-center">
+
+            <h2 class="text-2xl md:text-3xl font-black text-white mb-4">
+                TOGETHER, WE GO FURTHER
+            </h2>
+
+            <p class="text-gray-300 max-w-xl mx-auto mb-7">
+                Every supporter is part of our story.
+                Thank you for standing with Namanga River FC.
             </p>
+
+            <a href="contact.html"
+               class="inline-flex items-center gap-2 bg-club hover:bg-green-700 text-white font-bold px-7 py-3 rounded-lg transition">
+                Get In Touch
+                <i data-lucide="arrow-right" size="18"></i>
+            </a>
 
         </section>
 
     </div>
+</main>
 
-    <!-- IMPACT -->
-    <section class="impact-section">
 
-        <h2>Where Your Support Goes</h2>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container mx-auto px-5 py-12">
 
-        <p>
-            Every contribution helps us build a stronger club.
-        </p>
+        <div class="grid md:grid-cols-3 gap-10">
 
-        <div class="impact-grid">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="images/Namanga%20river%20logo.jpeg"
+                         alt="Namanga River FC Logo"
+                         class="w-12 h-12 object-contain rounded-full">
 
-            <div class="impact-item">
-                <span>⚽</span>
-                <h3>Equipment</h3>
-                <p>
-                    Footballs, training equipment, jerseys
-                    and other essential supplies.
+                    <h3 class="font-bold text-white">NAMANGA RIVER FC</h3>
+                </div>
+
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    One club. One dream. One river. United by football
+                    and driven by ambition.
                 </p>
             </div>
 
-            <div class="impact-item">
-                <span>🚌</span>
-                <h3>Travel & Matches</h3>
-                <p>
-                    Transport, match preparation and
-                    competition expenses.
-                </p>
+            <div>
+                <h3 class="font-bold text-white mb-4">Quick Links</h3>
+
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="squad.html">Our Squad</a>
+                    <a href="fixtures.html">Fixtures</a>
+                    <a href="results.html">Results</a>
+                </div>
             </div>
 
-            <div class="impact-item">
-                <span>🌱</span>
-                <h3>Player Development</h3>
-                <p>
-                    Training opportunities and development
-                    of young football talent.
-                </p>
+            <div>
+                <h3 class="font-bold text-white mb-4">Club Pages</h3>
+
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                    <a href="gallery.html">Gallery</a>
+                    <a href="new.html">News</a>
+                    <a href="shop.html">Merchandise</a>
+                    <a href="donations.html">Support the Club</a>
+                    <a href="contact.html">Contact</a>
+                </div>
             </div>
 
         </div>
 
-    </section>
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+            <p class="text-gray-500 text-sm">
+                © <span id="year"></span> Namanga River Football Club.
+                All Rights Reserved.
+            </p>
+        </div>
 
-    <!-- THANK YOU -->
-    <section class="thank-you">
+    </div>
+</footer>
 
-        <h2>Thank You for Standing With Us!</h2>
 
-        <p>
-            Whether you contribute a little or a lot,
-            your support means something to Namanga River FC.
-            Together, we move the club forward.
-        </p>
+<style>
+.donation-hero {
+    position: relative;
+    background:
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85")
+        center 45% / cover no-repeat;
+}
 
-    </section>
+.donation-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.55)
+    );
+}
 
-    <footer class="donation-footer">
-        <h3>Namanga River Football Club</h3>
-        <p>One Club. One Community. One Dream.</p>
-        <p>© <span id="year"></span> Namanga River FC. All Rights Reserved.</p>
-    </footer>
+.support-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 30px;
+    transition: .25s;
+}
 
-</main>
+.support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.support-icon {
+    width: 55px;
+    height: 55px;
+    background: #eaf7ef;
+    color: #16834a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.support-card h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.support-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 72px;
+}
+
+.support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #16834a;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 22px;
+}
+
+.support-link:hover {
+    color: #22c875;
+}
+
+.site-footer a:hover {
+    color: #22c875;
+}
+</style>
+
 
 <script src="js/script.js"></script>
 
 <script>
-    const amountButtons = document.querySelectorAll(".amount-btn");
-    const customAmount = document.getElementById("customAmount");
-    const donateButton = document.getElementById("donateButton");
-
-    let selectedAmount = 0;
-
-    amountButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            selectedAmount = Number(button.dataset.amount);
-
-            customAmount.value = "";
-            amountButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-        });
-    });
-
-    customAmount.addEventListener("input", () => {
-        selectedAmount = Number(customAmount.value);
-        amountButtons.forEach(btn => btn.classList.remove("active"));
-    });
-
-    donateButton.addEventListener("click", () => {
-        const amount = Number(customAmount.value) || selectedAmount;
-
-        if (!Number.isSafeInteger(amount) || amount < 1) {
-            alert("Please select or enter a valid donation amount.");
-            return;
-        }
-
-        const donorName =
-            document.getElementById("donorName").value.trim();
-
-        alert(
-            "Thank you" +
-            (donorName ? ", " + donorName : "") +
-            " for choosing to support Namanga River FC with KSh " +
-            amount.toLocaleString("en-KE") +
-            ". Online payment is not yet activated. Please contact the club to arrange your donation."
-        );
-    });
-
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+    lucide.createIcons();
 </script>
 
 </body>
