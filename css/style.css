@@ -984,3 +984,295 @@ footer a:hover {
     }
 
 }
+
+/* =========================================
+   NAMANGA RIVER FC
+   COMPLETE MOBILE OVERFLOW FIX
+   ========================================= */
+
+/* 1. PREVENT PAGE-LEVEL HORIZONTAL MOVEMENT */
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+#root,
+main,
+.site-header,
+.site-footer,
+footer {
+    max-width: 100%;
+}
+
+/* 2. PREVENT FLEX AND GRID CHILDREN
+      FROM EXPANDING THE SCREEN */
+
+.container,
+.header-inner,
+.home-container,
+.main-nav,
+section,
+article,
+.grid,
+.flex,
+.value-grid,
+.highlight-grid {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.grid > *,
+.flex > *,
+.value-grid > *,
+.highlight-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* 3. IMAGES AND MEDIA */
+
+img,
+picture,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+video,
+iframe {
+    display: block;
+}
+
+.hero-home {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* 4. LONG TEXT AND LINKS */
+
+p,
+h1,
+h2,
+h3,
+h4,
+a,
+strong,
+small,
+span {
+    overflow-wrap: anywhere;
+}
+
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* 5. TABLES */
+
+table {
+    max-width: 100%;
+}
+
+.table-container,
+.table-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 767px) {
+
+    table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+}
+
+/* 6. HEADER AND NAVIGATION */
+
+.site-header {
+    width: 100%;
+    max-width: 100%;
+}
+
+.header-inner {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.club-brand {
+    min-width: 0;
+}
+
+.club-brand strong {
+    overflow-wrap: normal;
+}
+
+@media (max-width: 767px) {
+
+    .main-nav {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-dropdown,
+    .dropdown-menu {
+        max-width: 100%;
+    }
+
+    #menu-toggle {
+        flex-shrink: 0;
+    }
+
+}
+
+/* 7. CARDS AND CONTENT SECTIONS */
+
+.value-card,
+.highlight-card,
+.coach-photo {
+    min-width: 0;
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+
+    .home-section,
+    .highlights-section,
+    .cta-home {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .value-grid,
+    .highlight-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-actions {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+/* 8. FORMS */
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+
+    form {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+}
+
+/* 9. FOOTER */
+
+footer,
+.site-footer {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+footer .container {
+    max-width: 100%;
+}
+
+footer .grid {
+    min-width: 0;
+}
+
+/* 10. MOBILE SCREEN WIDTHS */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 100%;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .section-title {
+        overflow-wrap: anywhere;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(34px, 10vw, 43px);
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .header-inner {
+        gap: 6px;
+    }
+
+    .club-brand {
+        gap: 7px;
+    }
+
+    .club-brand strong {
+        font-size: 9px;
+    }
+
+    .club-brand small {
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+
+}
