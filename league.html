@@ -51,7 +51,7 @@
 
         .league-table {
             width: 100%;
-            min-width: 720px;
+            min-width: 760px;
             border-collapse: collapse;
             text-align: center;
         }
@@ -112,6 +112,17 @@
             border-radius: 7px;
         }
 
+        .pending {
+            color: #9a6700 !important;
+            font-size: 10px !important;
+            font-weight: 800 !important;
+        }
+
+        .position-pending {
+            color: #9a6700 !important;
+            font-weight: 800 !important;
+        }
+
         .league-link {
             display: inline-flex;
             align-items: center;
@@ -140,6 +151,7 @@
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
     <div class="container mx-auto px-5">
         <div class="header-inner flex items-center justify-between">
@@ -148,6 +160,7 @@
                 <img src="images/Namanga%20river%20logo.jpeg"
                      alt="Namanga River FC Logo"
                      class="w-12 h-12 object-contain rounded-full">
+
                 <div>
                     <span class="block font-bold text-white">NAMANGA RIVER FC</span>
                     <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
@@ -191,12 +204,16 @@
                 <a href="donations.html" class="nav-link">Support Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
+
         </div>
     </div>
 </header>
 
+
+<!-- HERO -->
 <section class="league-hero">
     <div class="max-w-4xl mx-auto">
+
         <p class="text-green-400 font-extrabold text-xs tracking-widest uppercase mb-4">
             2026 / 2027 Season
         </p>
@@ -213,21 +230,27 @@
             <i data-lucide="shield-check" class="text-green-400"></i>
             NAMANGA RIVER FC
         </div>
+
     </div>
 </section>
 
+
+<!-- LEAGUE TABLE -->
 <main class="max-w-7xl mx-auto px-5 py-14">
 
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
+
         <div>
             <p class="text-club text-xs font-extrabold tracking-widest uppercase">
                 The Competition
             </p>
+
             <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-2">
                 Zone B Standings
             </h2>
+
             <p class="text-gray-500 text-sm mt-2">
-                Follow the progress of all 16 clubs in the zone.
+                All 16 clubs have played two matches.
             </p>
         </div>
 
@@ -235,26 +258,40 @@
             <p class="text-xs text-gray-500 font-bold uppercase">Our Club</p>
             <p class="text-club font-black text-lg">Namanga River FC</p>
         </div>
+
     </div>
 
+
+    <!-- DATA NOTICE -->
     <div class="table-note mb-6">
+
         <div class="flex gap-3 items-start">
+
             <i data-lucide="info" class="text-club shrink-0 mt-1"></i>
+
             <div>
                 <p class="font-extrabold text-gray-900 text-sm">
-                    Standings awaiting verified match statistics
+                    Provisional league statistics
                 </p>
+
                 <p class="text-gray-600 text-xs leading-relaxed mt-1">
-                    Team positions and statistics will be updated when official
-                    match results are confirmed. Dashes mean that the figures
-                    have not yet been entered; they do not represent zero points.
+                    Every club has played two matches. Figures shown are based
+                    on the results currently available to the club. Some match
+                    scores still need confirmation, so positions and incomplete
+                    statistics should not be treated as official standings.
                 </p>
             </div>
+
         </div>
+
     </div>
 
+
+    <!-- TABLE -->
     <div class="league-table-wrap">
+
         <table class="league-table">
+
             <thead>
                 <tr>
                     <th>POS</th>
@@ -271,64 +308,205 @@
             </thead>
 
             <tbody>
-                <tr><td>—</td><td class="team-name">Bandari Youth FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Butterfly FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">FC Dynamo</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Githungri Seniors FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Ishiara FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Kangemi AllStars</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Kariobangi Legends Youth</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Marafiki FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">MCF FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Mombasa Stars</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Mwatate United</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+
+                <tr>
+                    <td>1</td>
+                    <td class="team-name">Police Youth</td>
+                    <td>2</td><td>2</td><td>0</td><td>0</td>
+                    <td>5</td><td>1</td><td>+4</td><td>6</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td class="team-name">Mombasa Stars</td>
+                    <td>2</td><td>2</td><td>0</td><td>0</td>
+                    <td>4</td><td>0</td><td>+4</td><td>6</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td class="team-name">Kangemi AllStars</td>
+                    <td>2</td><td>1</td><td>1</td><td>0</td>
+                    <td>1</td><td>0</td><td>+1</td><td>4</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td class="team-name">Kariobangi Legends Youth</td>
+                    <td>2</td><td>1</td><td>0</td><td>1</td>
+                    <td>2</td><td>1</td><td>+1</td><td>3</td>
+                </tr>
+
+                <tr>
+                    <td class="position-pending">TBC</td>
+                    <td class="team-name">FC Dynamo</td>
+                    <td>2</td>
+                    <td colspan="7" class="pending">SECOND RESULT PENDING</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td class="team-name">Sailors FC</td>
+                    <td>2</td><td>1</td><td>0</td><td>1</td>
+                    <td>3</td><td>3</td><td>0</td><td>3</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td class="team-name">MCF FC</td>
+                    <td>2</td><td>1</td><td>0</td><td>1</td>
+                    <td>2</td><td>2</td><td>0</td><td>3</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td class="team-name">Bandari Youth FC</td>
+                    <td>2</td><td>1</td><td>0</td><td>1</td>
+                    <td>1</td><td>1</td><td>0</td><td>3</td>
+                </tr>
+
+                <tr>
+                    <td>9</td>
+                    <td class="team-name">Githungri Seniors FC</td>
+                    <td>2</td><td>1</td><td>0</td><td>1</td>
+                    <td>3</td><td>4</td><td>-1</td><td>3</td>
+                </tr>
+
+                <tr>
+                    <td>10</td>
+                    <td class="team-name">Marafiki FC</td>
+                    <td>2</td><td>0</td><td>1</td><td>1</td>
+                    <td>1</td><td>2</td><td>-1</td><td>1</td>
+                </tr>
+
+                <tr>
+                    <td>11</td>
+                    <td class="team-name">Sango Sportiff</td>
+                    <td>2</td><td>0</td><td>1</td><td>1</td>
+                    <td>1</td><td>2</td><td>-1</td><td>1</td>
+                </tr>
+
+                <tr>
+                    <td>12</td>
+                    <td class="team-name">Ishiara FC</td>
+                    <td>2</td><td>0</td><td>1</td><td>1</td>
+                    <td>1</td><td>3</td><td>-2</td><td>1</td>
+                </tr>
+
+                <tr>
+                    <td>13</td>
+                    <td class="team-name">Ruiru Hotstars</td>
+                    <td>2</td><td>0</td><td>1</td><td>1</td>
+                    <td>0</td><td>2</td><td>-2</td><td>1</td>
+                </tr>
 
                 <tr class="club-row">
-                    <td>—</td>
+                    <td>14</td>
+
                     <td class="team-name">
                         Namanga River FC
                         <span class="club-tag">OUR CLUB</span>
                     </td>
-                    <td>—</td><td>—</td><td>—</td><td>—</td>
-                    <td>—</td><td>—</td><td>—</td><td>—</td>
+
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>-3</td>
+                    <td>1</td>
                 </tr>
 
-                <tr><td>—</td><td class="team-name">Police Youth</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Ruiru Hotstars</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Sailors FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-                <tr><td>—</td><td class="team-name">Sango Sportiff</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                <tr>
+                    <td class="position-pending">TBC</td>
+                    <td class="team-name">Butterfly FC</td>
+                    <td>2</td>
+                    <td colspan="7" class="pending">SECOND RESULT PENDING</td>
+                </tr>
+
+                <tr>
+                    <td class="position-pending">TBC</td>
+                    <td class="team-name">Mwatate United</td>
+                    <td>2</td>
+                    <td colspan="7" class="pending">RESULTS PENDING</td>
+                </tr>
+
             </tbody>
+
         </table>
+
     </div>
 
+
+    <!-- TABLE KEY -->
+    <div class="mt-6 bg-white border border-gray-200 rounded-xl p-5">
+
+        <h3 class="font-black text-gray-900 text-sm mb-3">
+            Understanding the Table
+        </h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-gray-600">
+
+            <p><strong>MP:</strong> Matches Played</p>
+            <p><strong>W:</strong> Won</p>
+            <p><strong>D:</strong> Drawn</p>
+            <p><strong>L:</strong> Lost</p>
+            <p><strong>GF:</strong> Goals For</p>
+            <p><strong>GA:</strong> Goals Against</p>
+            <p><strong>GD:</strong> Goal Difference</p>
+            <p><strong>PTS:</strong> Points</p>
+
+        </div>
+
+    </div>
+
+
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+
         <p class="text-xs text-gray-500">
-            MP: Matches Played · GD: Goal Difference · PTS: Points
+            TBC means pending confirmation. Statistics are provisional.
         </p>
 
         <a href="index.html" class="league-link">
             <i data-lucide="arrow-left" size="16"></i>
             Back to Homepage
         </a>
+
     </div>
 
 </main>
 
+
+<!-- FOOTER -->
 <footer class="site-footer">
+
     <div class="container mx-auto px-5 py-10">
+
         <div class="text-center">
-            <h3 class="text-white font-black text-lg">NAMANGA RIVER FC</h3>
+
+            <h3 class="text-white font-black text-lg">
+                NAMANGA RIVER FC
+            </h3>
+
             <p class="text-gray-400 text-xs mt-2">
                 ONE CLUB. ONE DREAM. ONE RIVER.
             </p>
+
             <p class="text-gray-500 text-xs mt-6">
-                © <span id="year"></span> Namanga River Football Club. All Rights Reserved.
+                © <span id="year"></span> Namanga River Football Club.
+                All Rights Reserved.
             </p>
+
         </div>
+
     </div>
+
 </footer>
 
+
 <script src="js/script.js"></script>
+
 <script>
     if (window.lucide) {
         lucide.createIcons();
