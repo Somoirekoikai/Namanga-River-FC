@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="View upcoming fixtures and match information for Namanga River Football Club.">
-
     <title>Fixtures | Namanga River FC</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -30,9 +27,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
-
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -44,11 +39,10 @@
         <div class="header-inner flex items-center justify-between">
 
             <a href="index.html" class="flex items-center gap-3">
-                <img
-                    src="images/Namanga%20river%20logo.jpeg"
-                    alt="Namanga River FC Logo"
-                    class="w-12 h-12 object-contain rounded-full"
-                >
+                <img src="images/Namanga%20river%20logo.jpeg"
+                     alt="Namanga River FC Logo"
+                     class="w-12 h-12 object-contain rounded-full">
+
                 <div>
                     <span class="block font-bold text-white">NAMANGA RIVER FC</span>
                     <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
@@ -70,6 +64,7 @@
                     <button class="nav-link dropdown-toggle" type="button">
                         Club <i data-lucide="chevron-down" size="15"></i>
                     </button>
+
                     <div class="dropdown-menu">
                         <a href="squad.html">Our Squad</a>
                         <a href="gallery.html">Gallery</a>
@@ -77,13 +72,15 @@
                     </div>
                 </div>
 
-                <div class="nav-dropdown open">
+                <div class="nav-dropdown">
                     <button class="nav-link dropdown-toggle" type="button">
                         Matches <i data-lucide="chevron-down" size="15"></i>
                     </button>
+
                     <div class="dropdown-menu">
                         <a href="fixtures.html">Fixtures</a>
                         <a href="results.html">Results</a>
+                        <a href="league.html">League Table</a>
                     </div>
                 </div>
 
@@ -123,7 +120,6 @@
 
     <div class="container mx-auto px-5 max-w-6xl">
 
-        <!-- PAGE INTRODUCTION -->
         <div class="text-center mb-12">
             <span class="text-club font-bold uppercase tracking-widest text-sm">
                 Match Centre
@@ -139,7 +135,7 @@
         </div>
 
 
-        <!-- UPCOMING FIXTURES EMPTY STATE -->
+        <!-- UPCOMING FIXTURES -->
         <section class="fixtures-panel bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
 
             <div class="bg-black text-white px-6 py-5 flex flex-wrap items-center justify-between gap-3">
@@ -175,7 +171,6 @@
                 </a>
 
             </div>
-
         </section>
 
 
@@ -206,7 +201,6 @@
                     </p>
                 </div>
 
-
                 <div class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
                     <div class="w-12 h-12 rounded-lg bg-green-50 text-club flex items-center justify-center mb-5">
                         <i data-lucide="map-pin" size="25"></i>
@@ -218,7 +212,6 @@
                         Venue information will be provided alongside each confirmed fixture.
                     </p>
                 </div>
-
 
                 <div class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
                     <div class="w-12 h-12 rounded-lg bg-green-50 text-club flex items-center justify-center mb-5">
@@ -236,8 +229,37 @@
         </section>
 
 
+        <!-- LEAGUE TABLE SHORTCUT -->
+        <section class="mt-14 bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+                <div class="text-center md:text-left">
+                    <span class="text-club font-bold uppercase tracking-widest text-xs">
+                        FKF Division One
+                    </span>
+
+                    <h2 class="text-2xl font-black text-gray-900 mt-2">
+                        Follow the Zone B Standings
+                    </h2>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Keep track of Namanga River FC and the other teams in Zone B.
+                    </p>
+                </div>
+
+                <a href="league.html"
+                   class="inline-flex items-center gap-2 bg-club hover:bg-green-800 text-white font-bold px-7 py-4 rounded-lg transition whitespace-nowrap">
+                    View League Table
+                    <i data-lucide="arrow-right" size="18"></i>
+                </a>
+
+            </div>
+        </section>
+
+
         <!-- CTA -->
         <section class="mt-16 bg-black rounded-2xl px-7 py-12 text-center">
+
             <h2 class="text-2xl md:text-3xl font-black text-white mb-4">
                 ONE CLUB. ONE DREAM. ONE RIVER.
             </h2>
@@ -251,6 +273,7 @@
                 Latest Club News
                 <i data-lucide="arrow-right" size="18"></i>
             </a>
+
         </section>
 
     </div>
@@ -278,7 +301,6 @@
                 </p>
             </div>
 
-
             <div>
                 <h3 class="font-bold text-white mb-4">Quick Links</h3>
 
@@ -288,9 +310,9 @@
                     <a href="squad.html">Our Squad</a>
                     <a href="fixtures.html">Fixtures</a>
                     <a href="results.html">Results</a>
+                    <a href="league.html">League Table</a>
                 </div>
             </div>
-
 
             <div>
                 <h3 class="font-bold text-white mb-4">Club Pages</h3>
@@ -346,7 +368,6 @@
 
 
 <script src="js/script.js"></script>
-
 <script>
     lucide.createIcons();
 </script>
