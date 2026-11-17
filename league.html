@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FKF Division One Zone B league standings and Namanga River FC statistics.">
+    <meta name="description" content="FKF Division One Zone B league table - Namanga River FC.">
     <title>League Table | Namanga River FC</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,9 +37,8 @@
         }
 
         .league-hero {
-            background:
-                linear-gradient(120deg, rgba(0,0,0,.94), rgba(16,29,50,.88));
-            padding: 85px 20px;
+            background: linear-gradient(120deg, rgba(0,0,0,.96), rgba(16,29,50,.88));
+            padding: 75px 20px;
             text-align: center;
         }
 
@@ -80,12 +79,6 @@
             background: #f0faf4;
         }
 
-        .league-table .team-name {
-            text-align: left;
-            min-width: 200px;
-            color: #111827;
-        }
-
         .league-table .club-row {
             background: #e8f8ef;
             border-left: 4px solid #16834a;
@@ -94,6 +87,12 @@
         .league-table .club-row td {
             color: #126b3d;
             font-weight: 900;
+        }
+
+        .team-name {
+            text-align: left;
+            min-width: 190px;
+            color: #111827;
         }
 
         .club-tag {
@@ -107,18 +106,17 @@
             font-weight: 800;
         }
 
-        .pending {
-            color: #9a6700 !important;
-            font-size: 10px !important;
-            font-weight: 800 !important;
-            white-space: normal !important;
-        }
-
         .table-note {
             border-left: 4px solid #16834a;
             background: #eefbf3;
-            padding: 18px;
+            padding: 17px;
             border-radius: 7px;
+        }
+
+        .pending {
+            color: #9ca3af !important;
+            font-size: 10px !important;
+            font-weight: 700 !important;
         }
 
         .league-link {
@@ -141,12 +139,7 @@
 
         @media(max-width: 640px) {
             .league-hero {
-                padding: 60px 18px;
-            }
-
-            .league-table th,
-            .league-table td {
-                padding: 13px 10px;
+                padding: 55px 18px;
             }
         }
     </style>
@@ -154,7 +147,6 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
     <div class="container mx-auto px-5">
         <div class="header-inner flex items-center justify-between">
@@ -178,7 +170,6 @@
             </button>
 
             <nav id="nav" class="main-nav">
-
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
 
@@ -194,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="nav-dropdown">
+                <div class="nav-dropdown open">
                     <button class="nav-link dropdown-toggle" type="button">
                         Matches <i data-lucide="chevron-down" size="15"></i>
                     </button>
@@ -209,15 +200,12 @@
                 <a href="shop.html" class="nav-link">Shop</a>
                 <a href="donations.html" class="nav-link">Support Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-
             </nav>
 
         </div>
     </div>
 </header>
 
-
-<!-- HERO -->
 <section class="league-hero">
     <div class="max-w-4xl mx-auto">
 
@@ -241,8 +229,6 @@
     </div>
 </section>
 
-
-<!-- MAIN CONTENT -->
 <main class="max-w-7xl mx-auto px-5 py-14">
 
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
@@ -257,7 +243,7 @@
             </h2>
 
             <p class="text-gray-500 text-sm mt-2">
-                Current season — after two matches per club.
+                Follow the progress of all 16 clubs in the zone.
             </p>
         </div>
 
@@ -268,33 +254,27 @@
 
     </div>
 
-
-    <!-- NOTICE -->
     <div class="table-note mb-6">
-
         <div class="flex gap-3 items-start">
 
             <i data-lucide="info" class="text-club shrink-0 mt-1"></i>
 
             <div>
                 <p class="font-extrabold text-gray-900 text-sm">
-                    Provisional league statistics
+                    Provisional standings — after two matches
                 </p>
 
                 <p class="text-gray-600 text-xs leading-relaxed mt-1">
-                    All clubs have played two matches. Statistics are based
-                    on currently available match records. Figures marked
-                    PENDING require confirmation. Positions are provisional
-                    and may change when all results are verified.
+                    These figures are an unofficial preliminary snapshot.
+                    Some club statistics are still awaiting confirmation.
+                    Positions may change when all match results are verified.
+                    "Pending" means the statistics have not yet been confirmed.
                 </p>
             </div>
 
         </div>
-
     </div>
 
-
-    <!-- LEAGUE TABLE -->
     <div class="league-table-wrap">
 
         <table class="league-table">
@@ -345,98 +325,108 @@
                 </tr>
 
                 <tr>
-                    <td>—</td>
-                    <td class="team-name">FC Dynamo</td>
-                    <td>2</td>
-                    <td colspan="7" class="pending">STATISTICS PENDING</td>
-                </tr>
-
-                <tr>
-                    <td>—</td>
+                    <td>5</td>
                     <td class="team-name">Sailors FC</td>
                     <td>2</td><td>1</td><td>0</td><td>1</td>
                     <td>3</td><td>3</td><td>0</td><td>3</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>6</td>
                     <td class="team-name">MCF FC</td>
                     <td>2</td><td>1</td><td>0</td><td>1</td>
                     <td>2</td><td>2</td><td>0</td><td>3</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>7</td>
                     <td class="team-name">Bandari Youth FC</td>
                     <td>2</td><td>1</td><td>0</td><td>1</td>
                     <td>1</td><td>1</td><td>0</td><td>3</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>8</td>
                     <td class="team-name">Githungri Seniors FC</td>
                     <td>2</td><td>1</td><td>0</td><td>1</td>
                     <td>3</td><td>4</td><td>-1</td><td>3</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>9</td>
                     <td class="team-name">Marafiki FC</td>
                     <td>2</td><td>0</td><td>1</td><td>1</td>
                     <td>1</td><td>2</td><td>-1</td><td>1</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>10</td>
                     <td class="team-name">Sango Sportiff</td>
                     <td>2</td><td>0</td><td>1</td><td>1</td>
                     <td>1</td><td>2</td><td>-1</td><td>1</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>11</td>
                     <td class="team-name">Ishiara FC</td>
                     <td>2</td><td>0</td><td>1</td><td>1</td>
                     <td>1</td><td>3</td><td>-2</td><td>1</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td>12</td>
                     <td class="team-name">Ruiru Hotstars</td>
                     <td>2</td><td>0</td><td>1</td><td>1</td>
                     <td>0</td><td>2</td><td>-2</td><td>1</td>
                 </tr>
 
                 <tr class="club-row">
-                    <td>—</td>
-
+                    <td>13</td>
                     <td class="team-name">
                         Namanga River FC
                         <span class="club-tag">OUR CLUB</span>
                     </td>
-
-                    <td>2</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>-3</td>
-                    <td>1</td>
+                    <td>2</td><td>0</td><td>1</td><td>1</td>
+                    <td>0</td><td>3</td><td>-3</td><td>1</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td class="pending">TBC</td>
+                    <td class="team-name">FC Dynamo</td>
+                    <td>2</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                </tr>
+
+                <tr>
+                    <td class="pending">TBC</td>
                     <td class="team-name">Butterfly FC</td>
                     <td>2</td>
-                    <td colspan="7" class="pending">STATISTICS PENDING</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
                 </tr>
 
                 <tr>
-                    <td>—</td>
+                    <td class="pending">TBC</td>
                     <td class="team-name">Mwatate United</td>
                     <td>2</td>
-                    <td colspan="7" class="pending">STATISTICS PENDING</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
+                    <td class="pending">Pending</td>
                 </tr>
 
             </tbody>
@@ -445,35 +435,10 @@
 
     </div>
 
-
-    <!-- TABLE KEY -->
-    <div class="mt-6 bg-white border border-gray-200 rounded-xl p-5">
-
-        <h3 class="font-black text-gray-900 text-sm mb-4">
-            Understanding the Table
-        </h3>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-gray-600">
-
-            <p><strong>MP:</strong> Matches Played</p>
-            <p><strong>W:</strong> Won</p>
-            <p><strong>D:</strong> Drawn</p>
-            <p><strong>L:</strong> Lost</p>
-            <p><strong>GF:</strong> Goals For</p>
-            <p><strong>GA:</strong> Goals Against</p>
-            <p><strong>GD:</strong> Goal Difference</p>
-            <p><strong>PTS:</strong> Points</p>
-
-        </div>
-
-    </div>
-
-
-    <!-- BACK TO HOME -->
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
 
         <p class="text-xs text-gray-500">
-            Pending statistics will be updated when confirmed results are available.
+            MP: Matches Played · GD: Goal Difference · PTS: Points
         </p>
 
         <a href="index.html" class="league-link">
@@ -485,69 +450,23 @@
 
 </main>
 
-
-<!-- FOOTER -->
 <footer class="site-footer">
-
     <div class="container mx-auto px-5 py-10">
 
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+            <h3 class="text-white font-black text-lg">NAMANGA RIVER FC</h3>
 
-            <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <img src="images/Namanga%20river%20logo.jpeg"
-                         alt="Namanga River FC Logo"
-                         class="w-12 h-12 object-contain rounded-full">
+            <p class="text-gray-400 text-xs mt-2">
+                ONE CLUB. ONE DREAM. ONE RIVER.
+            </p>
 
-                    <h3 class="font-bold text-white">
-                        NAMANGA RIVER FC
-                    </h3>
-                </div>
-
-                <p class="text-gray-400 text-sm">
-                    One club. One dream. One river. United by football
-                    and driven by ambition.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="font-bold text-white mb-4">Quick Links</h3>
-
-                <div class="flex flex-col gap-3 text-gray-400 text-sm">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="squad.html">Our Squad</a>
-                    <a href="fixtures.html">Fixtures</a>
-                    <a href="results.html">Results</a>
-                    <a href="league.html">League Table</a>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="font-bold text-white mb-4">Club Pages</h3>
-
-                <div class="flex flex-col gap-3 text-gray-400 text-sm">
-                    <a href="gallery.html">Gallery</a>
-                    <a href="new.html">News</a>
-                    <a href="shop.html">Merchandise</a>
-                    <a href="donations.html">Support the Club</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="border-t border-gray-800 mt-10 pt-6 text-center">
-            <p class="text-gray-500 text-sm">
-                © <span id="year"></span> Namanga River Football Club.
-                All Rights Reserved.
+            <p class="text-gray-500 text-xs mt-6">
+                © <span id="year"></span> Namanga River Football Club. All Rights Reserved.
             </p>
         </div>
 
     </div>
-
 </footer>
-
 
 <script src="js/script.js"></script>
 
