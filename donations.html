@@ -4,403 +4,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official Namanga River FC merchandise shop.">
-    <title>Official Store | Namanga River FC</title>
+
+    <title>Support Namanga River FC | Donations & Sponsorship</title>
+    <meta name="description" content="Support Namanga River Football Club through donations, sponsorship and community partnerships.">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blackclub: "#080808",
+                        clubgreen: "#16834A",
+                        brightgreen: "#22C875"
+                    },
+                    fontFamily: {
+                        heading: ["Montserrat", "sans-serif"],
+                        body: ["Century Gothic", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        :root {
-            --black: #080808;
-            --green: #16834a;
-            --bright: #22c875;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: #f4f6f5;
+            overflow-x: hidden;
         }
 
-        .shop-hero {
-            min-height: 440px;
+        .donation-hero {
+            min-height: 470px;
             position: relative;
             display: flex;
             align-items: center;
             background:
-                linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.55)),
+                linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.48)),
                 url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85")
-                center/cover no-repeat;
+                center 45% / cover no-repeat;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 85px 25px;
-        }
-
-        .hero-tag {
-            color: var(--bright);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 4px;
-        }
-
-        .hero-content h1 {
-            color: white;
-            font-size: clamp(38px, 6vw, 75px);
-            font-weight: 900;
-            line-height: 1.05;
-            margin: 20px 0;
-        }
-
-        .hero-content p {
-            color: #ddd;
-            max-width: 600px;
-            line-height: 1.8;
-        }
-
-        .hero-button {
-            display: inline-flex;
-            gap: 10px;
-            align-items: center;
-            background: var(--green);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 5px;
-            font-weight: 800;
-            margin-top: 22px;
-            text-decoration: none;
-            transition: .3s;
-        }
-
-        .hero-button:hover {
-            background: var(--bright);
-            color: #080808;
-            transform: translateY(-3px);
-        }
-
-        .shop-intro {
-            text-align: center;
-            padding: 65px 20px 35px;
-        }
-
-        .shop-intro span {
-            color: var(--green);
+        .section-label {
+            color: #16834A;
             font-size: 12px;
+            font-weight: 900;
             letter-spacing: 3px;
-            font-weight: 900;
-        }
-
-        .shop-intro h2 {
-            font-size: clamp(27px, 4vw, 42px);
-            font-weight: 900;
-            margin: 12px 0;
-            color: #111;
-        }
-
-        .shop-intro p {
-            color: #666;
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.7;
-        }
-
-        .shop-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            padding: 20px;
-        }
-
-        .shop-filter {
-            border: 1px solid #ddd;
-            background: white;
-            color: #222;
-            padding: 11px 22px;
-            border-radius: 30px;
-            font-weight: 800;
-            font-size: 12px;
-            cursor: pointer;
-            transition: .3s;
-        }
-
-        .shop-filter:hover,
-        .shop-filter.active {
-            background: var(--green);
-            color: white;
-            border-color: var(--green);
-        }
-
-        .products-grid {
-            max-width: 1250px;
-            margin: 20px auto 80px;
-            padding: 0 22px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 27px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 13px;
-            overflow: hidden;
-            border: 1px solid #e5e5e5;
-            box-shadow: 0 5px 20px rgba(0,0,0,.05);
-            transition: .3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.12);
-        }
-
-        .product-card.hidden {
-            display: none;
-        }
-
-        .product-image {
-            height: 350px;
-            position: relative;
-            background: linear-gradient(145deg, #101010, #282828);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-image.red-bg {
-            background: linear-gradient(145deg, #570b12, #b91c1c);
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 12px;
-            transition: transform .4s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.06);
-        }
-
-        .product-placeholder {
-            color: rgba(255,255,255,.8);
-            text-align: center;
-        }
-
-        .product-placeholder i {
-            display: block;
-            margin: auto auto 12px;
-        }
-
-        .product-placeholder span {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .product-label {
-            position: absolute;
-            top: 17px;
-            left: 17px;
-            background: var(--green);
-            color: white;
-            padding: 9px 14px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            font-weight: 900;
-            border-radius: 3px;
-        }
-
-        .product-info {
-            padding: 24px;
-        }
-
-        .product-category {
-            color: var(--green);
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .product-info h3 {
-            color: #111;
-            font-size: 21px;
-            font-weight: 900;
-            margin: 10px 0;
+        .support-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 30px;
+            transition: .3s ease;
         }
 
-        .product-info p {
-            color: #777;
-            font-size: 13px;
-            line-height: 1.7;
-            min-height: 42px;
+        .support-card:hover {
+            transform: translateY(-6px);
+            border-color: #16834A;
+            box-shadow: 0 15px 35px rgba(0,0,0,.09);
         }
 
-        .product-bottom {
-            border-top: 1px solid #eee;
-            margin-top: 20px;
-            padding-top: 17px;
+        .support-icon {
+            width: 58px;
+            height: 58px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 10px;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eaf7ef;
+            color: #16834A;
+            margin-bottom: 22px;
         }
 
-        .product-price {
-            font-size: 17px;
+        .support-card h3 {
+            color: #111827;
+            font-size: 19px;
             font-weight: 900;
-            color: #111;
+            margin-bottom: 12px;
         }
 
-        .order-button {
-            background: var(--green);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 11px 15px;
+        .support-card p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .support-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #16834A;
+            font-size: 13px;
+            font-weight: 900;
+            margin-top: 22px;
+        }
+
+        .support-link:hover {
+            color: #22C875;
+        }
+
+        .impact-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            transition: .3s ease;
+        }
+
+        .impact-card:hover {
+            border-color: #16834A;
+            transform: translateY(-4px);
+        }
+
+        .payment-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .status-pending {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            font-size: 12px;
-            font-weight: 900;
-            cursor: pointer;
-        }
-
-        .order-button:hover {
-            background: #0c5b32;
-        }
-
-        .shop-benefits {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 22px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .benefit {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #eee;
-        }
-
-        .benefit-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: #e6f6ed;
-            color: var(--green);
-            margin: 0 auto 18px;
-        }
-
-        .benefit h3 {
-            font-weight: 900;
-            color: #111;
-            margin-bottom: 10px;
-        }
-
-        .benefit p {
-            font-size: 13px;
-            line-height: 1.7;
-            color: #777;
-        }
-
-        .shop-cta {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 65px 25px;
-            text-align: center;
-            background: linear-gradient(110deg, #080808, #14271c);
-            border-radius: 14px;
-        }
-
-        .shop-cta h2 {
-            font-size: clamp(25px, 4vw, 40px);
-            font-weight: 900;
-            color: white;
-        }
-
-        .shop-cta p {
-            color: #ccc;
-            margin: 15px auto 25px;
-        }
-
-        .shop-cta a {
-            display: inline-block;
-            background: var(--bright);
-            color: #06140c;
-            padding: 14px 25px;
+            background: #fff7ed;
+            color: #c2410c;
+            padding: 7px 11px;
             border-radius: 5px;
+            font-size: 10px;
             font-weight: 900;
-            text-decoration: none;
+            letter-spacing: .5px;
+        }
+
+        .sponsor-banner {
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.72)),
+                url("https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=1600&q=85")
+                center / cover no-repeat;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 9px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 19px;
+            text-align: left;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 19px 19px;
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron {
+            transition: transform .2s ease;
+            flex-shrink: 0;
         }
 
         .site-footer a:hover {
-            color: var(--bright);
+            color: #22C875;
         }
 
-        @media(max-width: 900px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
+        @media(max-width: 767px) {
+            .donation-hero {
+                min-height: 390px;
+                background-position: center;
             }
 
-            .shop-benefits {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media(max-width: 600px) {
-            .products-grid {
-                grid-template-columns: 1fr;
+            .support-card {
+                padding: 23px;
             }
 
-            .product-image {
-                height: 330px;
-            }
-
-            .shop-cta {
-                margin-left: 15px;
-                margin-right: 15px;
+            .faq-question {
+                font-size: 13px;
             }
         }
     </style>
 </head>
 
-<body>
+<body class="bg-white text-gray-900">
 
 <!-- HEADER -->
+
 <header class="site-header">
     <div class="container mx-auto px-5">
         <div class="header-inner flex items-center justify-between">
 
             <a href="index.html" class="flex items-center gap-3">
-                <img src="images/Namanga%20river%20logo.jpeg"
-                     alt="Namanga River FC Logo"
-                     class="w-12 h-12 object-contain rounded-full">
+                <img
+                    src="images/Namanga%20river%20logo.jpeg"
+                    alt="Namanga River FC Logo"
+                    class="w-12 h-12 object-contain rounded-full"
+                >
 
                 <div>
-                    <span class="block font-bold text-white">NAMANGA RIVER FC</span>
-                    <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
+                    <span class="block font-bold text-white">
+                        NAMANGA RIVER FC
+                    </span>
+                    <span class="block text-xs text-gray-400">
+                        ONE CLUB. ONE DREAM.
+                    </span>
                 </div>
             </a>
 
@@ -412,7 +245,9 @@
             </button>
 
             <nav id="nav" class="main-nav">
+
                 <a href="index.html" class="nav-link">Home</a>
+
                 <a href="about.html" class="nav-link">About</a>
 
                 <div class="nav-dropdown">
@@ -442,429 +277,673 @@
                 <a href="shop.html" class="nav-link">Shop</a>
                 <a href="donations.html" class="nav-link">Support Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
 
+            </nav>
         </div>
     </div>
 </header>
 
-
 <!-- HERO -->
-<section class="shop-hero">
-    <div class="hero-content container mx-auto">
 
-        <span class="hero-tag">OFFICIAL CLUB MERCHANDISE</span>
+<section class="donation-hero">
 
-        <h1>WEAR THE BADGE.<br>SHOW YOUR PRIDE.</h1>
+    <div class="container mx-auto px-5 py-24 relative z-10 w-full">
 
-        <p>
-            Welcome to the official Namanga River FC store.
-            Get your club merchandise and stand with the team
-            wherever the beautiful game takes you.
-        </p>
+        <div class="max-w-3xl">
 
-        <a href="#products" class="hero-button">
-            Explore Collection
-            <i data-lucide="arrow-down"></i>
-        </a>
+            <p class="text-brightgreen font-black text-xs tracking-widest mb-5">
+                STAND WITH YOUR CLUB
+            </p>
+
+            <h1 class="text-white font-black text-4xl md:text-6xl leading-tight mb-6">
+                BE PART OF<br>
+                OUR JOURNEY.
+            </h1>
+
+            <p class="text-gray-200 text-sm md:text-base leading-7 max-w-xl">
+                Every football club needs people who believe in its
+                vision. Stand with Namanga River FC and help us build
+                a stronger future through community support and partnership.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-9">
+
+                <a href="#support-options"
+                   class="inline-flex items-center gap-2 bg-club hover:bg-green-800 text-white font-black text-xs px-7 py-4 rounded transition">
+                    SUPPORT THE CLUB
+                    <i data-lucide="arrow-down" size="17"></i>
+                </a>
+
+                <a href="contact.html"
+                   class="inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:text-black font-black text-xs px-7 py-4 rounded transition">
+                    CONTACT US
+                    <i data-lucide="arrow-right" size="17"></i>
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 </section>
 
+<!-- INTRODUCTION -->
 
-<main>
+<main class="bg-gray-50">
 
-    <!-- INTRO -->
-    <section class="shop-intro">
-        <span>THE NRFC COLLECTION</span>
+    <section class="max-w-7xl mx-auto px-5 py-16">
 
-        <h2>SHOP THE COLLECTION</h2>
+        <div class="text-center max-w-3xl mx-auto mb-12">
 
-        <p>
-            From match-day jerseys to supporter accessories,
-            find your way to represent Namanga River FC.
-        </p>
-    </section>
+            <p class="section-label mb-3">
+                MORE THAN FOOTBALL
+            </p>
 
+            <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900">
+                YOUR SUPPORT BUILDS OUR FUTURE
+            </h2>
 
-    <!-- FILTERS -->
-    <div class="shop-filters">
-        <button class="shop-filter active" data-filter="all">ALL ITEMS</button>
-        <button class="shop-filter" data-filter="jerseys">JERSEYS</button>
-        <button class="shop-filter" data-filter="training">TRAINING WEAR</button>
-        <button class="shop-filter" data-filter="accessories">ACCESSORIES</button>
-    </div>
+            <p class="text-gray-500 text-sm leading-7 mt-5">
+                Namanga River FC is driven by commitment, teamwork
+                and ambition. Support from fans, individuals,
+                businesses and our community can help us continue
+                developing the club.
+            </p>
 
+        </div>
 
-    <!-- PRODUCTS -->
-    <section id="products" class="products-grid">
+        <!-- SUPPORT OPTIONS -->
 
-        <!-- BLACK HOME JERSEY -->
-        <article class="product-card" data-category="jerseys">
-            <div class="product-image">
-                <img src="images/black%20jersy.png"
-                     alt="Namanga River FC black home jersey">
+        <section id="support-options"
+                 class="grid md:grid-cols-3 gap-7">
 
-                <span class="product-label">HOME KIT</span>
-            </div>
+            <article class="support-card">
 
-            <div class="product-info">
-                <span class="product-category">Match Collection</span>
+                <div class="support-icon">
+                    <i data-lucide="heart-handshake" size="28"></i>
+                </div>
 
-                <h3>Black Home Jersey</h3>
+                <h3>Make a Donation</h3>
 
                 <p>
-                    Official Namanga River FC black home shirt
-                    featuring the club badge.
+                    Support the club financially and contribute
+                    towards its football activities and development.
+                    Every contribution is appreciated.
                 </p>
 
-                <div class="product-bottom">
-                    <span class="product-price">KSh ——</span>
+                <a href="#donation-information" class="support-link">
+                    Donation information
+                    <i data-lucide="arrow-right" size="16"></i>
+                </a>
 
-                    <button class="order-button"
-                            onclick="orderProduct('Black Home Jersey')">
-                        <i data-lucide="message-circle" size="16"></i>
-                        Order
-                    </button>
+            </article>
+
+            <article class="support-card">
+
+                <div class="support-icon">
+                    <i data-lucide="handshake" size="28"></i>
                 </div>
-            </div>
-        </article>
 
-
-        <!-- RED AWAY JERSEY -->
-        <article class="product-card" data-category="jerseys">
-            <div class="product-image red-bg">
-                <img src="images/red%20jersey.png"
-                     alt="Namanga River FC red away jersey">
-
-                <span class="product-label">AWAY KIT</span>
-            </div>
-
-            <div class="product-info">
-                <span class="product-category">Match Collection</span>
-
-                <h3>Red Away Jersey</h3>
+                <h3>Become a Sponsor</h3>
 
                 <p>
-                    Official Namanga River FC red away shirt
-                    featuring the club badge.
+                    Businesses and organisations can partner with
+                    Namanga River FC and explore opportunities
+                    to support the club.
                 </p>
 
-                <div class="product-bottom">
-                    <span class="product-price">KSh ——</span>
+                <a href="#sponsorship" class="support-link">
+                    Explore sponsorship
+                    <i data-lucide="arrow-right" size="16"></i>
+                </a>
 
-                    <button class="order-button"
-                            onclick="orderProduct('Red Away Jersey')">
-                        <i data-lucide="message-circle" size="16"></i>
-                        Order
-                    </button>
-                </div>
-            </div>
-        </article>
+            </article>
 
+            <article class="support-card">
 
-        <!-- TRAINING KIT -->
-        <article class="product-card" data-category="training">
-            <div class="product-image">
-                <div class="product-placeholder">
-                    <i data-lucide="shirt" size="65"></i>
-                    <span>IMAGE COMING SOON</span>
+                <div class="support-icon">
+                    <i data-lucide="shopping-bag" size="28"></i>
                 </div>
 
-                <span class="product-label">TRAINING</span>
-            </div>
-
-            <div class="product-info">
-                <span class="product-category">Training Collection</span>
-
-                <h3>Training Kit</h3>
-
-                <p>Club training wear for players and supporters.</p>
-
-                <div class="product-bottom">
-                    <span class="product-price">KSh ——</span>
-
-                    <button class="order-button"
-                            onclick="orderProduct('Training Kit')">
-                        <i data-lucide="message-circle" size="16"></i>
-                        Order
-                    </button>
-                </div>
-            </div>
-        </article>
-
-
-        <!-- CLUB CAP -->
-        <article class="product-card" data-category="accessories">
-            <div class="product-image red-bg">
-                <div class="product-placeholder">
-                    <i data-lucide="graduation-cap" size="65"></i>
-                    <span>IMAGE COMING SOON</span>
-                </div>
-
-                <span class="product-label">ACCESSORIES</span>
-            </div>
-
-            <div class="product-info">
-                <span class="product-category">Supporter Collection</span>
-
-                <h3>Club Cap</h3>
-
-                <p>Represent Namanga River FC wherever you go.</p>
-
-                <div class="product-bottom">
-                    <span class="product-price">KSh ——</span>
-
-                    <button class="order-button"
-                            onclick="orderProduct('Club Cap')">
-                        <i data-lucide="message-circle" size="16"></i>
-                        Order
-                    </button>
-                </div>
-            </div>
-        </article>
-
-
-        <!-- SUPPORTER SCARF -->
-        <article class="product-card" data-category="accessories">
-            <div class="product-image">
-                <div class="product-placeholder">
-                    <i data-lucide="flag" size="65"></i>
-                    <span>IMAGE COMING SOON</span>
-                </div>
-
-                <span class="product-label">ACCESSORIES</span>
-            </div>
-
-            <div class="product-info">
-                <span class="product-category">Supporter Collection</span>
-
-                <h3>Supporter Scarf</h3>
+                <h3>Buy Club Merchandise</h3>
 
                 <p>
-                    Show your support and bring your club spirit
-                    to match day.
+                    Represent the club with its official merchandise
+                    and help strengthen the Namanga River FC supporter
+                    community.
                 </p>
 
-                <div class="product-bottom">
-                    <span class="product-price">KSh ——</span>
+                <a href="shop.html" class="support-link">
+                    Visit club shop
+                    <i data-lucide="arrow-right" size="16"></i>
+                </a>
 
-                    <button class="order-button"
-                            onclick="orderProduct('Supporter Scarf')">
-                        <i data-lucide="message-circle" size="16"></i>
-                        Order
-                    </button>
-                </div>
-            </div>
-        </article>
+            </article>
 
-
-        <!-- TRAINING TOP -->
-        <article class="product-card" data-category="training">
-            <div class="product-image red-bg">
-                <div class="product-placeholder">
-                    <i data-lucide="shirt" size="65"></i>
-                    <span>IMAGE COMING SOON</span>
-                </div>
-
-                <span class="product-label">TRAINING</span>
-            </div>
-
-            <div class="product-info">
-                <span class="product-category">Training Collection</span>
-
-                <h3>Training Top</h3>
-
-                <p>Comfortable club training top for everyday use.</p>
-
-                <div class="product-bottom">
-                    <span class="product-price">KSh ——</span>
-
-                    <button class="order-button"
-                            onclick="orderProduct('Training Top')">
-                        <i data-lucide="message-circle" size="16"></i>
-                        Order
-                    </button>
-                </div>
-            </div>
-        </article>
+        </section>
 
     </section>
 
+    <!-- WHERE SUPPORT GOES -->
 
-    <!-- SHOP BENEFITS -->
-    <section class="shop-benefits">
+    <section class="bg-white py-20">
 
-        <div class="benefit">
-            <div class="benefit-icon">
-                <i data-lucide="shield-check" size="25"></i>
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="text-center mb-12">
+
+                <p class="section-label mb-3">
+                    THE DIFFERENCE YOU CAN MAKE
+                </p>
+
+                <h2 class="font-heading text-3xl md:text-4xl font-black">
+                    WHERE YOUR SUPPORT CAN HELP
+                </h2>
+
+                <p class="text-gray-500 text-sm mt-4 max-w-2xl mx-auto">
+                    Contributions may help the club meet important
+                    football and operational needs.
+                </p>
+
             </div>
 
-            <h3>Official Club Gear</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <p>
-                Show your support with Namanga River FC merchandise.
-            </p>
-        </div>
+                <article class="impact-card">
+                    <i data-lucide="shirt"
+                       class="text-clubgreen mb-5"
+                       size="30"></i>
 
+                    <h3 class="font-heading font-black text-base mb-3">
+                        Playing Equipment
+                    </h3>
 
-        <div class="benefit">
-            <div class="benefit-icon">
-                <i data-lucide="message-circle" size="25"></i>
+                    <p class="text-gray-500 text-sm leading-6">
+                        Footballs, training equipment, kits and
+                        other essential team supplies.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <i data-lucide="bus"
+                       class="text-clubgreen mb-5"
+                       size="30"></i>
+
+                    <h3 class="font-heading font-black text-base mb-3">
+                        Match Travel
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-6">
+                        Supporting transport and logistics
+                        for competitive fixtures.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <i data-lucide="activity"
+                       class="text-clubgreen mb-5"
+                       size="30"></i>
+
+                    <h3 class="font-heading font-black text-base mb-3">
+                        Player Development
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-6">
+                        Supporting training, preparation
+                        and player development activities.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <i data-lucide="building-2"
+                       class="text-clubgreen mb-5"
+                       size="30"></i>
+
+                    <h3 class="font-heading font-black text-base mb-3">
+                        Club Development
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-6">
+                        Helping build a stronger and more
+                        sustainable football organisation.
+                    </p>
+                </article>
+
             </div>
 
-            <h3>Easy Ordering</h3>
-
-            <p>
-                Contact the club to confirm sizes, prices and availability.
-            </p>
-        </div>
-
-
-        <div class="benefit">
-            <div class="benefit-icon">
-                <i data-lucide="credit-card" size="25"></i>
-            </div>
-
-            <h3>Online Payments</h3>
-
-            <p>
-                Secure Paystack checkout will be available after
-                the payment backend is configured.
-            </p>
         </div>
 
     </section>
 
+    <!-- DONATION INFORMATION -->
 
-    <!-- CTA -->
-    <section class="shop-cta">
-        <h2>ONE CLUB. ONE DREAM.</h2>
+    <section id="donation-information" class="py-20">
 
-        <p>
-            Every supporter is part of the Namanga River FC journey.
-        </p>
+        <div class="max-w-7xl mx-auto px-5">
 
-        <a href="contact.html">CONTACT THE CLUB</a>
+            <div class="text-center mb-12">
+
+                <p class="section-label mb-3">
+                    CONTRIBUTION METHODS
+                </p>
+
+                <h2 class="font-heading text-3xl md:text-4xl font-black">
+                    HOW TO SUPPORT FINANCIALLY
+                </h2>
+
+                <p class="text-gray-500 text-sm mt-4 max-w-2xl mx-auto">
+                    We are preparing secure contribution options.
+                    Contact the club to confirm official payment
+                    instructions before sending money.
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-7">
+
+                <!-- MPESA -->
+
+                <article class="payment-card">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="w-14 h-14 rounded-xl bg-green-50 text-clubgreen flex items-center justify-center">
+                            <i data-lucide="smartphone" size="28"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="font-heading font-black text-xl">
+                                M-Pesa
+                            </h3>
+
+                            <p class="text-gray-500 text-xs mt-1">
+                                Mobile money contributions
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm leading-7">
+                        M-Pesa contributions will be available once
+                        the club's official Paybill, Till or approved
+                        payment method has been confirmed.
+                    </p>
+
+                    <div class="mt-6">
+                        <span class="status-pending">
+                            <i data-lucide="clock" size="13"></i>
+                            NOT YET CONFIGURED
+                        </span>
+                    </div>
+
+                </article>
+
+                <!-- PAYSTACK -->
+
+                <article class="payment-card">
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="w-14 h-14 rounded-xl bg-green-50 text-clubgreen flex items-center justify-center">
+                            <i data-lucide="credit-card" size="28"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="font-heading font-black text-xl">
+                                Paystack
+                            </h3>
+
+                            <p class="text-gray-500 text-xs mt-1">
+                                Online card and digital payments
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm leading-7">
+                        Online donations will be introduced through
+                        a secure payment checkout after the club's
+                        payment integration has been configured.
+                    </p>
+
+                    <div class="mt-6">
+                        <span class="status-pending">
+                            <i data-lucide="clock" size="13"></i>
+                            NOT YET CONFIGURED
+                        </span>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="mt-9 bg-blackclub rounded-xl p-8 md:p-10 text-center">
+
+                <i data-lucide="shield-check"
+                   class="text-brightgreen mx-auto mb-5"
+                   size="36"></i>
+
+                <h3 class="font-heading font-black text-white text-xl md:text-2xl">
+                    SUPPORT SAFELY
+                </h3>
+
+                <p class="text-gray-400 text-sm leading-7 max-w-2xl mx-auto mt-4">
+                    Always verify payment instructions directly with
+                    Namanga River FC. Do not send money to unofficial
+                    numbers or accounts claiming to represent the club.
+                </p>
+
+                <a href="contact.html"
+                   class="inline-flex items-center gap-2 mt-7 bg-clubgreen hover:bg-green-700 text-white font-black text-xs px-7 py-4 rounded transition">
+                    VERIFY WITH THE CLUB
+                    <i data-lucide="arrow-right" size="16"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SPONSORSHIP -->
+
+    <section id="sponsorship" class="sponsor-banner py-20">
+
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div class="max-w-2xl">
+
+                <p class="text-brightgreen text-xs font-black tracking-widest mb-4">
+                    PARTNER WITH NAMANGA RIVER FC
+                </p>
+
+                <h2 class="font-heading text-white text-3xl md:text-5xl font-black leading-tight">
+                    LET'S BUILD<br>
+                    SOMETHING BIGGER.
+                </h2>
+
+                <p class="text-gray-300 text-sm leading-7 mt-6">
+                    We welcome enquiries from businesses,
+                    organisations and individuals interested
+                    in supporting the club's ambitions.
+                </p>
+
+                <div class="mt-8 space-y-4">
+
+                    <div class="flex items-center gap-3 text-white text-sm">
+                        <i data-lucide="check-circle" class="text-brightgreen" size="19"></i>
+                        Sponsorship enquiries
+                    </div>
+
+                    <div class="flex items-center gap-3 text-white text-sm">
+                        <i data-lucide="check-circle" class="text-brightgreen" size="19"></i>
+                        Community partnerships
+                    </div>
+
+                    <div class="flex items-center gap-3 text-white text-sm">
+                        <i data-lucide="check-circle" class="text-brightgreen" size="19"></i>
+                        Club support opportunities
+                    </div>
+
+                </div>
+
+                <a href="contact.html"
+                   class="inline-flex items-center gap-2 mt-9 bg-clubgreen hover:bg-green-700 text-white font-black text-xs px-8 py-4 rounded transition">
+                    DISCUSS A PARTNERSHIP
+                    <i data-lucide="arrow-right" size="17"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="bg-gray-50 py-20">
+
+        <div class="max-w-4xl mx-auto px-5">
+
+            <div class="text-center mb-10">
+
+                <p class="section-label mb-3">
+                    NEED MORE INFORMATION?
+                </p>
+
+                <h2 class="font-heading text-3xl md:text-4xl font-black">
+                    SUPPORTER QUESTIONS
+                </h2>
+
+            </div>
+
+            <div class="space-y-4">
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        How can I donate to Namanga River FC?
+                        <i data-lucide="chevron-down" class="faq-chevron" size="19"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        Contact the club through the Contact page
+                        to obtain verified contribution instructions.
+                        Online and M-Pesa payment options are not
+                        yet configured on this page.
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        Can my business sponsor the club?
+                        <i data-lucide="chevron-down" class="faq-chevron" size="19"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        Yes. Businesses and organisations interested
+                        in supporting Namanga River FC can contact
+                        the club to discuss possible partnership
+                        opportunities.
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        What can my contribution support?
+                        <i data-lucide="chevron-down" class="faq-chevron" size="19"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        Contributions may support equipment,
+                        training, match travel, player development
+                        and other club activities, depending on
+                        the club's priorities.
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        Can I support the club without donating?
+                        <i data-lucide="chevron-down" class="faq-chevron" size="19"></i>
+                    </button>
+
+                    <div class="faq-answer">
+                        Absolutely. You can support the club by
+                        attending matches, sharing club news,
+                        purchasing merchandise and encouraging
+                        the players.
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="bg-clubgreen py-16">
+
+        <div class="max-w-7xl mx-auto px-5 text-center">
+
+            <p class="text-green-100 text-xs font-black tracking-widest mb-4">
+                ONE COMMUNITY. ONE CLUB.
+            </p>
+
+            <h2 class="font-heading text-white text-3xl md:text-4xl font-black">
+                EVERY SUPPORTER COUNTS.
+            </h2>
+
+            <p class="text-green-100 text-sm max-w-xl mx-auto mt-5 leading-7">
+                Thank you for believing in Namanga River FC.
+                Together, we can keep moving forward.
+            </p>
+
+            <a href="contact.html"
+               class="inline-flex items-center gap-2 mt-8 bg-white text-black hover:bg-gray-100 font-black text-xs px-8 py-4 rounded transition">
+                GET IN TOUCH
+                <i data-lucide="arrow-right" size="17"></i>
+            </a>
+
+        </div>
+
     </section>
 
 </main>
 
-
 <!-- FOOTER -->
+
 <footer class="site-footer">
+
     <div class="container mx-auto px-5 py-12">
 
         <div class="grid md:grid-cols-3 gap-10">
 
             <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <img src="images/Namanga%20river%20logo.jpeg"
-                         alt="Namanga River FC Logo"
-                         class="w-12 h-12 object-contain rounded-full">
 
-                    <h3 class="font-bold text-white">NAMANGA RIVER FC</h3>
+                <div class="flex items-center gap-3 mb-4">
+
+                    <img
+                        src="images/Namanga%20river%20logo.jpeg"
+                        alt="Namanga River FC Logo"
+                        class="w-12 h-12 object-contain rounded-full"
+                    >
+
+                    <h3 class="font-bold text-white">
+                        NAMANGA RIVER FC
+                    </h3>
+
                 </div>
 
                 <p class="text-gray-400 text-sm leading-relaxed">
                     One club. One dream. One river.
                     United by football and driven by ambition.
                 </p>
+
             </div>
 
-
             <div>
-                <h3 class="font-bold text-white mb-4">Quick Links</h3>
 
-                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+                <h3 class="font-bold text-white mb-4">
+                    QUICK LINKS
+                </h3>
+
+                <div class="grid grid-cols-2 gap-4 text-gray-400 text-sm">
+
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="squad.html">Our Squad</a>
                     <a href="fixtures.html">Fixtures</a>
                     <a href="results.html">Results</a>
                     <a href="league.html">League Table</a>
-                </div>
-            </div>
-
-
-            <div>
-                <h3 class="font-bold text-white mb-4">Club Pages</h3>
-
-                <div class="flex flex-col gap-3 text-gray-400 text-sm">
                     <a href="gallery.html">Gallery</a>
                     <a href="new.html">News</a>
-                    <a href="shop.html">Merchandise</a>
-                    <a href="donations.html">Support the Club</a>
-                    <a href="contact.html">Contact</a>
+
                 </div>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-bold text-white mb-4">
+                    SUPPORT THE CLUB
+                </h3>
+
+                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+
+                    <a href="shop.html">Merchandise</a>
+                    <a href="donations.html">Donations</a>
+                    <a href="contact.html">Contact Us</a>
+
+                </div>
+
+                <p class="text-gray-500 text-xs mt-6 leading-6">
+                    Thank you for standing with Namanga River FC.
+                </p>
+
             </div>
 
         </div>
 
-
         <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+
             <p class="text-gray-500 text-sm">
-                © <span id="year"></span> Namanga River Football Club.
+                &copy; <span id="year"></span>
+                Namanga River Football Club.
                 All Rights Reserved.
             </p>
+
         </div>
 
     </div>
+
 </footer>
 
+<!-- JAVASCRIPT -->
 
 <script src="js/script.js"></script>
 
 <script>
-// PRODUCT FILTERS
-document.querySelectorAll(".shop-filter").forEach(button => {
-    button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
+    // FAQ ACCORDION
 
-        document.querySelectorAll(".shop-filter").forEach(item => {
-            item.classList.remove("active");
+    document.querySelectorAll(".faq-question").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const item = button.closest(".faq-item");
+            const isOpen = item.classList.contains("open");
+
+            document.querySelectorAll(".faq-item").forEach(otherItem => {
+                otherItem.classList.remove("open");
+
+                const otherButton = otherItem.querySelector(".faq-question");
+
+                if (otherButton) {
+                    otherButton.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            if (!isOpen) {
+                item.classList.add("open");
+                button.setAttribute("aria-expanded", "true");
+            }
+
         });
 
-        button.classList.add("active");
-
-        document.querySelectorAll(".product-card").forEach(card => {
-            const category = card.dataset.category;
-
-            card.classList.toggle(
-                "hidden",
-                filter !== "all" && category !== filter
-            );
-        });
     });
-});
 
+    // ICONS AND COPYRIGHT YEAR
 
-// WHATSAPP ORDERING
-// Add the club's real WhatsApp number before enabling orders.
-const CLUB_WHATSAPP_NUMBER = "2547XXXXXXXX";
-
-function orderProduct(productName) {
-    if (CLUB_WHATSAPP_NUMBER.includes("X")) {
-        alert("WhatsApp ordering is not yet configured. Please contact the club.");
-        return;
+    if (window.lucide) {
+        window.lucide.createIcons();
     }
 
-    const message =
-        "Hello Namanga River FC. I would like to enquire about ordering: "
-        + productName
-        + ". Please share the price, available sizes and delivery details.";
+    const yearElement = document.getElementById("year");
 
-    const url = "https://wa.me/" + CLUB_WHATSAPP_NUMBER
-        + "?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
-}
-
-
-// ICONS
-if (window.lucide) {
-    lucide.createIcons();
-}
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 </script>
 
 </body>
