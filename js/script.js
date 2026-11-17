@@ -1,67 +1,102 @@
 
-// =============================================
-// NAMANGA RIVER FOOTBALL CLUB
-// Main Website JavaScript
-// =============================================
+/* =============================================
+   NAMANGA RIVER FOOTBALL CLUB
+   COMPLETE WEBSITE JAVASCRIPT
+============================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================================
-    // MOBILE NAVIGATION
-    // =========================================
+    /* =========================================
+       1. MOBILE NAVIGATION
+    ========================================= */
 
     const menuToggle = document.getElementById("menu-toggle");
-    const navigation = document.getElementById("nav");
+
+    const navigation =
+        document.getElementById("nav") ||
+        document.querySelector(".main-nav");
+
+    function refreshIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+    }
 
     function updateMenuIcon(isOpen) {
+
         if (!menuToggle) return;
 
-        const iconName = isOpen ? "x" : "menu";
-
-        if (window.lucide && typeof window.lucide.createIcons === "function") {
-            menuToggle.innerHTML = `<i data-lucide="${iconName}"></i>`;
-            window.lucide.createIcons();
-        } else {
-            menuToggle.textContent = isOpen ? "×" : "☰";
-        }
+        menuToggle.innerHTML = isOpen
+            ? '<i data-lucide="x"></i>'
+            : '<i data-lucide="menu"></i>';
 
         menuToggle.setAttribute(
             "aria-label",
             isOpen ? "Close navigation" : "Open navigation"
         );
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        refreshIcons();
+    }
+
+    function openNavigation() {
+
+        if (!navigation || !menuToggle) return;
+
+        navigation.classList.add("show");
+
+        updateMenuIcon(true);
     }
 
     function closeNavigation() {
-        if (!menuToggle || !navigation) return;
+
+        if (!navigation || !menuToggle) return;
 
         navigation.classList.remove("show");
-        menuToggle.setAttribute("aria-expanded", "false");
+
         updateMenuIcon(false);
+    }
+
+    function toggleNavigation() {
+
+        if (!navigation || !menuToggle) return;
+
+        const isOpen = navigation.classList.contains("show");
+
+        if (isOpen) {
+            closeNavigation();
+        } else {
+            openNavigation();
+        }
     }
 
     if (menuToggle && navigation) {
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function (event) {
 
-            const isOpen = navigation.classList.contains("show");
+            event.preventDefault();
+            event.stopPropagation();
 
-            navigation.classList.toggle("show", !isOpen);
+            toggleNavigation();
 
-            menuToggle.setAttribute("aria-expanded", String(!isOpen));
-
-            updateMenuIcon(!isOpen);
         });
 
     }
 
-    // =========================================
-    // DROPDOWN NAVIGATION
-    // =========================================
+    /* =========================================
+       2. DROPDOWN MENUS
+    ========================================= */
 
     const dropdowns = document.querySelectorAll(".nav-dropdown");
 
     function closeDropdowns() {
+
         dropdowns.forEach(function (dropdown) {
+
             dropdown.classList.remove("open");
 
             const button = dropdown.querySelector(".dropdown-toggle");
@@ -69,7 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (button) {
                 button.setAttribute("aria-expanded", "false");
             }
+
         });
+
     }
 
     dropdowns.forEach(function (dropdown) {
@@ -83,63 +120,72 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function (event) {
 
             event.preventDefault();
+            event.stopPropagation();
 
             const isOpen = dropdown.classList.contains("open");
 
             closeDropdowns();
 
             if (!isOpen) {
+
                 dropdown.classList.add("open");
+
                 button.setAttribute("aria-expanded", "true");
+
             }
 
         });
 
     });
 
-    // =========================================
-    // CLOSE MENU AFTER SELECTING A PAGE
-    // =========================================
+    /* =========================================
+       3. CLOSE MENU AFTER CLICKING A LINK
+    ========================================= */
 
     if (navigation) {
 
-        const navigationLinks = navigation.querySelectorAll("a");
-
-        navigationLinks.forEach(function (link) {
+        navigation.querySelectorAll("a").forEach(function (link) {
 
             link.addEventListener("click", function () {
+
                 closeNavigation();
                 closeDropdowns();
+
             });
 
         });
 
     }
 
-    // =========================================
-    // CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
-    // =========================================
+    /* =========================================
+       4. CLOSE MENU WHEN CLICKING OUTSIDE
+    ========================================= */
 
     document.addEventListener("click", function (event) {
 
-        if (!event.target.closest(".nav-dropdown")) {
-            closeDropdowns();
+        const clickedInsideNavigation =
+            navigation && navigation.contains(event.target);
+
+        const clickedMenuButton =
+            menuToggle && menuToggle.contains(event.target);
+
+        if (!clickedInsideNavigation && !clickedMenuButton) {
+
+            closeNavigation();
+
         }
 
-        if (
-            navigation &&
-            menuToggle &&
-            !navigation.contains(event.target) &&
-            !menuToggle.contains(event.target)
-        ) {
-            closeNavigation();
+        if (!event.target.closest(".nav-dropdown")) {
+
+            closeDropdowns();
+
         }
 
     });
 
-    // =========================================
-    // KEYBOARD ACCESSIBILITY
-    // =========================================
+    /* =========================================
+       5. KEYBOARD ACCESSIBILITY
+    ========================================= */
 
     document.addEventListener("keydown", function (event) {
 
@@ -156,35 +202,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // =========================================
-    // RESET MOBILE MENU ON DESKTOP
-    // =========================================
+    /* =========================================
+       6. RESET MENU ON DESKTOP
+    ========================================= */
 
     window.addEventListener("resize", function () {
 
         if (window.innerWidth > 767) {
+
             closeNavigation();
             closeDropdowns();
+
         }
 
     });
 
-    // =========================================
-    // AUTOMATIC COPYRIGHT YEAR
-    // =========================================
+    /* =========================================
+       7. AUTOMATIC COPYRIGHT YEAR
+    ========================================= */
 
     const yearElement = document.getElementById("year");
 
     if (yearElement) {
+
         yearElement.textContent = new Date().getFullYear();
+
     }
 
-    // =========================================
-    // INITIALISE LUCIDE ICONS
-    // =========================================
+    /* =========================================
+       8. INITIALISE LUCIDE ICONS
+    ========================================= */
 
-    if (window.lucide && typeof window.lucide.createIcons === "function") {
-        window.lucide.createIcons();
+    refreshIcons();
+
+    /* =========================================
+       9. PREVENT EMPTY MENU BUTTON
+    ========================================= */
+
+    if (menuToggle && !menuToggle.innerHTML.trim()) {
+
+        updateMenuIcon(false);
+
     }
 
 });
