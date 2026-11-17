@@ -4,31 +4,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore photos and memorable moments from Namanga River Football Club.">
+    <meta name="description" content="Official photo gallery of Namanga River Football Club.">
     <title>Gallery | Namanga River FC</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: "#101D32",
-                        club: "#16834A",
-                        bright: "#22C875"
-                    },
-                    fontFamily: {
-                        heading: ["Montserrat", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --club-green: #16834a;
+            --club-bright: #22c875;
+            --club-black: #080808;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .gallery-hero {
+            position: relative;
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+                url("images/gallery3.jpg") center 45% / cover no-repeat;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(2.5rem, 7vw, 4.8rem);
+            font-weight: 900;
+            color: white;
+            letter-spacing: -2px;
+        }
+
+        .gallery-hero p {
+            color: #ddd;
+        }
+
+        .gallery-filter {
+            padding: 11px 22px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            color: #333;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .gallery-filter:hover,
+        .gallery-filter.active {
+            background: var(--club-green);
+            border-color: var(--club-green);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.12);
+        }
+
+        .gallery-card.hidden {
+            display: none;
+        }
+
+        .gallery-image-wrap {
+            position: relative;
+            height: 310px;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .gallery-card:hover .gallery-image {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            padding: 18px 19px 20px;
+        }
+
+        .gallery-caption span {
+            display: inline-block;
+            color: var(--club-green);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1.8px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-caption h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #151515;
+            line-height: 1.5;
+        }
+
+        .gallery-caption p {
+            color: #777;
+            font-size: 12px;
+            margin-top: 7px;
+            line-height: 1.7;
+        }
+
+        .gallery-intro {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .gallery-intro h2 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            font-weight: 900;
+            color: #111;
+        }
+
+        .gallery-intro p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .gallery-cta {
+            background: #080808;
+            border-radius: 14px;
+            padding: 55px 25px;
+            text-align: center;
+        }
+
+        .gallery-cta h2 {
+            color: white;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            font-weight: 900;
+        }
+
+        .gallery-cta p {
+            color: #ccc;
+            max-width: 600px;
+            margin: 15px auto 25px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .gallery-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--club-green);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 900;
+            transition: .25s;
+        }
+
+        .gallery-button:hover {
+            background: #116b3c;
+            transform: translateY(-2px);
+        }
+
+        .community-note {
+            background: #f0f8f3;
+            border-left: 4px solid var(--club-green);
+            padding: 20px;
+            border-radius: 7px;
+        }
+
+        @media(max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media(max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .gallery-image-wrap {
+                height: 280px;
+            }
+
+            .gallery-filter {
+                padding: 10px 14px;
+                font-size: 10px;
+            }
+
+            .gallery-hero {
+                min-height: 310px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -42,6 +237,7 @@
                 <img src="images/Namanga%20river%20logo.jpeg"
                      alt="Namanga River FC Logo"
                      class="w-12 h-12 object-contain rounded-full">
+
                 <div>
                     <span class="block font-bold text-white">NAMANGA RIVER FC</span>
                     <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
@@ -59,7 +255,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
 
-                <div class="nav-dropdown open">
+                <div class="nav-dropdown">
                     <button class="nav-link dropdown-toggle" type="button">
                         Club <i data-lucide="chevron-down" size="15"></i>
                     </button>
@@ -92,210 +288,254 @@
 
 <!-- HERO -->
 <section class="gallery-hero">
-    <div class="gallery-overlay"></div>
-
-    <div class="relative z-10 container mx-auto px-5 py-24 text-center">
-        <p class="text-green-400 font-bold tracking-widest uppercase mb-4">
-            Moments That Define Us
+    <div class="container mx-auto px-5 relative z-10">
+        <p class="text-green-400 font-bold tracking-widest uppercase text-xs mb-4">
+            Our Club. Our People. Our Story.
         </p>
 
-        <h1 class="text-4xl md:text-6xl font-black text-white mb-5">
-            CLUB GALLERY
-        </h1>
+        <h1>THE GALLERY</h1>
 
-        <p class="text-gray-200 max-w-2xl mx-auto">
-            Explore the passion, teamwork and unforgettable moments
-            that make Namanga River FC special.
+        <p class="max-w-2xl mx-auto mt-5 text-sm md:text-base">
+            Every photograph tells a story. Explore the people,
+            moments and memories that make Namanga River FC.
         </p>
     </div>
 </section>
 
 
-<!-- GALLERY -->
+<!-- GALLERY CONTENT -->
 <main class="bg-gray-50 py-16">
 
     <div class="container mx-auto px-5 max-w-7xl">
 
-        <div class="text-center mb-12">
-            <span class="text-club font-bold uppercase tracking-widest text-sm">
-                Through Our Lens
+        <div class="gallery-intro mb-10">
+            <span class="text-green-700 font-black text-xs tracking-widest uppercase">
+                Life At Namanga River
             </span>
 
-            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mt-3">
-                Moments From The Club
-            </h2>
+            <h2 class="mt-3 mb-4">OUR MOMENTS. OUR MEMORIES.</h2>
 
-            <p class="text-gray-500 mt-4 max-w-xl mx-auto">
-                From the players on the pitch to the supporters in the stands,
-                every photograph tells part of our story.
+            <p>
+                From individual player portraits and team gatherings
+                to match-day action and community service, this is
+                the story of our football family.
             </p>
         </div>
 
 
-        <!-- GALLERY FILTERS -->
+        <!-- FILTERS -->
         <div class="flex flex-wrap justify-center gap-3 mb-10">
-            <button class="gallery-filter active" data-filter="all">All Photos</button>
-            <button class="gallery-filter" data-filter="matches">Matches</button>
-            <button class="gallery-filter" data-filter="training">Training</button>
-            <button class="gallery-filter" data-filter="team">Team Moments</button>
+
+            <button class="gallery-filter active" data-filter="all">
+                All Photos
+            </button>
+
+            <button class="gallery-filter" data-filter="players">
+                Players
+            </button>
+
+            <button class="gallery-filter" data-filter="team">
+                Team Moments
+            </button>
+
+            <button class="gallery-filter" data-filter="matches">
+                Matches
+            </button>
+
+            <button class="gallery-filter" data-filter="community">
+                Community
+            </button>
+
         </div>
 
 
         <!-- PHOTO GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="gallery-grid">
 
-            <!-- MATCH PHOTO 1 -->
-            <div class="gallery-card" data-category="matches">
+
+            <!-- PLAYER PORTRAIT -->
+            <article class="gallery-card" data-category="players">
                 <div class="gallery-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=900&q=85"
-                         alt="Football match action"
-                         class="gallery-image">
-
-                    <div class="gallery-caption">
-                        <span>MATCHES</span>
-                        <h3>On The Pitch</h3>
-                    </div>
+                    <img src="images/gallery.jpg"
+                         alt="Namanga River FC player wearing the club jersey"
+                         class="gallery-image"
+                         loading="lazy">
                 </div>
-            </div>
+
+                <div class="gallery-caption">
+                    <span>PLAYER SPOTLIGHT</span>
+                    <h3>Representing The River</h3>
+                    <p>Our players proudly wear the Namanga River colours.</p>
+                </div>
+            </article>
 
 
-            <!-- TRAINING PHOTO 1 -->
-            <div class="gallery-card" data-category="training">
+            <!-- PLAYERS TOGETHER -->
+            <article class="gallery-card" data-category="team">
                 <div class="gallery-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
-                         alt="Football training session"
-                         class="gallery-image">
-
-                    <div class="gallery-caption">
-                        <span>TRAINING</span>
-                        <h3>Preparing For Greatness</h3>
-                    </div>
+                    <img src="images/gallery2.jpg"
+                         alt="Namanga River FC players together in their blue jerseys"
+                         class="gallery-image"
+                         loading="lazy">
                 </div>
-            </div>
+
+                <div class="gallery-caption">
+                    <span>TEAM MOMENTS</span>
+                    <h3>One Team, One Family</h3>
+                    <p>Friendship and unity beyond the football pitch.</p>
+                </div>
+            </article>
 
 
-            <!-- TEAM PHOTO 1 -->
-            <div class="gallery-card" data-category="team">
+            <!-- SQUAD GROUP PHOTO -->
+            <article class="gallery-card" data-category="team">
                 <div class="gallery-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85"
-                         alt="Football stadium"
-                         class="gallery-image">
-
-                    <div class="gallery-caption">
-                        <span>TEAM MOMENTS</span>
-                        <h3>Our Football Journey</h3>
-                    </div>
+                    <img src="images/gallery3.jpg"
+                         alt="Namanga River FC players gathered together"
+                         class="gallery-image"
+                         loading="lazy">
                 </div>
-            </div>
+
+                <div class="gallery-caption">
+                    <span>THE SQUAD</span>
+                    <h3>Together We Stand</h3>
+                    <p>The people behind the Namanga River dream.</p>
+                </div>
+            </article>
 
 
-            <!-- MATCH PHOTO 2 -->
-            <div class="gallery-card" data-category="matches">
+            <!-- TEAM HUDDLE -->
+            <article class="gallery-card" data-category="team">
                 <div class="gallery-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85"
-                         alt="Football field"
-                         class="gallery-image">
-
-                    <div class="gallery-caption">
-                        <span>MATCHES</span>
-                        <h3>The Beautiful Game</h3>
-                    </div>
+                    <img src="images/gallery4.jpg"
+                         alt="Namanga River FC players gathering around the team trophy"
+                         class="gallery-image"
+                         loading="lazy">
                 </div>
-            </div>
+
+                <div class="gallery-caption">
+                    <span>TEAM SPIRIT</span>
+                    <h3>United In Our Ambition</h3>
+                    <p>Every player contributes to the club's journey.</p>
+                </div>
+            </article>
 
 
-            <!-- TRAINING PHOTO 2 -->
-            <div class="gallery-card" data-category="training">
+            <!-- COMMUNITY CLEANUP -->
+            <article class="gallery-card" data-category="community">
                 <div class="gallery-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=85"
-                         alt="Football players in action"
-                         class="gallery-image">
-
-                    <div class="gallery-caption">
-                        <span>TRAINING</span>
-                        <h3>Discipline And Hard Work</h3>
-                    </div>
+                    <img src="images/gallery5.jpg"
+                         alt="Namanga River FC community member taking part in a clean-up activity"
+                         class="gallery-image"
+                         loading="lazy">
                 </div>
-            </div>
+
+                <div class="gallery-caption">
+                    <span>COMMUNITY IMPACT</span>
+                    <h3>Beyond The Football Pitch</h3>
+                    <p>Our commitment to making a positive difference in the community.</p>
+                </div>
+            </article>
 
 
-            <!-- TEAM PHOTO 2 -->
-            <div class="gallery-card" data-category="team">
+            <!-- PLAYER IN TRAINING KIT -->
+            <article class="gallery-card" data-category="players">
                 <div class="gallery-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85"
-                         alt="Football team playing together"
-                         class="gallery-image">
-
-                    <div class="gallery-caption">
-                        <span>TEAM MOMENTS</span>
-                        <h3>United By Football</h3>
-                    </div>
+                    <img src="images/gallery6.jpg"
+                         alt="Namanga River FC player wearing training colours"
+                         class="gallery-image"
+                         loading="lazy">
                 </div>
-            </div>
+
+                <div class="gallery-caption">
+                    <span>PLAYER SPOTLIGHT</span>
+                    <h3>Ready For The Challenge</h3>
+                    <p>Determination, commitment and pride.</p>
+                </div>
+            </article>
 
 
-            <!-- REAL NAMANGA RIVER FC SUPPORTERS PHOTO -->
-            <div class="gallery-card" data-category="team">
+            <!-- MATCH ACTION -->
+            <article class="gallery-card" data-category="matches">
+                <div class="gallery-image-wrap">
+                    <img src="images/gallery7.jpg"
+                         alt="Namanga River FC players competing during a football match"
+                         class="gallery-image"
+                         loading="lazy">
+                </div>
+
+                <div class="gallery-caption">
+                    <span>MATCH ACTION</span>
+                    <h3>Fighting For Every Ball</h3>
+                    <p>Commitment and hard work on the pitch.</p>
+                </div>
+            </article>
+
+
+            <!-- SUPPORTERS -->
+            <article class="gallery-card" data-category="team">
                 <div class="gallery-image-wrap">
                     <img src="images/support.jpg"
                          alt="Namanga River FC supporters displaying the club flag"
                          class="gallery-image"
                          loading="lazy">
+                </div>
 
-                    <div class="gallery-caption">
-                        <span>TEAM MOMENTS</span>
-                        <h3>The Namanga River Family — United by Passion</h3>
-                    </div>
+                <div class="gallery-caption">
+                    <span>OUR SUPPORTERS</span>
+                    <h3>The Namanga River Family</h3>
+                    <p>United by passion. Driven by one dream.</p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <!-- COMMUNITY MESSAGE -->
+        <div class="community-note mt-12">
+            <div class="flex items-start gap-4">
+                <div class="text-green-700 mt-1">
+                    <i data-lucide="heart-handshake" size="28"></i>
+                </div>
+
+                <div>
+                    <h3 class="font-black text-gray-900 text-lg mb-2">
+                        More Than A Football Club
+                    </h3>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Namanga River FC is about more than football.
+                        We believe in teamwork, community, discipline
+                        and creating positive memories together.
+                        Our journey belongs to everyone who supports
+                        and represents this club.
+                    </p>
                 </div>
             </div>
-
         </div>
 
 
-        <!-- CLUB STORY SECTION -->
-        <div class="mt-12 bg-white border border-gray-200 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-5">
+        <!-- CALL TO ACTION -->
+        <section class="gallery-cta mt-16">
 
-            <div class="w-14 h-14 shrink-0 bg-green-50 text-club rounded-full flex items-center justify-center">
-                <i data-lucide="camera" size="27"></i>
-            </div>
-
-            <div>
-                <h3 class="font-bold text-xl text-gray-900 mb-2">
-                    More Than A Football Club
-                </h3>
-
-                <p class="text-gray-500 text-sm leading-relaxed">
-                    From our players to our loyal supporters, Namanga River FC
-                    is built on passion, unity and commitment. Every match,
-                    every celebration and every moment brings our football
-                    family closer together.
-                </p>
-            </div>
-        </div>
-
-
-        <!-- CTA -->
-        <section class="mt-16 bg-black rounded-2xl px-7 py-12 text-center">
-
-            <p class="text-green-400 font-bold tracking-widest text-sm mb-3">
-                ONE CLUB. ONE DREAM.
+            <p class="text-green-400 font-black tracking-widest text-xs uppercase">
+                One Club. One Dream.
             </p>
 
-            <h2 class="text-2xl md:text-3xl font-black text-white mb-4">
-                MORE THAN JUST A FOOTBALL CLUB
+            <h2 class="mt-3">
+                BE PART OF OUR STORY
             </h2>
 
-            <p class="text-gray-300 max-w-xl mx-auto mb-7">
-                Get to know the players who proudly represent
-                Namanga River FC.
+            <p>
+                Discover the players, follow our journey and stand
+                with Namanga River Football Club.
             </p>
 
-            <a href="squad.html"
-               class="inline-flex items-center gap-2 bg-club hover:bg-green-700 text-white font-bold px-7 py-3 rounded-lg transition">
-
-                Meet Our Squad
-                <i data-lucide="arrow-right" size="18"></i>
+            <a href="squad.html" class="gallery-button">
+                MEET OUR SQUAD
+                <i data-lucide="arrow-right" size="17"></i>
             </a>
+
         </section>
 
     </div>
@@ -308,7 +548,6 @@
 
         <div class="grid md:grid-cols-3 gap-10">
 
-            <!-- CLUB INFORMATION -->
             <div>
                 <div class="flex items-center gap-3 mb-4">
                     <img src="images/Namanga%20river%20logo.jpeg"
@@ -319,13 +558,12 @@
                 </div>
 
                 <p class="text-gray-400 text-sm leading-relaxed">
-                    One club. One dream. One river. United by football
-                    and driven by ambition.
+                    One club. One dream. One river.
+                    United by football and driven by ambition.
                 </p>
             </div>
 
 
-            <!-- QUICK LINKS -->
             <div>
                 <h3 class="font-bold text-white mb-4">Quick Links</h3>
 
@@ -340,23 +578,20 @@
             </div>
 
 
-            <!-- CLUB PAGES -->
             <div>
-                <h3 class="font-bold text-white mb-4">Club Pages</h3>
+                <h3 class="font-bold text-white mb-4">Explore The Club</h3>
 
                 <div class="flex flex-col gap-3 text-gray-400 text-sm">
                     <a href="gallery.html">Gallery</a>
                     <a href="new.html">News</a>
-                    <a href="shop.html">Merchandise</a>
-                    <a href="donations.html">Support the Club</a>
+                    <a href="shop.html">Club Shop</a>
+                    <a href="donations.html">Support Us</a>
                     <a href="contact.html">Contact</a>
                 </div>
             </div>
 
         </div>
 
-
-        <!-- COPYRIGHT -->
         <div class="border-t border-gray-800 mt-10 pt-6 text-center">
             <p class="text-gray-500 text-sm">
                 © <span id="year"></span> Namanga River Football Club.
@@ -368,161 +603,48 @@
 </footer>
 
 
-<!-- PAGE STYLES -->
-<style>
-
-.gallery-hero {
-    position: relative;
-    background:
-        url("https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=1800&q=85")
-        center 45% / cover no-repeat;
-}
-
-.gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(0,0,0,.88),
-        rgba(0,0,0,.55)
-    );
-}
-
-
-/* FILTER BUTTONS */
-.gallery-filter {
-    padding: 10px 22px;
-    border: 1px solid #d1d5db;
-    border-radius: 7px;
-    background: white;
-    color: #333;
-    font-weight: 700;
-    font-size: 13px;
-    transition: .25s;
-}
-
-.gallery-filter:hover,
-.gallery-filter.active {
-    background: #16834a;
-    border-color: #16834a;
-    color: white;
-}
-
-
-/* GALLERY IMAGES */
-.gallery-image-wrap {
-    position: relative;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #111;
-}
-
-.gallery-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .5s ease;
-}
-
-.gallery-image-wrap:hover .gallery-image {
-    transform: scale(1.08);
-}
-
-
-/* IMAGE CAPTIONS */
-.gallery-caption {
-    position: absolute;
-    inset: auto 0 0;
-    padding: 45px 22px 20px;
-    color: white;
-    background: linear-gradient(transparent, rgba(0,0,0,.9));
-}
-
-.gallery-caption span {
-    color: #22c875;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.gallery-caption h3 {
-    font-size: 19px;
-    font-weight: 800;
-    margin-top: 6px;
-}
-
-
-/* FILTER FUNCTION */
-.gallery-card.hidden {
-    display: none;
-}
-
-
-/* FOOTER */
-.site-footer a:hover {
-    color: #22c875;
-}
-
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 640px) {
-
-    .gallery-image-wrap {
-        height: 260px;
-    }
-
-    .gallery-filter {
-        padding: 9px 15px;
-        font-size: 12px;
-    }
-
-    .gallery-caption h3 {
-        font-size: 17px;
-    }
-}
-
-</style>
-
-
-<!-- MAIN JAVASCRIPT -->
 <script src="js/script.js"></script>
 
 <script>
+    // GALLERY FILTERS
+    const filterButtons = document.querySelectorAll(".gallery-filter");
+    const galleryCards = document.querySelectorAll(".gallery-card");
 
-// GALLERY FILTERS
-document.querySelectorAll(".gallery-filter").forEach(button => {
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
 
-    button.addEventListener("click", () => {
+            const selectedFilter = button.dataset.filter;
 
-        const filter = button.dataset.filter;
+            filterButtons.forEach(item => {
+                item.classList.remove("active");
+            });
 
-        document.querySelectorAll(".gallery-filter").forEach(item => {
-            item.classList.remove("active");
+            button.classList.add("active");
+
+            galleryCards.forEach(card => {
+                const category = card.dataset.category;
+
+                if (selectedFilter === "all" || category === selectedFilter) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+
         });
-
-        button.classList.add("active");
-
-        document.querySelectorAll(".gallery-card").forEach(card => {
-
-            const category = card.dataset.category;
-
-            card.classList.toggle(
-                "hidden",
-                filter !== "all" && category !== filter
-            );
-
-        });
-
     });
 
-});
+    // COPYRIGHT YEAR
+    const yearElement = document.getElementById("year");
 
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
-// LUCIDE ICONS
-lucide.createIcons();
-
+    // ICONS
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 </script>
 
 </body>
