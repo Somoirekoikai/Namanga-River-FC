@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Our Squad | Namanga River FC</title>
-    <meta name="description" content="Meet the players representing Namanga River Football Club.">
+    <meta name="description" content="Meet the players and technical team of Namanga River Football Club.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,25 +32,28 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* SQUAD HERO */
-
-        .squad-hero {
-            background:
-                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)),
-                url("images/squad.jpg");
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            min-height: 460px;
-            display: flex;
-            align-items: center;
+        body {
+            overflow-x: hidden;
         }
 
-        /* PLAYER CARDS */
+        .squad-hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.48)),
+                url("images/squad.jpg") center/cover no-repeat;
+        }
 
-        .player-card {
+        .section-label {
+            color: #16834A;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .coach-card {
             background: #fff;
             border: 1px solid #e5e7eb;
             border-radius: 12px;
@@ -58,54 +61,81 @@
             transition: .3s ease;
         }
 
+        .coach-card:hover,
         .player-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.1);
             border-color: #16834A;
-            box-shadow: 0 15px 35px rgba(0,0,0,.12);
         }
 
-        .player-image {
-            height: 230px;
-            background: #edf0ed;
-            position: relative;
+        .coach-photo {
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #101010, #25382d);
+            color: #22C875;
+        }
+
+        .coach-photo svg {
+            width: 85px;
+            height: 85px;
+            opacity: .85;
+        }
+
+        .player-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
             overflow: hidden;
+            transition: .3s ease;
         }
 
-        .player-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .player-photo {
+            height: 175px;
+            background: linear-gradient(145deg, #101010, #254a35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #22C875;
+            position: relative;
         }
 
-        .player-number {
+        .player-photo svg {
+            width: 54px;
+            height: 54px;
+            opacity: .85;
+        }
+
+        .player-id {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px;
+            left: 10px;
             background: #16834A;
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
-            font-weight: 800;
+            font-size: 11px;
+            font-weight: 900;
+            padding: 6px 10px;
+            border-radius: 4px;
         }
 
         .position-tag {
             display: inline-block;
             background: #eaf7ef;
             color: #16834A;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 800;
+            padding: 5px 9px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: .5px;
         }
 
-        /* FILTER BUTTONS */
-
         .filter-btn {
-            padding: 10px 17px;
-            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border: 1px solid #d1d5db;
             border-radius: 5px;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 900;
             transition: .2s;
         }
 
@@ -116,17 +146,89 @@
             border-color: #16834A;
         }
 
-        .empty-photo {
-            height: 100%;
+        .lineup-section {
+            background: #080808;
+            color: white;
+        }
+
+        .pitch {
+            position: relative;
+            max-width: 850px;
+            margin: auto;
+            aspect-ratio: 1.45 / 1;
+            border: 3px solid rgba(255,255,255,.8);
+            border-radius: 8px;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    #176b3b 0,
+                    #176b3b 12.5%,
+                    #1b7943 12.5%,
+                    #1b7943 25%
+                );
+            overflow: hidden;
+        }
+
+        .pitch::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            border-left: 2px solid rgba(255,255,255,.7);
+        }
+
+        .pitch-circle {
+            position: absolute;
+            width: 23%;
+            aspect-ratio: 1;
+            border: 2px solid rgba(255,255,255,.7);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pitch-box {
+            position: absolute;
+            top: 24%;
+            height: 52%;
+            width: 13%;
+            border: 2px solid rgba(255,255,255,.7);
+        }
+
+        .pitch-box.left {
+            left: 0;
+            border-left: none;
+        }
+
+        .pitch-box.right {
+            right: 0;
+            border-right: none;
+        }
+
+        .lineup-overlay {
+            position: absolute;
+            inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #16834A;
+            padding: 20px;
+            background: rgba(0,0,0,.53);
+            text-align: center;
         }
 
-        .empty-photo i {
-            width: 65px;
-            height: 65px;
+        .announcement-card {
+            max-width: 440px;
+            background: rgba(0,0,0,.9);
+            border: 1px solid #22C875;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .squad-stat {
+            border-left: 3px solid #22C875;
+            padding-left: 15px;
         }
 
         @media(max-width: 767px) {
@@ -135,8 +237,16 @@
                 background-position: center;
             }
 
-            .player-image {
-                height: 190px;
+            .coach-photo {
+                height: 210px;
+            }
+
+            .player-photo {
+                height: 145px;
+            }
+
+            .pitch {
+                aspect-ratio: 1 / 1.15;
             }
         }
     </style>
@@ -161,7 +271,6 @@
                     <h1 class="text-white font-heading font-black text-lg">
                         NAMANGA RIVER
                     </h1>
-
                     <p class="text-brightgreen text-xs tracking-widest font-bold">
                         FOOTBALL CLUB
                     </p>
@@ -183,7 +292,6 @@
                     <button class="dropdown-toggle">
                         Club <i data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="dropdown-menu">
                         <a href="about.html">About the Club</a>
                         <a href="contact.html">Contact Us</a>
@@ -194,7 +302,6 @@
                     <button class="dropdown-toggle">
                         Team <i data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="dropdown-menu">
                         <a href="squad.html">Our Squad</a>
                     </div>
@@ -204,10 +311,10 @@
                     <button class="dropdown-toggle">
                         Matches <i data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="dropdown-menu">
                         <a href="fixtures.html">Fixtures</a>
                         <a href="results.html">Results</a>
+                        <a href="league.html">League Table</a>
                     </div>
                 </div>
 
@@ -215,7 +322,6 @@
                     <button class="dropdown-toggle">
                         Media <i data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="dropdown-menu">
                         <a href="gallery.html">Gallery</a>
                         <a href="new.html">News</a>
@@ -226,7 +332,6 @@
                     <button class="dropdown-toggle">
                         Support <i data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="dropdown-menu">
                         <a href="shop.html">Club Shop</a>
                         <a href="donations.html">Donations</a>
@@ -242,52 +347,234 @@
     </div>
 </header>
 
-<!-- SQUAD HERO WITH CLUB PHOTOGRAPH -->
+<!-- HERO -->
 
 <section class="squad-hero">
+    <div class="max-w-7xl mx-auto px-6 py-20 w-full">
 
-    <div class="max-w-7xl mx-auto px-6 py-20 md:py-28 w-full">
-
-        <p class="text-brightgreen font-bold tracking-widest text-sm mb-4">
+        <p class="text-brightgreen font-bold tracking-widest text-xs mb-5">
             THE PEOPLE BEHIND THE BADGE
         </p>
 
         <h2 class="text-white font-heading text-4xl md:text-6xl font-black mb-5">
-            MEET OUR SQUAD
+            OUR TEAM.<br>
+            OUR PRIDE.
         </h2>
 
         <p class="text-gray-200 max-w-xl leading-7">
-            Meet the players who represent Namanga River Football Club
-            with passion, unity and determination.
+            Meet the players and technical team representing
+            Namanga River Football Club with passion, unity
+            and determination.
         </p>
 
-        <div class="w-16 h-1 bg-clubgreen mt-7"></div>
+        <div class="w-20 h-1 bg-clubgreen mt-8"></div>
+
+    </div>
+</section>
+
+<!-- TEAM INTRODUCTION -->
+
+<section class="max-w-7xl mx-auto px-5 py-14">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div class="squad-stat">
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                First Team
+            </p>
+            <h3 class="font-heading font-black text-3xl mt-2">25</h3>
+            <p class="text-gray-500 text-xs mt-1">Squad places</p>
+        </div>
+
+        <div class="squad-stat">
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                Technical Team
+            </p>
+            <h3 class="font-heading font-black text-3xl mt-2">02</h3>
+            <p class="text-gray-500 text-xs mt-1">Coaching positions</p>
+        </div>
+
+        <div class="squad-stat">
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                Competition
+            </p>
+            <h3 class="font-heading font-black text-2xl mt-2">FKF</h3>
+            <p class="text-gray-500 text-xs mt-1">Division One</p>
+        </div>
+
+        <div class="squad-stat">
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                Club Values
+            </p>
+            <h3 class="font-heading font-black text-xl mt-2">ONE TEAM</h3>
+            <p class="text-gray-500 text-xs mt-1">One ambition</p>
+        </div>
 
     </div>
 
 </section>
 
-<!-- SQUAD SECTION -->
+<!-- COACHING TEAM -->
 
-<main class="max-w-7xl mx-auto px-5 py-20">
+<section class="bg-gray-50 py-20">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="text-center mb-12">
+            <p class="section-label mb-3">LEADERSHIP ON THE TOUCHLINE</p>
+
+            <h2 class="font-heading font-black text-3xl md:text-4xl">
+                TECHNICAL TEAM
+            </h2>
+
+            <p class="text-gray-500 text-sm mt-4">
+                The people guiding the team on and off the pitch.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+            <article class="coach-card">
+                <div class="coach-photo">
+                    <i data-lucide="user-round"></i>
+                </div>
+
+                <div class="p-7">
+                    <span class="position-tag">HEAD COACH</span>
+
+                    <h3 class="font-heading font-black text-xl mt-4">
+                        Head Coach
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Profile and photograph coming soon.
+                    </p>
+
+                    <div class="border-t mt-5 pt-4 text-xs text-gray-400">
+                        NAMANGA RIVER FC
+                    </div>
+                </div>
+            </article>
+
+            <article class="coach-card">
+                <div class="coach-photo">
+                    <i data-lucide="user-round"></i>
+                </div>
+
+                <div class="p-7">
+                    <span class="position-tag">ASSISTANT COACH</span>
+
+                    <h3 class="font-heading font-black text-xl mt-4">
+                        Assistant Coach
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Profile and photograph coming soon.
+                    </p>
+
+                    <div class="border-t mt-5 pt-4 text-xs text-gray-400">
+                        NAMANGA RIVER FC
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FIRST XI ANNOUNCEMENT -->
+
+<section class="lineup-section py-20">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="text-center mb-12">
+
+            <p class="text-brightgreen text-xs font-black tracking-widest mb-3">
+                MATCHDAY TEAM SELECTION
+            </p>
+
+            <h2 class="font-heading font-black text-3xl md:text-5xl">
+                THE FIRST XI
+            </h2>
+
+            <p class="text-gray-400 text-sm mt-4 max-w-xl mx-auto">
+                The official starting lineup will be published here
+                before each match.
+            </p>
+
+        </div>
+
+        <div class="pitch">
+
+            <div class="pitch-circle"></div>
+            <div class="pitch-box left"></div>
+            <div class="pitch-box right"></div>
+
+            <div class="lineup-overlay">
+
+                <div class="announcement-card">
+
+                    <div class="flex justify-center mb-5">
+                        <div class="w-14 h-14 rounded-full bg-green-900 flex items-center justify-center">
+                            <i data-lucide="clipboard-list"
+                               class="text-green-400 w-7 h-7"></i>
+                        </div>
+                    </div>
+
+                    <p class="text-brightgreen text-xs font-black tracking-widest mb-3">
+                        OFFICIAL TEAM ANNOUNCEMENT
+                    </p>
+
+                    <h3 class="font-heading font-black text-2xl md:text-3xl mb-4">
+                        LINEUP TO BE ANNOUNCED
+                    </h3>
+
+                    <p class="text-gray-300 text-sm leading-6">
+                        The coach's confirmed starting eleven will appear
+                        on this pitch before the next match.
+                    </p>
+
+                    <div class="mt-6 border-t border-gray-700 pt-5">
+                        <p class="text-gray-500 text-xs">
+                            NAMANGA RIVER FOOTBALL CLUB
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center mt-7">
+            <p class="text-gray-500 text-xs">
+                Official match selection will be updated when confirmed by the coaching team.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FIRST TEAM SQUAD -->
+
+<section class="max-w-7xl mx-auto px-5 py-20">
 
     <div class="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-10">
 
         <div>
-            <p class="text-clubgreen font-bold text-xs tracking-widest mb-3">
-                OUR PLAYERS
-            </p>
+            <p class="section-label mb-3">THE PLAYERS</p>
 
             <h2 class="font-heading text-3xl md:text-4xl font-black">
                 FIRST TEAM SQUAD
             </h2>
 
             <p class="text-gray-500 text-sm mt-3">
-                The players carrying our club forward.
+                Our 25 first-team squad profiles.
             </p>
         </div>
 
-        <div class="relative w-full md:w-72">
+        <div class="relative w-full md:w-80">
 
             <i data-lucide="search"
                class="absolute left-4 top-3.5 text-gray-400 w-5 h-5"></i>
@@ -295,7 +582,7 @@
             <input
                 type="search"
                 id="player-search"
-                placeholder="Search players..."
+                placeholder="Search squad members..."
                 class="w-full border border-gray-300 rounded-lg py-3 pl-12 pr-4 outline-none focus:border-green-600"
             >
 
@@ -303,160 +590,34 @@
 
     </div>
 
-    <!-- PLAYER POSITION FILTERS -->
+    <!-- FILTERS -->
 
-    <div class="flex flex-wrap gap-3 mb-10">
+    <div class="flex flex-wrap gap-2 mb-9">
 
         <button class="filter-btn active" data-filter="all">
             ALL PLAYERS
         </button>
 
-        <button class="filter-btn" data-filter="Goalkeeper">
-            GOALKEEPERS
+        <button class="filter-btn" data-filter="To be confirmed">
+            SQUAD PROFILES
         </button>
 
-        <button class="filter-btn" data-filter="Defender">
-            DEFENDERS
-        </button>
+    </div>
 
-        <button class="filter-btn" data-filter="Midfielder">
-            MIDFIELDERS
-        </button>
+    <div class="flex items-center justify-between mb-6 border-b pb-4">
+        <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">
+            First team player profiles
+        </p>
 
-        <button class="filter-btn" data-filter="Forward">
-            FORWARDS
-        </button>
-
+        <p class="text-clubgreen text-xs font-black">
+            <span id="player-count">25</span> PROFILES
+        </p>
     </div>
 
     <!-- PLAYER GRID -->
 
     <div id="players-container"
-         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-
-        <!-- SAMPLE PLAYER 1 -->
-
-        <article class="player-card"
-                 data-name="Player One"
-                 data-position="Goalkeeper">
-
-            <div class="player-image">
-
-                <div class="empty-photo">
-                    <i data-lucide="user-round"></i>
-                </div>
-
-                <span class="player-number">01</span>
-
-            </div>
-
-            <div class="p-4">
-
-                <span class="position-tag">GOALKEEPER</span>
-
-                <h3 class="font-heading font-bold text-base mt-3">
-                    Player One
-                </h3>
-
-                <p class="text-gray-500 text-xs mt-1">
-                    Goalkeeper
-                </p>
-
-            </div>
-        </article>
-
-        <!-- SAMPLE PLAYER 2 -->
-
-        <article class="player-card"
-                 data-name="Player Two"
-                 data-position="Defender">
-
-            <div class="player-image">
-
-                <div class="empty-photo">
-                    <i data-lucide="user-round"></i>
-                </div>
-
-                <span class="player-number">02</span>
-
-            </div>
-
-            <div class="p-4">
-
-                <span class="position-tag">DEFENDER</span>
-
-                <h3 class="font-heading font-bold text-base mt-3">
-                    Player Two
-                </h3>
-
-                <p class="text-gray-500 text-xs mt-1">
-                    Defender
-                </p>
-
-            </div>
-        </article>
-
-        <!-- SAMPLE PLAYER 3 -->
-
-        <article class="player-card"
-                 data-name="Player Three"
-                 data-position="Midfielder">
-
-            <div class="player-image">
-
-                <div class="empty-photo">
-                    <i data-lucide="user-round"></i>
-                </div>
-
-                <span class="player-number">03</span>
-
-            </div>
-
-            <div class="p-4">
-
-                <span class="position-tag">MIDFIELDER</span>
-
-                <h3 class="font-heading font-bold text-base mt-3">
-                    Player Three
-                </h3>
-
-                <p class="text-gray-500 text-xs mt-1">
-                    Midfielder
-                </p>
-
-            </div>
-        </article>
-
-        <!-- SAMPLE PLAYER 4 -->
-
-        <article class="player-card"
-                 data-name="Player Four"
-                 data-position="Forward">
-
-            <div class="player-image">
-
-                <div class="empty-photo">
-                    <i data-lucide="user-round"></i>
-                </div>
-
-                <span class="player-number">04</span>
-
-            </div>
-
-            <div class="p-4">
-
-                <span class="position-tag">FORWARD</span>
-
-                <h3 class="font-heading font-bold text-base mt-3">
-                    Player Four
-                </h3>
-
-                <p class="text-gray-500 text-xs mt-1">
-                    Forward
-                </p>
-
-            </div>
-        </article>
+         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
 
     </div>
 
@@ -464,7 +625,59 @@
         No players match your search.
     </p>
 
-</main>
+    <div class="mt-12 bg-gray-50 border border-gray-200 rounded-lg p-6 text-center">
+
+        <i data-lucide="info" class="w-6 h-6 text-clubgreen mx-auto mb-3"></i>
+
+        <h3 class="font-heading font-bold text-sm">
+            PLAYER PROFILES BEING UPDATED
+        </h3>
+
+        <p class="text-gray-500 text-xs leading-6 mt-2 max-w-2xl mx-auto">
+            Player names, photographs, shirt numbers and playing positions
+            will be added once the official squad information is confirmed.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CLUB CTA -->
+
+<section class="bg-clubgreen py-16">
+
+    <div class="max-w-7xl mx-auto px-5 text-center">
+
+        <p class="text-white text-xs font-black tracking-widest mb-3">
+            PASSION. UNITY. DETERMINATION.
+        </p>
+
+        <h2 class="font-heading font-black text-white text-3xl md:text-4xl">
+            ONE CLUB. ONE DREAM.
+        </h2>
+
+        <p class="text-green-100 text-sm mt-4 max-w-xl mx-auto">
+            Follow Namanga River FC throughout the season.
+            Stay connected with our fixtures, results and club news.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+
+            <a href="fixtures.html"
+               class="bg-white text-black font-black text-xs px-7 py-4 rounded hover:bg-gray-100 transition">
+                VIEW FIXTURES
+            </a>
+
+            <a href="league.html"
+               class="border border-white text-white font-black text-xs px-7 py-4 rounded hover:bg-white hover:text-black transition">
+                LEAGUE TABLE
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- FOOTER -->
 
@@ -490,8 +703,10 @@
                 <div class="grid grid-cols-2 gap-3 text-gray-400 text-sm">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
+                    <a href="squad.html">Our Squad</a>
                     <a href="fixtures.html">Fixtures</a>
                     <a href="results.html">Results</a>
+                    <a href="league.html">League Table</a>
                     <a href="shop.html">Shop</a>
                     <a href="contact.html">Contact</a>
                 </div>
@@ -508,10 +723,8 @@
         </div>
 
         <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
-
             &copy; <span id="year">2026</span>
             Namanga River Football Club. All rights reserved.
-
         </div>
 
     </div>
@@ -523,54 +736,72 @@
 <script src="js/script.js"></script>
 
 <script>
+    // TEMPORARY SQUAD PROFILES
+    // Replace these labels with confirmed player details later.
 
-    // PLAYER SEARCH AND POSITION FILTERING
+    const players = Array.from({ length: 25 }, (_, index) => ({
+        id: String(index + 1).padStart(2, "0"),
+        name: `Squad Member ${String(index + 1).padStart(2, "0")}`,
+        position: "To be confirmed"
+    }));
 
+    const playersContainer = document.getElementById("players-container");
     const searchInput = document.getElementById("player-search");
-
     const filterButtons = document.querySelectorAll(".filter-btn");
-
-    const playerCards = document.querySelectorAll(".player-card");
-
     const noPlayers = document.getElementById("no-players");
+    const playerCount = document.getElementById("player-count");
 
     let activeFilter = "all";
 
-    function filterPlayers() {
+    function renderPlayers() {
+        const search = searchInput.value.trim().toLowerCase();
 
-        const search = searchInput.value.toLowerCase();
-
-        let visibleCount = 0;
-
-        playerCards.forEach(card => {
-
-            const name = card.dataset.name.toLowerCase();
-
-            const position = card.dataset.position;
-
-            const matchesSearch = name.includes(search);
+        const filteredPlayers = players.filter(player => {
+            const matchesSearch =
+                player.name.toLowerCase().includes(search) ||
+                player.id.includes(search);
 
             const matchesPosition =
-                activeFilter === "all" || position === activeFilter;
+                activeFilter === "all" ||
+                player.position === activeFilter;
 
-            const visible = matchesSearch && matchesPosition;
-
-            card.style.display = visible ? "" : "none";
-
-            if (visible) visibleCount++;
-
+            return matchesSearch && matchesPosition;
         });
 
-        noPlayers.classList.toggle("hidden", visibleCount > 0);
+        playersContainer.innerHTML = filteredPlayers.map(player => `
+            <article class="player-card">
+                <div class="player-photo">
+                    <i data-lucide="user-round"></i>
+                    <span class="player-id">ID ${player.id}</span>
+                </div>
 
+                <div class="p-4">
+                    <span class="position-tag">POSITION TBC</span>
+
+                    <h3 class="font-heading font-bold text-sm mt-3">
+                        ${player.name}
+                    </h3>
+
+                    <p class="text-gray-500 text-xs mt-2">
+                        Namanga River FC
+                    </p>
+                </div>
+            </article>
+        `).join("");
+
+        playerCount.textContent = filteredPlayers.length;
+
+        noPlayers.classList.toggle("hidden", filteredPlayers.length > 0);
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
     }
 
-    searchInput.addEventListener("input", filterPlayers);
+    searchInput.addEventListener("input", renderPlayers);
 
     filterButtons.forEach(button => {
-
         button.addEventListener("click", () => {
-
             activeFilter = button.dataset.filter;
 
             filterButtons.forEach(btn => {
@@ -579,18 +810,23 @@
 
             button.classList.add("active");
 
-            filterPlayers();
-
+            renderPlayers();
         });
-
     });
 
-    // LOAD ICONS
+    // INITIALISE PAGE
+
+    renderPlayers();
 
     if (window.lucide) {
         window.lucide.createIcons();
     }
 
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 </script>
 
 </body>
