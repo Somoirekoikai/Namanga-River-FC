@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop official Namanga River Football Club merchandise.">
-    <title>Official Club Store | Namanga River FC</title>
+    <meta name="description" content="Shop official Namanga River Football Club jerseys and merchandise.">
+    <title>Official Store | Namanga River FC</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,7 +15,7 @@
                     colors: {
                         club: "#16834A",
                         bright: "#22C875",
-                        dark: "#080808"
+                        navy: "#101D32"
                     },
                     fontFamily: {
                         heading: ["Montserrat", "sans-serif"]
@@ -29,578 +29,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        :root {
-            --club-green: #16834A;
-            --bright-green: #22C875;
-            --black: #080808;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Montserrat", sans-serif;
-            background: #f5f7f5;
-        }
-
-        /* HEADER */
-
-        .site-header {
-            background: #080808;
-        }
-
-        .header-inner {
-            min-height: 82px;
-        }
-
-        .site-header img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-        }
-
-        /* STORE HERO */
-
-        .store-hero {
-            min-height: 520px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background:
-                linear-gradient(90deg, rgba(0,0,0,.93), rgba(0,0,0,.58)),
-                url("images/shop-banner.jpg") center 55% / cover no-repeat;
-        }
-
-        .store-hero::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 5px;
-            width: 100%;
-            background: linear-gradient(90deg, #16834A, #22C875, #ffffff);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 760px;
-            padding: 85px 0;
-        }
-
-        .hero-kicker {
-            color: #22C875;
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            margin-bottom: 22px;
-        }
-
-        .hero-title {
-            color: white;
-            font-size: clamp(42px, 7vw, 78px);
-            line-height: 1.03;
-            font-weight: 900;
-            margin: 0 0 22px;
-        }
-
-        .hero-title span {
-            color: #22C875;
-        }
-
-        .hero-description {
-            color: #d1d5db;
-            font-size: 15px;
-            line-height: 1.9;
-            max-width: 570px;
-        }
-
-        .hero-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #16834A;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 5px;
-            margin-top: 30px;
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            transition: .25s;
-        }
-
-        .hero-button:hover {
-            background: #22C875;
-            color: #080808;
-            transform: translateY(-3px);
-        }
-
-        /* STORE BENEFITS */
-
-        .benefit-strip {
-            background: #080808;
-            color: white;
-            padding: 22px 0;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        .benefit-item i {
-            color: #22C875;
-            width: 21px;
-            height: 21px;
-        }
-
-        /* SHOP SECTION */
-
-        .shop-section {
-            padding: 85px 0;
-            background: #f5f7f5;
-        }
-
-        .section-kicker {
-            color: #16834A;
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 3px;
-        }
-
-        .section-heading {
-            color: #080808;
-            font-size: clamp(28px, 4vw, 42px);
-            font-weight: 900;
-            margin-top: 12px;
-        }
-
-        .section-description {
-            color: #6b7280;
-            max-width: 570px;
-            margin: 15px auto 0;
-            font-size: 13px;
-            line-height: 1.9;
-        }
-
-        /* FILTERS */
-
-        .shop-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 38px 0;
-        }
-
-        .shop-filter {
-            padding: 12px 21px;
-            background: white;
-            border: 1px solid #dfe5df;
-            color: #333;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: .7px;
-            cursor: pointer;
-            transition: .25s;
-        }
-
-        .shop-filter:hover,
-        .shop-filter.active {
-            background: #16834A;
-            color: white;
-            border-color: #16834A;
-        }
-
-        /* PRODUCT CARDS */
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 9px;
-            overflow: hidden;
-            transition: .3s ease;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 40px rgba(0,0,0,.11);
-            border-color: #16834A;
-        }
-
-        .product-card.hidden {
-            display: none;
-        }
-
-        .product-image {
-            height: 340px;
-            position: relative;
-            overflow: hidden;
-            background: #f0f2ef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 12px;
-            transition: transform .4s ease;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.045);
-        }
-
-        .product-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            color: #16834A;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(circle at center, #ffffff, #e8eee9);
-        }
-
-        .product-placeholder i {
-            width: 55px;
-            height: 55px;
-        }
-
-        .product-placeholder span {
-            font-size: 10px;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-
-        .product-label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #080808;
-            color: white;
-            padding: 8px 12px;
-            border-left: 3px solid #22C875;
-            font-size: 9px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            z-index: 2;
-        }
-
-        .product-details {
-            padding: 23px;
-        }
-
-        .product-category {
-            color: #16834A;
-            font-size: 9px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .product-name {
-            color: #080808;
-            font-size: 19px;
-            font-weight: 900;
-            margin-top: 9px;
-        }
-
-        .product-description {
-            color: #777;
-            font-size: 12px;
-            line-height: 1.8;
-            margin-top: 9px;
-            min-height: 42px;
-        }
-
-        .product-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            border-top: 1px solid #edf0ed;
-            margin-top: 20px;
-            padding-top: 17px;
-        }
-
-        .product-price {
-            font-size: 17px;
-            font-weight: 900;
-            color: #080808;
-        }
-
-        .order-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            background: #16834A;
-            color: white;
-            padding: 11px 14px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 900;
-            cursor: pointer;
-            transition: .2s;
-        }
-
-        .order-button:hover {
-            background: #080808;
-            color: #22C875;
-        }
-
-        /* FEATURED COLLECTION */
-
-        .featured-collection {
-            background: #080808;
-            color: white;
-            padding: 65px 35px;
-            margin-top: 75px;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-collection::after {
-            content: "NRFC";
-            position: absolute;
-            right: 20px;
-            bottom: -45px;
-            color: rgba(255,255,255,.045);
-            font-size: 150px;
-            font-weight: 900;
-            pointer-events: none;
-        }
-
-        .featured-collection h3 {
-            font-size: clamp(25px, 4vw, 38px);
-            font-weight: 900;
-            line-height: 1.2;
-        }
-
-        .featured-collection h3 span {
-            color: #22C875;
-        }
-
-        .featured-collection p {
-            color: #c5c5c5;
-            font-size: 13px;
-            line-height: 1.9;
-            max-width: 570px;
-            margin-top: 15px;
-        }
-
-        .featured-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            background: #16834A;
-            color: white;
-            padding: 13px 20px;
-            margin-top: 24px;
-            font-size: 11px;
-            font-weight: 900;
-            border-radius: 4px;
-        }
-
-        .featured-link:hover {
-            background: #22C875;
-            color: #080808;
-        }
-
-        /* ORDER INFORMATION */
-
-        .order-info {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 22px;
-            margin-top: 65px;
-        }
-
-        .info-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 30px;
-            display: flex;
-            gap: 18px;
-        }
-
-        .info-icon {
-            min-width: 48px;
-            height: 48px;
-            background: #eaf7ef;
-            color: #16834A;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-        }
-
-        .info-card h3 {
-            font-size: 16px;
-            font-weight: 900;
-            margin-bottom: 9px;
-        }
-
-        .info-card p {
-            color: #777;
-            font-size: 12px;
-            line-height: 1.9;
-        }
-
-        /* FINAL CTA */
-
-        .shop-cta {
-            background: linear-gradient(110deg, #0a0a0a, #122c1d);
-            border-radius: 9px;
-            padding: 55px 25px;
-            margin-top: 65px;
-            text-align: center;
-            border-bottom: 4px solid #22C875;
-        }
-
-        .shop-cta h2 {
-            color: white;
-            font-size: clamp(24px, 4vw, 36px);
-            font-weight: 900;
-        }
-
-        .shop-cta p {
-            color: #c7c7c7;
-            font-size: 13px;
-            margin-top: 13px;
-        }
-
-        /* FOOTER */
-
-        .site-footer {
-            background: #080808;
-        }
-
-        .site-footer a:hover {
-            color: #22C875;
-        }
-
-        /* RESPONSIVE */
-
-        @media(max-width: 900px) {
-            .product-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media(max-width: 640px) {
-            .store-hero {
-                min-height: 430px;
-                background-position: center;
-            }
-
-            .hero-content {
-                padding: 65px 0;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 12px;
-            }
-
-            .product-image {
-                height: 220px;
-            }
-
-            .product-details {
-                padding: 13px;
-            }
-
-            .product-name {
-                font-size: 14px;
-            }
-
-            .product-description {
-                font-size: 10px;
-            }
-
-            .product-price {
-                font-size: 13px;
-            }
-
-            .order-button {
-                padding: 9px;
-                font-size: 9px;
-            }
-
-            .product-bottom {
-                flex-wrap: wrap;
-            }
-
-            .order-info {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-collection {
-                padding: 40px 22px;
-            }
-
-            .benefit-item {
-                font-size: 9px;
-            }
-        }
-
-        @media(max-width: 380px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-image {
-                height: 300px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-
 <header class="site-header">
     <div class="container mx-auto px-5">
         <div class="header-inner flex items-center justify-between">
 
             <a href="index.html" class="flex items-center gap-3">
-                <img
-                    src="images/Namanga%20river%20logo.jpeg"
-                    alt="Namanga River FC Logo"
-                    class="object-contain rounded-full"
-                >
+                <img src="images/Namanga%20river%20logo.jpeg"
+                     alt="Namanga River FC Badge"
+                     class="w-12 h-12 object-contain rounded-full">
 
                 <div>
-                    <span class="block font-bold text-white">
-                        NAMANGA RIVER FC
-                    </span>
-                    <span class="block text-xs text-green-400">
-                        ONE CLUB. ONE DREAM.
-                    </span>
+                    <span class="block font-bold text-white">NAMANGA RIVER FC</span>
+                    <span class="block text-xs text-gray-400">ONE CLUB. ONE DREAM.</span>
                 </div>
             </a>
 
@@ -612,7 +57,6 @@
             </button>
 
             <nav id="nav" class="main-nav">
-
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
 
@@ -640,529 +84,242 @@
                 <a href="shop.html" class="nav-link">Shop</a>
                 <a href="donations.html" class="nav-link">Support Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-
             </nav>
         </div>
     </div>
 </header>
 
 
-<!-- SHOP HERO -->
+<!-- HERO -->
+<section class="shop-hero">
+    <div class="shop-overlay"></div>
 
-<section class="store-hero">
-    <div class="container mx-auto px-5 w-full">
+    <div class="shop-hero-content">
+        <span class="hero-tag">
+            <i data-lucide="shirt" size="16"></i>
+            OFFICIAL CLUB MERCHANDISE
+        </span>
 
-        <div class="hero-content">
+        <h1>WEAR THE<br><span>BADGE WITH PRIDE.</span></h1>
 
-            <p class="hero-kicker">
-                THE OFFICIAL NAMANGA RIVER FC STORE
-            </p>
+        <p>
+            Represent Namanga River Football Club.
+            Get your official home and away jerseys and stand with the team.
+        </p>
 
-            <h1 class="hero-title">
-                WEAR THE BADGE.<br>
-                <span>REPRESENT THE RIVER.</span>
-            </h1>
+        <a href="#products" class="shop-hero-button">
+            EXPLORE THE KITS
+            <i data-lucide="arrow-down" size="18"></i>
+        </a>
+    </div>
 
-            <p class="hero-description">
-                Show your colours wherever you go.
-                Explore the official Namanga River Football Club
-                merchandise collection and represent the club with pride.
-            </p>
-
-            <a href="#products" class="hero-button">
-                EXPLORE THE COLLECTION
-                <i data-lucide="arrow-down" size="17"></i>
-            </a>
-
-        </div>
+    <div class="hero-bottom-label">
+        NAMANGA RIVER FOOTBALL CLUB
     </div>
 </section>
 
 
-<!-- BENEFIT STRIP -->
+<!-- SHOP INTRO -->
+<main class="shop-main">
 
-<section class="benefit-strip">
-    <div class="container mx-auto px-5">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-
-            <div class="benefit-item">
-                <i data-lucide="shield-check"></i>
-                OFFICIAL CLUB MERCHANDISE
-            </div>
-
-            <div class="benefit-item">
-                <i data-lucide="message-circle"></i>
-                DIRECT CLUB ORDERING
-            </div>
-
-            <div class="benefit-item">
-                <i data-lucide="heart"></i>
-                SUPPORT YOUR CLUB
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- PRODUCTS -->
-
-<main class="shop-section">
-
-    <div class="container mx-auto px-5 max-w-7xl">
-
-        <div class="text-center">
-
-            <span class="section-kicker">
-                THE RIVER COLLECTION
-            </span>
-
-            <h2 class="section-heading">
-                SHOP CLUB MERCHANDISE
-            </h2>
-
-            <p class="section-description">
-                From match-day jerseys to supporter accessories,
-                find your way to represent Namanga River FC.
+    <section class="shop-intro container mx-auto px-5">
+        <div>
+            <span class="section-kicker">THE OFFICIAL COLLECTION</span>
+            <h2>THE CLUB <span>STORE.</span></h2>
+            <p>
+                Two colours. One identity. Choose your favourite
+                Namanga River FC kit and show your support.
             </p>
-
         </div>
 
+        <div class="collection-count">
+            <strong>02</strong>
+            <span>OFFICIAL KITS</span>
+        </div>
+    </section>
 
-        <!-- CATEGORY FILTERS -->
 
-        <div class="shop-filters">
+    <!-- PRODUCTS -->
+    <section id="products" class="container mx-auto px-5 product-section">
 
-            <button class="shop-filter active" data-filter="all">
-                ALL ITEMS
-            </button>
-
-            <button class="shop-filter" data-filter="jerseys">
-                JERSEYS
-            </button>
-
-            <button class="shop-filter" data-filter="training">
-                TRAINING WEAR
-            </button>
-
-            <button class="shop-filter" data-filter="accessories">
-                ACCESSORIES
-            </button>
-
+        <div class="product-heading">
+            <div>
+                <span class="section-kicker">MATCH COLLECTION</span>
+                <h2>THE JERSEYS</h2>
+            </div>
+            <span class="collection-label">HOME & AWAY</span>
         </div>
 
-
-        <!-- PRODUCT GRID -->
-
-        <section id="products" class="product-grid">
+        <div class="product-grid">
 
             <!-- BLACK HOME JERSEY -->
+            <article class="kit-card">
 
-            <article class="product-card" data-category="jerseys">
+                <div class="kit-image black-kit">
+                    <span class="kit-badge">HOME KIT</span>
 
-                <div class="product-image">
+                    <img src="images/black%20jersey.jpg"
+                         alt="Namanga River FC black home jersey"
+                         loading="lazy">
 
-                    <div class="product-placeholder">
-                        <i data-lucide="shirt"></i>
-                        <span>HOME JERSEY</span>
+                    <div class="image-caption">
+                        <span>01 / HOME</span>
+                        <span>BLACK EDITION</span>
                     </div>
-
-                    <img
-                        src="images/black%20jersey.jpg"
-                        alt="Namanga River FC black home jersey"
-                        onerror="this.style.display='none'"
-                    >
-
-                    <span class="product-label">HOME KIT</span>
-
                 </div>
 
-                <div class="product-details">
+                <div class="kit-details">
+                    <div class="kit-category">NAMANGA RIVER FC · HOME</div>
 
-                    <p class="product-category">MATCH COLLECTION</p>
+                    <h3>Black Home Jersey</h3>
 
-                    <h3 class="product-name">Black Home Jersey</h3>
-
-                    <p class="product-description">
-                        The black and gold home colours of Namanga River FC.
+                    <p>
+                        The official black home kit.
+                        Represent the club in its home colours.
                     </p>
 
-                    <div class="product-bottom">
+                    <div class="kit-bottom">
+                        <div>
+                            <span class="price-label">PRICE</span>
+                            <strong>Price on enquiry</strong>
+                        </div>
 
-                        <span class="product-price">KSh ——</span>
-
-                        <button class="order-button"
-                                onclick="orderProduct('Black Home Jersey')">
-                            <i data-lucide="message-circle" size="15"></i>
-                            ORDER
+                        <button class="kit-order-button"
+                                data-product="Black Home Jersey">
+                            ORDER KIT
+                            <i data-lucide="arrow-up-right" size="17"></i>
                         </button>
-
                     </div>
                 </div>
+
             </article>
 
 
             <!-- RED AWAY JERSEY -->
+            <article class="kit-card">
 
-            <article class="product-card" data-category="jerseys">
+                <div class="kit-image red-kit">
+                    <span class="kit-badge">AWAY KIT</span>
 
-                <div class="product-image">
+                    <img src="images/red%20jersey.jpg"
+                         alt="Namanga River FC red away jersey"
+                         loading="lazy">
 
-                    <div class="product-placeholder">
-                        <i data-lucide="shirt"></i>
-                        <span>AWAY JERSEY</span>
+                    <div class="image-caption">
+                        <span>02 / AWAY</span>
+                        <span>RED EDITION</span>
                     </div>
-
-                    <img
-                        src="images/red%20jersey.jpg"
-                        alt="Namanga River FC red and cream away jersey"
-                        onerror="this.style.display='none'"
-                    >
-
-                    <span class="product-label">AWAY KIT</span>
-
                 </div>
 
-                <div class="product-details">
+                <div class="kit-details">
+                    <div class="kit-category">NAMANGA RIVER FC · AWAY</div>
 
-                    <p class="product-category">MATCH COLLECTION</p>
+                    <h3>Red Away Jersey</h3>
 
-                    <h3 class="product-name">Red Away Jersey</h3>
-
-                    <p class="product-description">
-                        The cream and red away colours of Namanga River FC.
+                    <p>
+                        The official red away kit.
+                        Carry the club colours wherever we play.
                     </p>
 
-                    <div class="product-bottom">
+                    <div class="kit-bottom">
+                        <div>
+                            <span class="price-label">PRICE</span>
+                            <strong>Price on enquiry</strong>
+                        </div>
 
-                        <span class="product-price">KSh ——</span>
-
-                        <button class="order-button"
-                                onclick="orderProduct('Red Away Jersey')">
-                            <i data-lucide="message-circle" size="15"></i>
-                            ORDER
+                        <button class="kit-order-button"
+                                data-product="Red Away Jersey">
+                            ORDER KIT
+                            <i data-lucide="arrow-up-right" size="17"></i>
                         </button>
-
                     </div>
                 </div>
+
             </article>
 
+        </div>
+    </section>
 
-            <!-- TRAINING KIT -->
 
-            <article class="product-card" data-category="training">
+    <!-- CLUB MESSAGE -->
+    <section class="club-message">
+        <div class="container mx-auto px-5">
+            <span class="section-kicker">MORE THAN A JERSEY</span>
 
-                <div class="product-image">
-
-                    <div class="product-placeholder">
-                        <i data-lucide="shirt"></i>
-                        <span>TRAINING COLLECTION</span>
-                    </div>
-
-                    <img
-                        src="images/club-training-kit.jpg"
-                        alt="Namanga River FC training kit"
-                        onerror="this.style.display='none'"
-                    >
-
-                    <span class="product-label">TRAINING</span>
-
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-category">TRAINING COLLECTION</p>
-
-                    <h3 class="product-name">Training Kit</h3>
-
-                    <p class="product-description">
-                        Club training wear for practice and preparation.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <span class="product-price">KSh ——</span>
-
-                        <button class="order-button"
-                                onclick="orderProduct('Training Kit')">
-                            <i data-lucide="message-circle" size="15"></i>
-                            ORDER
-                        </button>
-
-                    </div>
-                </div>
-            </article>
-
-
-            <!-- CLUB CAP -->
-
-            <article class="product-card" data-category="accessories">
-
-                <div class="product-image">
-
-                    <div class="product-placeholder">
-                        <i data-lucide="hat-glasses"></i>
-                        <span>CLUB ACCESSORY</span>
-                    </div>
-
-                    <img
-                        src="images/club-cap.jpg"
-                        alt="Namanga River FC club cap"
-                        onerror="this.style.display='none'"
-                    >
-
-                    <span class="product-label">ACCESSORIES</span>
-
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-category">SUPPORTER COLLECTION</p>
-
-                    <h3 class="product-name">Club Cap</h3>
-
-                    <p class="product-description">
-                        Represent Namanga River FC wherever you go.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <span class="product-price">KSh ——</span>
-
-                        <button class="order-button"
-                                onclick="orderProduct('Club Cap')">
-                            <i data-lucide="message-circle" size="15"></i>
-                            ORDER
-                        </button>
-
-                    </div>
-                </div>
-            </article>
-
-
-            <!-- SUPPORTER SCARF -->
-
-            <article class="product-card" data-category="accessories">
-
-                <div class="product-image">
-
-                    <div class="product-placeholder">
-                        <i data-lucide="flag"></i>
-                        <span>SUPPORTER COLLECTION</span>
-                    </div>
-
-                    <img
-                        src="images/club-scarf.jpg"
-                        alt="Namanga River FC supporter scarf"
-                        onerror="this.style.display='none'"
-                    >
-
-                    <span class="product-label">ACCESSORIES</span>
-
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-category">SUPPORTER COLLECTION</p>
-
-                    <h3 class="product-name">Supporter Scarf</h3>
-
-                    <p class="product-description">
-                        Bring your club colours to every match day.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <span class="product-price">KSh ——</span>
-
-                        <button class="order-button"
-                                onclick="orderProduct('Supporter Scarf')">
-                            <i data-lucide="message-circle" size="15"></i>
-                            ORDER
-                        </button>
-
-                    </div>
-                </div>
-            </article>
-
-
-            <!-- TRAINING TOP -->
-
-            <article class="product-card" data-category="training">
-
-                <div class="product-image">
-
-                    <div class="product-placeholder">
-                        <i data-lucide="shirt"></i>
-                        <span>TRAINING COLLECTION</span>
-                    </div>
-
-                    <img
-                        src="images/club-training-top.jpg"
-                        alt="Namanga River FC training top"
-                        onerror="this.style.display='none'"
-                    >
-
-                    <span class="product-label">TRAINING</span>
-
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-category">TRAINING COLLECTION</p>
-
-                    <h3 class="product-name">Training Top</h3>
-
-                    <p class="product-description">
-                        Comfortable club training wear.
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <span class="product-price">KSh ——</span>
-
-                        <button class="order-button"
-                                onclick="orderProduct('Training Top')">
-                            <i data-lucide="message-circle" size="15"></i>
-                            ORDER
-                        </button>
-
-                    </div>
-                </div>
-            </article>
-
-        </section>
-
-
-        <!-- FEATURED COLLECTION -->
-
-        <section class="featured-collection">
-
-            <span class="text-bright font-black text-xs tracking-widest">
-                MORE THAN A FOOTBALL CLUB
-            </span>
-
-            <h3 class="mt-4">
-                WEAR YOUR COLOURS.<br>
-                <span>LIVE THE RIVER SPIRIT.</span>
-            </h3>
+            <h2>ONE CLUB.<br><span>ONE DREAM. ONE RIVER.</span></h2>
 
             <p>
-                Every jersey tells a story. Every supporter is part
-                of the journey. Stand with Namanga River FC and
-                represent the badge with pride.
+                Every jersey represents the players, supporters
+                and community behind Namanga River FC.
             </p>
 
-            <a href="contact.html" class="featured-link">
+            <a href="contact.html" class="message-button">
                 CONTACT THE CLUB
-                <i data-lucide="arrow-right" size="16"></i>
+                <i data-lucide="arrow-right" size="18"></i>
             </a>
+        </div>
+    </section>
 
-        </section>
 
+    <!-- ORDER INFORMATION -->
+    <section class="order-info container mx-auto px-5">
 
-        <!-- ORDER INFORMATION -->
-
-        <section class="order-info">
-
-            <div class="info-card">
-
-                <div class="info-icon">
-                    <i data-lucide="message-circle" size="24"></i>
-                </div>
-
-                <div>
-                    <h3>WhatsApp Ordering</h3>
-
-                    <p>
-                        Choose your product and contact the club to
-                        confirm availability, size, price and delivery
-                        arrangements.
-                    </p>
-                </div>
-
+        <div class="order-info-card">
+            <div class="info-icon">
+                <i data-lucide="message-circle" size="25"></i>
             </div>
 
-
-            <div class="info-card">
-
-                <div class="info-icon">
-                    <i data-lucide="shield-check" size="24"></i>
-                </div>
-
-                <div>
-                    <h3>Online Payments</h3>
-
-                    <p>
-                        Paystack checkout will be enabled after the
-                        club's products, prices and secure payment
-                        backend have been configured.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL CTA -->
-
-        <section class="shop-cta">
-
-            <h2>WEAR THE BADGE WITH PRIDE.</h2>
+            <h3>ORDER THROUGH WHATSAPP</h3>
 
             <p>
-                One club. One dream. One river.
-                United by football.
+                Contact the club to enquire about jersey sizes,
+                prices and collection or delivery arrangements.
+            </p>
+        </div>
+
+        <div class="order-info-card">
+            <div class="info-icon">
+                <i data-lucide="credit-card" size="25"></i>
+            </div>
+
+            <h3>SECURE ONLINE PAYMENTS</h3>
+
+            <p>
+                Online checkout through Paystack will be enabled
+                once the secure payment backend is configured.
             </p>
 
-            <a href="contact.html" class="hero-button">
-                GET IN TOUCH
-                <i data-lucide="arrow-right" size="17"></i>
-            </a>
+            <span class="coming-soon">ONLINE PAYMENTS COMING SOON</span>
+        </div>
 
-        </section>
+    </section>
 
-    </div>
 </main>
 
 
 <!-- FOOTER -->
-
 <footer class="site-footer">
-
     <div class="container mx-auto px-5 py-12">
 
         <div class="grid md:grid-cols-3 gap-10">
 
             <div>
-
                 <div class="flex items-center gap-3 mb-4">
+                    <img src="images/Namanga%20river%20logo.jpeg"
+                         alt="Namanga River FC badge"
+                         class="w-12 h-12 object-contain rounded-full">
 
-                    <img
-                        src="images/Namanga%20river%20logo.jpeg"
-                        alt="Namanga River FC Logo"
-                        class="w-12 h-12 object-contain rounded-full"
-                    >
-
-                    <h3 class="font-bold text-white">
-                        NAMANGA RIVER FC
-                    </h3>
-
+                    <h3 class="font-bold text-white">NAMANGA RIVER FC</h3>
                 </div>
 
                 <p class="text-gray-400 text-sm leading-relaxed">
                     One club. One dream. One river.
                     United by football and driven by ambition.
                 </p>
-
             </div>
 
-
             <div>
-
-                <h3 class="font-bold text-white mb-4">QUICK LINKS</h3>
-
+                <h3 class="font-bold text-white mb-4">Quick Links</h3>
                 <div class="flex flex-col gap-3 text-gray-400 text-sm">
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
@@ -1170,14 +327,10 @@
                     <a href="fixtures.html">Fixtures</a>
                     <a href="results.html">Results</a>
                 </div>
-
             </div>
 
-
             <div>
-
-                <h3 class="font-bold text-white mb-4">CLUB PAGES</h3>
-
+                <h3 class="font-bold text-white mb-4">Club Pages</h3>
                 <div class="flex flex-col gap-3 text-gray-400 text-sm">
                     <a href="gallery.html">Gallery</a>
                     <a href="new.html">News</a>
@@ -1185,115 +338,579 @@
                     <a href="donations.html">Support the Club</a>
                     <a href="contact.html">Contact</a>
                 </div>
-
             </div>
 
         </div>
 
         <div class="border-t border-gray-800 mt-10 pt-6 text-center">
-
             <p class="text-gray-500 text-sm">
-                © <span id="year"></span>
-                Namanga River Football Club. All Rights Reserved.
+                © <span id="year"></span> Namanga River Football Club.
+                All Rights Reserved.
             </p>
-
         </div>
 
     </div>
-
 </footer>
 
 
-<!-- MAIN WEBSITE JAVASCRIPT -->
+<style>
+/* GENERAL */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: #f5f7f5;
+}
 
-<script src="js/script.js"></script>
+html {
+    scroll-behavior: smooth;
+}
 
+.shop-main {
+    background: #f5f7f5;
+}
 
-<!-- SHOP FUNCTIONS -->
+/* HERO */
+.shop-hero {
+    min-height: 570px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.48)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+}
 
-<script>
+.shop-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 90px 7%;
+    color: white;
+}
 
-    // UPDATE COPYRIGHT YEAR
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #22c875;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
 
-    const yearElement = document.getElementById("year");
+.shop-hero h1 {
+    font-size: clamp(43px, 7vw, 85px);
+    line-height: 1.02;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -3px;
+}
 
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+.shop-hero h1 span {
+    color: #22c875;
+}
+
+.shop-hero p {
+    max-width: 550px;
+    color: #dedede;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-top: 25px;
+}
+
+.shop-hero-button,
+.message-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #16834a;
+    color: white;
+    padding: 16px 24px;
+    margin-top: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .25s;
+}
+
+.shop-hero-button:hover,
+.message-button:hover {
+    background: #22c875;
+    color: #06130b;
+    transform: translateY(-3px);
+}
+
+.hero-bottom-label {
+    position: absolute;
+    bottom: 25px;
+    right: 6%;
+    color: rgba(255,255,255,.55);
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 800;
+}
+
+/* INTRO */
+.shop-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding-top: 85px;
+    padding-bottom: 65px;
+}
+
+.section-kicker {
+    display: block;
+    color: #16834a;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.shop-intro h2,
+.product-heading h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    color: #101010;
+    margin-top: 12px;
+}
+
+.shop-intro h2 span {
+    color: #16834a;
+}
+
+.shop-intro p {
+    color: #666;
+    max-width: 550px;
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+.collection-count {
+    min-width: 145px;
+    min-height: 125px;
+    background: #101010;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid #16834a;
+}
+
+.collection-count strong {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.collection-count span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #22c875;
+    font-weight: 800;
+}
+
+/* PRODUCTS */
+.product-section {
+    padding-bottom: 100px;
+}
+
+.product-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #dce2dc;
+    padding-bottom: 20px;
+}
+
+.product-heading h2 {
+    margin-bottom: 0;
+}
+
+.collection-label {
+    background: #e1f4e9;
+    color: #16834a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 11px 15px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.kit-card {
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #e6e9e6;
+    transition: .3s;
+}
+
+.kit-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
+
+.kit-image {
+    height: 470px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black-kit {
+    background: radial-gradient(circle at center, #3c3c3c, #080808 75%);
+}
+
+.red-kit {
+    background: radial-gradient(circle at center, #a91d27, #41080d 80%);
+}
+
+.kit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 18px;
+    transition: transform .5s;
+}
+
+.kit-card:hover .kit-image img {
+    transform: scale(1.04);
+}
+
+.kit-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    background: #16834a;
+    color: white;
+    padding: 10px 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 22px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,.8));
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.kit-details {
+    padding: 28px;
+}
+
+.kit-category {
+    color: #16834a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.kit-details h3 {
+    color: #101010;
+    font-size: 25px;
+    font-weight: 900;
+    margin-top: 12px;
+}
+
+.kit-details p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+.kit-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+.price-label {
+    display: block;
+    color: #999;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.kit-bottom strong {
+    font-size: 14px;
+    color: #101010;
+}
+
+.kit-order-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 17px;
+    background: #16834a;
+    color: white;
+    border: none;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.kit-order-button:hover {
+    background: #101010;
+}
+
+/* CLUB MESSAGE */
+.club-message {
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.78)),
+        url("https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    padding: 90px 0;
+    color: white;
+}
+
+.club-message h2 {
+    font-size: clamp(34px, 6vw, 65px);
+    line-height: 1.1;
+    font-weight: 900;
+    margin-top: 20px;
+}
+
+.club-message h2 span {
+    color: #22c875;
+}
+
+.club-message p {
+    color: #ccc;
+    max-width: 550px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* ORDER INFO */
+.order-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    padding-top: 75px;
+    padding-bottom: 85px;
+}
+
+.order-info-card {
+    background: white;
+    padding: 35px;
+    border: 1px solid #e4e9e4;
+    border-top: 4px solid #16834a;
+}
+
+.info-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6f5ec;
+    color: #16834a;
+    margin-bottom: 22px;
+}
+
+.order-info-card h3 {
+    font-size: 17px;
+    font-weight: 900;
+    color: #111;
+}
+
+.order-info-card p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+.coming-soon {
+    display: inline-block;
+    margin-top: 18px;
+    color: #16834a;
+    background: #e6f5ec;
+    padding: 9px 12px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* FOOTER */
+.site-footer a {
+    transition: .2s;
+}
+
+.site-footer a:hover {
+    color: #22c875;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    .shop-hero {
+        min-height: 500px;
     }
 
+    .shop-hero-content {
+        padding: 75px 25px;
+    }
 
-    // PRODUCT CATEGORY FILTERS
+    .shop-hero h1 {
+        letter-spacing: -1px;
+    }
 
-    const filterButtons = document.querySelectorAll(".shop-filter");
-    const productCards = document.querySelectorAll(".product-card");
+    .shop-intro {
+        padding-top: 60px;
+        padding-bottom: 45px;
+    }
 
-    filterButtons.forEach(button => {
+    .collection-count {
+        min-width: 100px;
+        min-height: 100px;
+    }
 
-        button.addEventListener("click", () => {
+    .collection-count strong {
+        font-size: 32px;
+    }
 
-            const selectedCategory = button.dataset.filter;
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 
-            filterButtons.forEach(item => {
-                item.classList.remove("active");
-            });
+    .kit-image {
+        height: 420px;
+    }
 
-            button.classList.add("active");
+    .order-info {
+        grid-template-columns: 1fr;
+    }
+}
 
-            productCards.forEach(card => {
+@media(max-width: 480px) {
+    .shop-intro {
+        align-items: flex-start;
+    }
 
-                const category = card.dataset.category;
+    .collection-count {
+        min-width: 75px;
+        min-height: 85px;
+    }
 
-                const shouldShow =
-                    selectedCategory === "all" ||
-                    selectedCategory === category;
+    .collection-count strong {
+        font-size: 25px;
+    }
 
-                card.classList.toggle("hidden", !shouldShow);
+    .collection-count span {
+        font-size: 8px;
+    }
 
-            });
+    .product-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
 
+    .kit-image {
+        height: 350px;
+    }
+
+    .kit-details {
+        padding: 22px;
+    }
+
+    .kit-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .kit-order-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+
+
+<!-- SCRIPTS -->
+<script src="js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Update copyright year
+    const year = document.getElementById("year");
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+    // WhatsApp ordering
+    // Replace this with the club's real number when available.
+    const CLUB_WHATSAPP_NUMBER = "2547XXXXXXXX";
+
+    document.querySelectorAll(".kit-order-button").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const productName = this.dataset.product;
+
+            if (CLUB_WHATSAPP_NUMBER.includes("X")) {
+                alert(
+                    "WhatsApp ordering is not configured yet. " +
+                    "Please contact the club directly to order."
+                );
+                return;
+            }
+
+            const message =
+                "Hello Namanga River FC. I would like to order the " +
+                productName +
+                ". Please share the available sizes, price and delivery details.";
+
+            const url =
+                "https://wa.me/" +
+                CLUB_WHATSAPP_NUMBER +
+                "?text=" +
+                encodeURIComponent(message);
+
+            window.open(url, "_blank");
         });
 
     });
 
-
-    // WHATSAPP ORDERING
-
-    // Replace with the club's real WhatsApp number.
-    // Use international format without + or spaces.
-
-    const CLUB_WHATSAPP_NUMBER = "2547XXXXXXXX";
-
-    function orderProduct(productName) {
-
-        if (CLUB_WHATSAPP_NUMBER.includes("X")) {
-
-            alert(
-                "The club's WhatsApp number has not been configured yet."
-            );
-
-            return;
-        }
-
-        const message =
-            "Hello Namanga River FC. I would like to order: "
-            + productName
-            + ". Please share the price, available sizes and delivery details.";
-
-        const whatsappURL =
-            "https://wa.me/" + CLUB_WHATSAPP_NUMBER
-            + "?text=" + encodeURIComponent(message);
-
-        window.open(whatsappURL, "_blank");
-
-    }
-
-
-    // LOAD ICONS
-
     if (window.lucide) {
-        window.lucide.createIcons();
+        lucide.createIcons();
     }
 
+});
 </script>
 
 </body>
