@@ -5,408 +5,673 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Official website of Namanga River Football Club. Follow our squad, fixtures, results and league standings.">
+
     <title>Namanga River FC | Official Website</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        * { box-sizing: border-box; }
+<style>
 
-        body {
-            margin: 0;
-            font-family: "Montserrat", sans-serif;
-        }
+/* =========================================
+   GLOBAL HOMEPAGE STYLES
+========================================= */
 
-        .hero-home {
-            min-height: min(760px, 85vh);
-            display: flex;
-            align-items: center;
-            background-image:
-                linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.55), rgba(0,0,0,.2)),
-                url("images/index.jpg");
-            background-size: cover;
-            background-position: center 48%;
-            background-repeat: no-repeat;
-            overflow: hidden;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .hero-content {
-            max-width: 1250px;
-            width: 100%;
-            margin: auto;
-            padding: 100px 25px;
-        }
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+}
 
-        .hero-label {
-            color: #22c875;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            margin-bottom: 22px;
-            text-transform: uppercase;
-        }
+img {
+    max-width: 100%;
+}
 
-        .hero-content h1 {
-            color: white;
-            font-size: clamp(42px, 7vw, 82px);
-            line-height: 1.06;
-            font-weight: 900;
-            max-width: 800px;
-            margin: 0 0 25px;
-        }
+/* =========================================
+   HERO SECTION
+========================================= */
 
-        .hero-content h1 span { color: #22c875; }
+.hero-home {
+    min-height: min(760px, 85vh);
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.55), rgba(0,0,0,.2)),
+        url("images/index.jpg");
+    background-size: cover;
+    background-position: center 48%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
 
-        .hero-description {
-            max-width: 590px;
-            color: #e5e7eb;
-            font-size: 16px;
-            line-height: 1.9;
-            margin-bottom: 35px;
-        }
+.hero-content {
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    padding: 100px 25px;
+}
 
-        .hero-actions {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.hero-label {
+    color: #22c875;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
 
-        .hero-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 25px;
-            border-radius: 5px;
-            font-size: 13px;
-            font-weight: 800;
-            text-decoration: none;
-            transition: .25s;
-        }
+.hero-content h1 {
+    color: white;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.06;
+    font-weight: 900;
+    max-width: 800px;
+    margin: 0 0 25px;
+}
 
-        .hero-button.primary {
-            background: #16834a;
-            color: white;
-        }
+.hero-content h1 span {
+    color: #22c875;
+}
 
-        .hero-button.primary:hover {
-            background: #22c875;
-            transform: translateY(-3px);
-        }
+.hero-description {
+    max-width: 590px;
+    color: #e5e7eb;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
 
-        .hero-button.secondary {
-            border: 1px solid white;
-            color: white;
-        }
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        .hero-button.secondary:hover {
-            background: white;
-            color: black;
-        }
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .25s;
+}
 
-        .home-section {
-            padding: 85px 25px;
-            background: white;
-        }
+.hero-button.primary {
+    background: #16834a;
+    color: white;
+}
 
-        .home-container {
-            max-width: 1200px;
-            margin: auto;
-        }
+.hero-button.primary:hover {
+    background: #22c875;
+    transform: translateY(-3px);
+}
 
-        .section-heading {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+.hero-button.secondary {
+    border: 1px solid white;
+    color: white;
+}
 
-        .section-heading span {
-            color: #16834a;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+.hero-button.secondary:hover {
+    background: white;
+    color: black;
+}
 
-        .section-heading h2 {
-            font-size: clamp(27px, 4vw, 38px);
-            font-weight: 900;
-            color: #111;
-            margin: 12px 0;
-        }
+/* =========================================
+   INTRODUCTION SECTION
+========================================= */
 
-        .section-heading p {
-            max-width: 650px;
-            margin: auto;
-            color: #6b7280;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+.home-section {
+    padding: 85px 25px;
+    background: white;
+}
 
-        .value-grid, .highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.home-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
 
-        .value-card {
-            padding: 32px;
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            transition: .25s;
-        }
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
 
-        .value-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.08);
-        }
+.section-heading span {
+    color: #16834a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
-        .value-card i {
-            color: #16834a;
-            margin-bottom: 20px;
-        }
+.section-heading h2 {
+    font-size: clamp(27px, 4vw, 38px);
+    font-weight: 900;
+    color: #111;
+    margin: 12px 0;
+}
 
-        .value-card h3 {
-            color: #111;
-            font-size: 19px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
+.section-heading p {
+    max-width: 650px;
+    margin: auto;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.8;
+}
 
-        .value-card p {
-            color: #6b7280;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+.value-grid,
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
 
-        .highlights-section {
-            background: #080808;
-            padding: 80px 25px;
-        }
+.value-card {
+    padding: 32px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    transition: .25s;
+}
 
-        .highlights-section .section-heading h2 { color: white; }
-        .highlights-section .section-heading p { color: #a3a3a3; }
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
 
-        .highlight-card {
-            background: #151515;
-            border: 1px solid #292929;
-            padding: 30px;
-            border-radius: 10px;
-            transition: .25s;
-        }
+.value-card i {
+    color: #16834a;
+    margin-bottom: 20px;
+}
 
-        .highlight-card:hover {
-            border-color: #16834a;
-            transform: translateY(-5px);
-        }
+.value-card h3 {
+    color: #111;
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
 
-        .highlight-card i {
-            color: #22c875;
-            margin-bottom: 20px;
-        }
+.value-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.8;
+}
 
-        .highlight-card h3 {
-            color: white;
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
+/* =========================================
+   CLUB HIGHLIGHTS
+========================================= */
 
-        .highlight-card p {
-            color: #a3a3a3;
-            font-size: 13px;
-            line-height: 1.8;
-        }
+.highlights-section {
+    background: #080808;
+    padding: 80px 25px;
+}
 
-        .highlight-card a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #22c875;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            margin-top: 15px;
-        }
+.highlights-section .section-heading h2 {
+    color: white;
+}
 
-        /* HOMEPAGE LEAGUE PREVIEW */
+.highlights-section .section-heading p {
+    color: #a3a3a3;
+}
 
-        .league-preview {
-            padding: 85px 25px;
-            background: #f4f6f8;
-        }
+.highlight-card {
+    background: #151515;
+    border: 1px solid #292929;
+    padding: 30px;
+    border-radius: 10px;
+    transition: .25s;
+}
 
-        .league-preview-inner {
-            max-width: 1200px;
-            margin: auto;
-        }
+.highlight-card:hover {
+    border-color: #16834a;
+    transform: translateY(-5px);
+}
 
-        .league-preview-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 20px;
-            margin-bottom: 28px;
-        }
+.highlight-card i {
+    color: #22c875;
+    margin-bottom: 20px;
+}
 
-        .league-preview-heading span {
-            color: #16834a;
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
+.highlight-card h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
 
-        .league-preview-heading h2 {
-            font-size: clamp(25px, 4vw, 36px);
-            color: #111;
-            font-weight: 900;
-            margin: 10px 0;
-        }
+.highlight-card p {
+    color: #a3a3a3;
+    font-size: 13px;
+    line-height: 1.8;
+}
 
-        .league-preview-heading p {
-            color: #6b7280;
-            font-size: 13px;
-            line-height: 1.7;
-        }
+.highlight-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #22c875;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 15px;
+}
 
-        .league-table-box {
-            background: white;
-            border-radius: 10px;
-            overflow-x: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,.05);
-        }
+/* =========================================
+   LEAGUE TABLE PREVIEW
+========================================= */
 
-        .home-league-table {
-            width: 100%;
-            min-width: 580px;
-            border-collapse: collapse;
-            text-align: center;
-        }
+.league-preview {
+    padding: 85px 25px;
+    background: #f4f6f8;
+}
 
-        .home-league-table th {
-            background: #101d32;
-            color: white;
-            padding: 16px 12px;
-            font-size: 10px;
-            font-weight: 800;
-        }
+.league-preview-inner {
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .home-league-table td {
-            padding: 14px 12px;
-            border-bottom: 1px solid #edf0f2;
-            font-size: 12px;
-            color: #374151;
-            font-weight: 600;
-        }
+.league-preview-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 28px;
+}
 
-        .home-league-table td:nth-child(2) {
-            text-align: left;
-            min-width: 170px;
-        }
+.league-preview-heading span {
+    color: #16834a;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
 
-        .home-league-table .our-club {
-            background: #e8f8ef;
-        }
+.league-preview-heading h2 {
+    font-size: clamp(25px, 4vw, 36px);
+    color: #111;
+    font-weight: 900;
+    margin: 10px 0;
+}
 
-        .home-league-table .our-club td {
-            color: #126b3d;
-            font-weight: 900;
-        }
+.league-preview-heading p {
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.7;
+}
 
-        .table-status {
-            margin-top: 18px;
-            padding: 15px;
-            background: #e8f8ef;
-            border-left: 4px solid #16834a;
-            border-radius: 5px;
-            color: #276345;
-            font-size: 12px;
-            line-height: 1.7;
-        }
+.league-table-box {
+    background: white;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
 
-        .league-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 14px 22px;
-            margin-top: 22px;
-            background: #16834a;
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 800;
-            border-radius: 5px;
-            transition: .2s;
-        }
+.home-league-table {
+    width: 100%;
+    min-width: 580px;
+    border-collapse: collapse;
+    text-align: center;
+}
 
-        .league-more:hover { background: #22c875; }
+.home-league-table th {
+    background: #101d32;
+    color: white;
+    padding: 16px 12px;
+    font-size: 10px;
+    font-weight: 800;
+}
 
-        .cta-home {
-            padding: 75px 25px;
-            text-align: center;
-            background: #16834a;
-        }
+.home-league-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #edf0f2;
+    font-size: 12px;
+    color: #374151;
+    font-weight: 600;
+}
 
-        .cta-home h2 {
-            color: white;
-            font-size: clamp(25px, 4vw, 38px);
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
+.home-league-table td:nth-child(2) {
+    text-align: left;
+    min-width: 170px;
+}
 
-        .cta-home p {
-            color: #e5f5eb;
-            max-width: 600px;
-            margin: 0 auto 28px;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+.home-league-table .our-club {
+    background: #e8f8ef;
+}
 
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #111;
-            padding: 14px 25px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 800;
-            border-radius: 5px;
-            transition: .25s;
-        }
+.home-league-table .our-club td {
+    color: #126b3d;
+    font-weight: 900;
+}
 
-        .cta-button:hover {
-            background: #111;
-            color: white;
-        }
+.table-status {
+    margin-top: 18px;
+    padding: 15px;
+    background: #e8f8ef;
+    border-left: 4px solid #16834a;
+    border-radius: 5px;
+    color: #276345;
+    font-size: 12px;
+    line-height: 1.7;
+}
 
-        @media(max-width: 768px) {
-            .hero-home { min-height: 620px; }
-            .hero-content { padding: 85px 22px; }
-            .hero-description { font-size: 14px; }
-            .value-grid, .highlight-grid { grid-template-columns: 1fr; }
-            .home-section, .highlights-section, .league-preview {
-                padding: 65px 20px;
-            }
-            .hero-actions {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .hero-button {
-                width: 100%;
-                max-width: 280px;
-            }
-            .league-preview-heading {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-        }
-    </style>
+.league-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 14px 22px;
+    margin-top: 22px;
+    background: #16834a;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.league-more:hover {
+    background: #22c875;
+}
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.cta-home {
+    padding: 75px 25px;
+    text-align: center;
+    background: #16834a;
+}
+
+.cta-home h2 {
+    color: white;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.cta-home p {
+    color: #e5f5eb;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #111;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 5px;
+    transition: .25s;
+}
+
+.cta-button:hover {
+    background: #111;
+    color: white;
+}
+
+/* =========================================
+   PROFESSIONAL FOOTER
+========================================= */
+
+.site-footer {
+    background: #050505;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 25px 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 45px;
+    width: 100%;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.footer-brand h3 {
+    color: white;
+    font-size: 19px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.footer-column > h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 22px;
+}
+
+.footer-about p {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 300px;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color .2s ease;
+    overflow-wrap: anywhere;
+}
+
+.footer-links a:hover {
+    color: #22c875;
+}
+
+.footer-bottom {
+    border-top: 1px solid #252525;
+    margin-top: 45px;
+    padding: 25px 0 5px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #737373;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-home {
+        min-height: 620px;
+    }
+
+    .hero-content {
+        padding: 85px 22px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .value-grid,
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-section,
+    .highlights-section,
+    .league-preview {
+        padding: 65px 20px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .league-preview-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 25px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .hero-home {
+        min-height: 580px;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 75px 20px;
+    }
+
+    .hero-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 10vw, 52px);
+    }
+
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .value-card,
+    .highlight-card {
+        padding: 25px;
+    }
+
+    .footer-container {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .footer-about {
+        grid-column: auto;
+    }
+
+    .footer-brand h3 {
+        font-size: 16px;
+    }
+
+    .footer-column > h3 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+
+    .league-preview-heading h2 {
+        font-size: 25px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
+
+<!-- =========================================
+     HEADER AND NAVIGATION
+========================================= -->
 
 <header class="site-header">
     <div class="container mx-auto px-5">
@@ -420,11 +685,14 @@
                 </div>
             </a>
 
-            <button id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            <button id="menu-toggle" type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
                 <i data-lucide="menu"></i>
             </button>
 
             <nav id="nav" class="main-nav">
+
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
 
@@ -432,6 +700,7 @@
                     <button type="button" class="nav-link dropdown-toggle">
                         Club <i data-lucide="chevron-down"></i>
                     </button>
+
                     <div class="dropdown-menu">
                         <a href="squad.html">Our Squad</a>
                         <a href="gallery.html">Gallery</a>
@@ -443,6 +712,7 @@
                     <button type="button" class="nav-link dropdown-toggle">
                         Matches <i data-lucide="chevron-down"></i>
                     </button>
+
                     <div class="dropdown-menu">
                         <a href="fixtures.html">Fixtures</a>
                         <a href="results.html">Results</a>
@@ -453,15 +723,21 @@
                 <a href="shop.html" class="nav-link">Shop</a>
                 <a href="donations.html" class="nav-link">Support Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
+
             </nav>
+
         </div>
     </div>
 </header>
 
-<!-- HERO -->
+<!-- =========================================
+     HERO SECTION
+========================================= -->
 
 <section class="hero-home">
+
     <div class="hero-content">
+
         <div class="hero-label">Official Club Website</div>
 
         <h1>
@@ -477,24 +753,36 @@
         </p>
 
         <div class="hero-actions">
+
             <a href="squad.html" class="hero-button primary">
-                Meet Our Squad <i data-lucide="arrow-right"></i>
+                Meet Our Squad
+                <i data-lucide="arrow-right"></i>
             </a>
+
             <a href="fixtures.html" class="hero-button secondary">
-                View Fixtures <i data-lucide="calendar-days"></i>
+                View Fixtures
+                <i data-lucide="calendar-days"></i>
             </a>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- INTRODUCTION -->
+<!-- =========================================
+     INTRODUCTION
+========================================= -->
 
 <section class="home-section">
+
     <div class="home-container">
 
         <div class="section-heading">
             <span>Welcome To Our Club</span>
+
             <h2>More Than Just Football</h2>
+
             <p>
                 Namanga River FC is built around teamwork,
                 commitment and the shared ambition to keep
@@ -504,36 +792,57 @@
         </div>
 
         <div class="value-grid">
+
             <article class="value-card">
                 <i data-lucide="users" size="34"></i>
                 <h3>Teamwork</h3>
-                <p>We believe in unity, discipline and working together towards a common goal.</p>
+                <p>
+                    We believe in unity, discipline and working
+                    together towards a common goal.
+                </p>
             </article>
 
             <article class="value-card">
                 <i data-lucide="target" size="34"></i>
                 <h3>Ambition</h3>
-                <p>We aim to improve continuously, compete with determination and build for the future.</p>
+                <p>
+                    We aim to improve continuously, compete
+                    with determination and build for the future.
+                </p>
             </article>
 
             <article class="value-card">
                 <i data-lucide="heart" size="34"></i>
                 <h3>Community</h3>
-                <p>Our supporters and community are an important part of the identity and future of our club.</p>
+                <p>
+                    Our supporters and community are an important
+                    part of the identity and future of our club.
+                </p>
             </article>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- CLUB HIGHLIGHTS -->
+<!-- =========================================
+     CLUB HIGHLIGHTS
+========================================= -->
 
 <section class="highlights-section">
+
     <div class="home-container">
 
         <div class="section-heading">
             <span>Explore Namanga River FC</span>
+
             <h2>Everything About The Club</h2>
-            <p>Follow the team, discover our players and stay connected with the latest club activities.</p>
+
+            <p>
+                Follow the team, discover our players and stay
+                connected with the latest club activities.
+            </p>
         </div>
 
         <div class="highlight-grid">
@@ -541,68 +850,112 @@
             <article class="highlight-card">
                 <i data-lucide="users" size="32"></i>
                 <h3>First Team Squad</h3>
-                <p>Get to know the players representing Namanga River Football Club.</p>
-                <a href="squad.html">Explore Squad <i data-lucide="arrow-right" size="16"></i></a>
+                <p>
+                    Get to know the players representing
+                    Namanga River Football Club.
+                </p>
+                <a href="squad.html">
+                    Explore Squad <i data-lucide="arrow-right" size="16"></i>
+                </a>
             </article>
 
             <article class="highlight-card">
                 <i data-lucide="calendar-days" size="32"></i>
                 <h3>Fixtures & Results</h3>
-                <p>Keep up with upcoming matches and the team's published results.</p>
-                <a href="fixtures.html">View Matches <i data-lucide="arrow-right" size="16"></i></a>
+                <p>
+                    Keep up with upcoming matches and the team's
+                    published results.
+                </p>
+                <a href="fixtures.html">
+                    View Matches <i data-lucide="arrow-right" size="16"></i>
+                </a>
             </article>
 
             <article class="highlight-card">
                 <i data-lucide="camera" size="32"></i>
                 <h3>Club Gallery</h3>
-                <p>Explore photographs capturing the team's matches, training and moments together.</p>
-                <a href="gallery.html">View Gallery <i data-lucide="arrow-right" size="16"></i></a>
+                <p>
+                    Explore photographs capturing the team's
+                    matches, training and moments together.
+                </p>
+                <a href="gallery.html">
+                    View Gallery <i data-lucide="arrow-right" size="16"></i>
+                </a>
             </article>
 
             <article class="highlight-card">
                 <i data-lucide="newspaper" size="32"></i>
                 <h3>Latest News</h3>
-                <p>Stay connected with club announcements and important updates.</p>
-                <a href="new.html">Read News <i data-lucide="arrow-right" size="16"></i></a>
+                <p>
+                    Stay connected with club announcements
+                    and important updates.
+                </p>
+                <a href="new.html">
+                    Read News <i data-lucide="arrow-right" size="16"></i>
+                </a>
             </article>
 
             <article class="highlight-card">
                 <i data-lucide="shopping-bag" size="32"></i>
                 <h3>Club Merchandise</h3>
-                <p>Discover merchandise and show your support for Namanga River FC.</p>
-                <a href="shop.html">Visit Shop <i data-lucide="arrow-right" size="16"></i></a>
+                <p>
+                    Discover merchandise and show your support
+                    for Namanga River FC.
+                </p>
+                <a href="shop.html">
+                    Visit Shop <i data-lucide="arrow-right" size="16"></i>
+                </a>
             </article>
 
             <article class="highlight-card">
                 <i data-lucide="handshake" size="32"></i>
                 <h3>Support Our Club</h3>
-                <p>Find out how supporters and partners can contribute to our journey.</p>
-                <a href="donations.html">Support Us <i data-lucide="arrow-right" size="16"></i></a>
+                <p>
+                    Find out how supporters and partners can
+                    contribute to our journey.
+                </p>
+                <a href="donations.html">
+                    Support Us <i data-lucide="arrow-right" size="16"></i>
+                </a>
             </article>
 
         </div>
+
     </div>
+
 </section>
 
-<!-- LEAGUE TABLE PREVIEW -->
+<!-- =========================================
+     LEAGUE TABLE PREVIEW
+========================================= -->
 
 <section class="league-preview">
+
     <div class="league-preview-inner">
 
         <div class="league-preview-heading">
+
             <div>
                 <span>FKF DIVISION ONE · 2026/2027</span>
+
                 <h2>Zone B League Table</h2>
-                <p>Follow Namanga River FC's campaign in FKF Division One.</p>
+
+                <p>
+                    Follow Namanga River FC's campaign in FKF Division One.
+                </p>
             </div>
 
             <a href="league.html" class="league-more">
-                Full League Table <i data-lucide="arrow-right" size="16"></i>
+                Full League Table
+                <i data-lucide="arrow-right" size="16"></i>
             </a>
+
         </div>
 
         <div class="league-table-box">
+
             <table class="home-league-table">
+
                 <thead>
                     <tr>
                         <th>POS</th>
@@ -617,6 +970,7 @@
                 </thead>
 
                 <tbody>
+
                     <tr><td>—</td><td>Bandari Youth FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>—</td><td>Butterfly FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>—</td><td>FC Dynamo</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
@@ -632,104 +986,168 @@
                     <tr class="our-club">
                         <td>—</td>
                         <td>NAMANGA RIVER FC ★</td>
-                        <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
                     </tr>
 
                     <tr><td>—</td><td>Police Youth</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>—</td><td>Ruiru Hotstars</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>—</td><td>Sailors FC</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
                     <tr><td>—</td><td>Sango Sportiff</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+
                 </tbody>
+
             </table>
+
         </div>
 
         <div class="table-status">
             <strong>Standings update pending:</strong>
-            Match statistics will be published here once verified results are available.
-            Dashes indicate figures that have not yet been entered.
+            Match statistics will be published here once verified
+            results are available. Dashes indicate figures that
+            have not yet been entered.
         </div>
 
         <a href="league.html" class="league-more">
-            View All Zone B Standings <i data-lucide="arrow-right" size="16"></i>
+            View All Zone B Standings
+            <i data-lucide="arrow-right" size="16"></i>
         </a>
 
     </div>
+
 </section>
 
-<!-- CALL TO ACTION -->
+<!-- =========================================
+     CALL TO ACTION
+========================================= -->
 
 <section class="cta-home">
+
     <div class="home-container">
+
         <h2>BE PART OF OUR JOURNEY</h2>
+
         <p>
             Whether you are a supporter, player, partner or football enthusiast,
             there is a place for you in the Namanga River FC family.
         </p>
-        <a href="contact.html" class="cta-button">Get In Touch</a>
+
+        <a href="contact.html" class="cta-button">
+            Get In Touch
+        </a>
+
     </div>
+
 </section>
 
-<!-- FOOTER -->
+<!-- =========================================
+     RESPONSIVE FOOTER
+========================================= -->
 
 <footer class="site-footer">
-    <div class="container mx-auto px-5 py-12">
 
-        <div class="grid md:grid-cols-3 gap-10">
+    <div class="footer-container">
 
-            <div>
-                <div class="flex items-center gap-3 mb-4">
+        <div class="footer-grid">
+
+            <!-- CLUB INFORMATION -->
+
+            <div class="footer-column footer-about">
+
+                <div class="footer-brand">
+
                     <img src="images/Namanga%20river%20logo.jpeg"
-                         alt="Namanga River FC logo"
-                         class="w-12 h-12 object-contain rounded-full">
-                    <h3 class="font-bold text-white">NAMANGA RIVER FC</h3>
+                         alt="Namanga River FC logo">
+
+                    <h3>NAMANGA RIVER FC</h3>
+
                 </div>
 
-                <p class="text-gray-400 text-sm leading-relaxed">
+                <p>
                     One club. One dream. One river.
                     United by football and driven by ambition.
                 </p>
+
             </div>
 
-            <div>
-                <h3 class="font-bold text-white mb-4">Quick Links</h3>
-                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <div class="footer-links">
+
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="squad.html">Our Squad</a>
                     <a href="fixtures.html">Fixtures</a>
                     <a href="results.html">Results</a>
                     <a href="league.html">League Table</a>
+
                 </div>
+
             </div>
 
-            <div>
-                <h3 class="font-bold text-white mb-4">Explore</h3>
-                <div class="flex flex-col gap-3 text-gray-400 text-sm">
+            <!-- EXPLORE -->
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <div class="footer-links">
+
                     <a href="gallery.html">Gallery</a>
                     <a href="new.html">News</a>
                     <a href="shop.html">Merchandise</a>
                     <a href="donations.html">Support Us</a>
                     <a href="contact.html">Contact</a>
+
                 </div>
+
             </div>
 
         </div>
 
-        <div class="border-t border-gray-800 mt-10 pt-6 text-center">
-            <p class="text-gray-500 text-sm">
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            <p>
                 © <span id="year"></span>
                 Namanga River Football Club. All Rights Reserved.
             </p>
+
         </div>
 
     </div>
+
 </footer>
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script src="js/script.js"></script>
+
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
     if (window.lucide) {
-        lucide.createIcons();
+        window.lucide.createIcons();
     }
+
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+});
 </script>
 
 </body>
