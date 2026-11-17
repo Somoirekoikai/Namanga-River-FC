@@ -33,14 +33,17 @@
     <style>
         .about-hero {
             background:
-                linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.88)),
-                url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=85");
+                linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+                url("images/bout3.jpg");
             background-size: cover;
             background-position: center;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
         }
 
         .about-image {
-            min-height: 380px;
+            height: 480px;
             background: #f1f5f2;
             border-radius: 12px;
             overflow: hidden;
@@ -49,8 +52,9 @@
         .about-image img {
             width: 100%;
             height: 100%;
-            min-height: 380px;
             object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .about-card {
@@ -78,6 +82,21 @@
             height: 4px;
             background: #16834A;
             margin-top: 20px;
+        }
+
+        @media (max-width: 767px) {
+            .about-hero {
+                min-height: 350px;
+                background-position: center;
+            }
+
+            .about-image {
+                height: 340px;
+            }
+
+            .about-card {
+                padding: 24px;
+            }
         }
     </style>
 </head>
@@ -174,10 +193,10 @@
     </div>
 </header>
 
-<!-- HERO -->
+<!-- ABOUT HERO: BOUT3.JPG -->
 
 <section class="about-hero">
-    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
 
         <p class="text-brightgreen font-bold tracking-widest text-sm mb-5">
             OUR IDENTITY. OUR PURPOSE.
@@ -197,7 +216,7 @@
     </div>
 </section>
 
-<!-- INTRODUCTION -->
+<!-- INTRODUCTION: BOUT2.JPG -->
 
 <section class="py-20 md:py-28 px-6">
 
@@ -230,12 +249,11 @@
             </p>
         </div>
 
-       
-<div class="about-image">
-    <img
-        src="images/bout.jpg"
-        alt="Namanga River FC players playing football on the pitch">
-</div>
+        <div class="about-image">
+            <img
+                src="images/bout2.jpg"
+                alt="Namanga River FC players sharing a moment on the football pitch">
+        </div>
 
     </div>
 
@@ -437,6 +455,7 @@
 </footer>
 
 <script src="js/script.js"></script>
+
 <script>
     if (window.lucide) {
         window.lucide.createIcons();
