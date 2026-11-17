@@ -1268,3 +1268,150 @@ code {
     }
 
 }
+
+/* =====================================
+   FOOTER - RESPONSIVE FIX
+===================================== */
+
+.site-footer {
+    background: #050505;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 25px 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 45px;
+    width: 100%;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.footer-brand h3 {
+    color: white;
+    font-size: 19px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.footer-column h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 22px;
+}
+
+.footer-about p {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 300px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color .2s ease;
+    overflow-wrap: anywhere;
+}
+
+.footer-links a:hover {
+    color: #22c875;
+}
+
+.footer-bottom {
+    border-top: 1px solid #252525;
+    margin-top: 45px;
+    padding: 25px 0 5px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #737373;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 25px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .footer-about {
+        grid-column: auto;
+    }
+
+    .footer-column h3 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .footer-brand h3 {
+        font-size: 16px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+    }
+}
